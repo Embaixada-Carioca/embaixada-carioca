@@ -2,7 +2,17 @@ name: Organic growth P1 P2 gate
 on:
   push:
     branches: [master]
-    paths: ['**/*.html', 'llms.txt', 'en/llms.txt', 'es/llms.txt', 'functions/[[path]].js', 'scripts/apply_growth_p1_p2.py', 'data/seo-intents.json', 'assets/css/ec-growth-links.css']
+    paths:
+      - '**/*.html'
+      - 'llms.txt'
+      - 'en/llms.txt'
+      - 'es/llms.txt'
+      - 'functions/**'
+      - 'scripts/apply_growth_p1_p2.py'
+      - 'scripts/test_growth_router.mjs'
+      - 'data/seo-intents.json'
+      - 'assets/css/ec-growth-links.css'
+      - '.github/workflows/growth-p1-p2.yml'
   pull_request:
     branches: [master]
 jobs:
