@@ -1,4 +1,12 @@
 const LEGACY_REDIRECTS = new Map([
+  ["/en", "/en/"],
+  ["/es", "/es/"],
+  ["/cafe-manha.html", "/cafe-da-manha.html"],
+  ["/pao-bondinho.html", "/parque-bondinho.html"],
+  ["/es/donde-comer-cerca-al-pan-de-azucar.html", "/es/donde-comer-cerca-del-pan-de-azucar.html"],
+  ["/es/donde-comer-cerca-de-pan-de-azucar", "/es/donde-comer-cerca-del-pan-de-azucar.html"],
+  ["/es/o-que-fazer-depois-do-bondinho-pao-de-acucar/", "/es/o-que-fazer-depois-do-bondinho-pao-de-acucar.html"],
+  ["/es/como-chegar.html", "/es/como-llegar.html"],
   ["/general-3", "/"],
   ["/inquiry-services-page", "/eventos.html"],
   ["/caf%C3%A9-da-manh%C3%A3-com-a-melhor-vista-do-rio", "/cafe-da-manha-com-vista-rio-de-janeiro.html"],

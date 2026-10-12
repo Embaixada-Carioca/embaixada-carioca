@@ -1,0 +1,25 @@
+name: Organic growth P1 P2 gate
+on:
+  push:
+    branches: [master]
+    paths: ['**/*.html', 'llms.txt', 'en/llms.txt', 'es/llms.txt', 'functions/[[path]].js', 'scripts/apply_growth_p1_p2.py', 'data/seo-intents.json', 'assets/css/ec-growth-links.css']
+  pull_request:
+    branches: [master]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python3 scripts/apply_growth_p1_p2.py --check
+      - run: node scripts/test_growth_router.mjs
+      - run: python3 scripts/schema_jsonld_duplicate_key_guard.py --check
+      - run: python3 scripts/schema_rating_guard.py --check
+      - run: python3 scripts/audit_hreflang_pt_en_es.py
+      - run: python3 scripts/audit_p2_visit_hub.py
+      - run: python3 scripts/build_cloudflare_pages.py

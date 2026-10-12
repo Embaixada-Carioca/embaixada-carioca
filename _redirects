@@ -2,6 +2,13 @@
 # Processado pelo Cloudflare Pages antes dos arquivos estaticos.
 
 /index.html / 301
+/en /en/ 301
+/es /es/ 301
+/cafe-manha.html /cafe-da-manha.html 301
+/pao-bondinho.html /parque-bondinho.html 301
+/es/donde-comer-cerca-al-pan-de-azucar.html /es/donde-comer-cerca-del-pan-de-azucar.html 301
+/es/donde-comer-cerca-de-pan-de-azucar /es/donde-comer-cerca-del-pan-de-azucar.html 301
+/es/o-que-fazer-depois-do-bondinho-pao-de-acucar/ /es/o-que-fazer-depois-do-bondinho-pao-de-acucar.html 301
 /en/index.html /en/ 301
 /es/index.html /es/ 301
 

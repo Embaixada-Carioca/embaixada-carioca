@@ -1,0 +1,67 @@
+{
+  "menu": {
+    "pt": "/cardapio.html",
+    "en": "/en/cardapio.html",
+    "es": "/es/cardapio.html"
+  },
+  "breakfast": {
+    "pt": "/cafe-da-manha.html",
+    "en": "/en/cafe-da-manha.html",
+    "es": "/es/cafe-da-manha.html"
+  },
+  "lunch": {
+    "pt": "/almoco.html",
+    "en": "/en/almoco.html",
+    "es": "/es/almoco.html"
+  },
+  "park": {
+    "pt": "/parque-bondinho.html",
+    "en": "/en/parque-bondinho.html",
+    "es": "/es/parque-bondinho.html"
+  },
+  "hill": {
+    "pt": "/morro-da-urca.html",
+    "en": "/en/morro-da-urca.html",
+    "es": "/es/morro-da-urca.html"
+  },
+  "access": {
+    "pt": "/como-chegar.html",
+    "en": "/en/how-to-get-there.html",
+    "es": "/es/como-llegar.html"
+  },
+  "food": {
+    "pt": "/gastronomia-carioca.html",
+    "en": "/en/gastronomia-carioca.html",
+    "es": "/es/gastronomia-carioca.html"
+  },
+  "restaurant": {
+    "pt": "/restaurante-morro-da-urca.html",
+    "en": "/en/restaurant-at-urca-hill.html",
+    "es": "/es/restaurante-morro-da-urca.html"
+  },
+  "cable_restaurant": {
+    "pt": "/restaurante-bondinho-pao-de-acucar.html",
+    "en": "/en/sugarloaf-cable-car-restaurant.html",
+    "es": "/es/restaurante-bondinho-pan-de-azucar.html"
+  },
+  "where": {
+    "pt": "/onde-comer-no-pao-de-acucar.html",
+    "en": "/en/where-to-eat-near-sugarloaf.html",
+    "es": "/es/donde-comer-cerca-del-pan-de-azucar.html"
+  },
+  "itinerary": {
+    "pt": "/roteiro-meio-dia-urca-pao-de-acucar.html",
+    "en": "/en/roteiro-meio-dia-urca-pao-de-acucar.html",
+    "es": "/es/roteiro-meio-dia-urca-pao-de-acucar.html"
+  },
+  "visit": {
+    "pt": "/planeje-sua-visita.html",
+    "en": "/en/plan-your-visit.html",
+    "es": "/es/planifica-tu-visita.html"
+  },
+  "brand": {
+    "pt": "/",
+    "en": "/en/",
+    "es": "/es/"
+  }
+}
