@@ -64,6 +64,10 @@ def copy_public_site() -> None:
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(path, target)
 
+    from build_markdown import write_all
+    md_count = write_all(OUTPUT)
+    print(f"Markdown para agentes: {md_count} páginas")
+
     routes = {
         "version": 1,
         "include": ["/*"],

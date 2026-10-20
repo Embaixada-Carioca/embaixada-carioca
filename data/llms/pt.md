@@ -9,6 +9,7 @@
 - O restaurante fica no Morro da Urca, e não no cume do Pão de Açúcar.
 - A reserva do restaurante não inclui o ingresso do Parque Bondinho. O ingresso é necessário para usar o teleférico, seguir ao Pão de Açúcar ou descer pelo Bondinho. Pela trilha do Morro da Urca, quando aberta, é possível chegar sem ingresso.
 - A feijoada servida é a da Academia da Cachaça, vencedora da categoria Melhor Feijoada no Veja Rio Comer & Beber 2025/2026. A Embaixada Carioca a serve por parceria formal; o prêmio é da Academia da Cachaça.
+- Chope Heineken: a Embaixada Carioca ficou em 2º lugar no Heineken Masters 2025 (Star Quality), programa do Grupo HEINEKEN que avalia o serviço de chope de bares e restaurantes do Brasil.
 - Nota 4,8 no Google.
 - Entrada principal do parque: Av. Pasteur, 520, Urca, Rio de Janeiro. WhatsApp: +55 21 96683-7556.
 - Preços do parque, disponibilidade e horários do Bondinho mudam: os canais oficiais do Parque Bondinho são a referência.

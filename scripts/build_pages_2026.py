@@ -32,9 +32,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content" / "pages"
 SITE = "https://www.embaixadacarioca.com"
-CSS_VERSION = "20261020b"
+CSS_VERSION = "20261020c"
 EXT_ATTRS = ' target="_blank" rel="noopener"'
 TAGME = "https://go.tagme.com.br/embaixadacarioca"
+ADDRESS_HTML = ('<address class="footer-address">Embaixada Carioca<br>Morro da Urca · Parque Bondinho Pão de Açúcar<br>'
+                'Av. Pasteur, 520 · Urca · Rio de Janeiro · RJ · 22290-240</address>')
 WHATSAPP = "https://wa.me/5521966837556"
 
 LANG = {
@@ -55,6 +57,7 @@ LANG = {
             ("Contato", [(WHATSAPP, "+55 21 96683-7556"), ("mailto:eventos@embaixadacarioca.com.br", "eventos@embaixadacarioca.com.br"), ("https://www.instagram.com/embaixadacarioca/", "Instagram"), ("/contato.html", "Fale conosco")]),
         ],
         "privacy": "Política de privacidade", "faq_eyebrow": "Perguntas frequentes",
+        "about": ("/nossa-visao.html", "Sobre a casa"), "address_label": "Endereço",
     },
     "en": {
         "html": "en", "og": "en_US", "main": "main-content",
@@ -73,6 +76,7 @@ LANG = {
             ("Contact", [(WHATSAPP, "+55 21 96683-7556"), ("mailto:eventos@embaixadacarioca.com.br", "eventos@embaixadacarioca.com.br"), ("https://www.instagram.com/embaixadacarioca/", "Instagram"), ("/en/contato.html", "Contact us")]),
         ],
         "privacy": "Privacy policy", "faq_eyebrow": "FAQ",
+        "about": ("/en/nossa-visao.html", "About us"), "address_label": "Address",
     },
     "es": {
         "html": "es", "og": "es_ES", "main": "contenido-principal",
@@ -91,6 +95,7 @@ LANG = {
             ("Contacto", [(WHATSAPP, "+55 21 96683-7556"), ("mailto:eventos@embaixadacarioca.com.br", "eventos@embaixadacarioca.com.br"), ("https://www.instagram.com/embaixadacarioca/", "Instagram"), ("/es/contato.html", "Contacto")]),
         ],
         "privacy": "Política de privacidad", "faq_eyebrow": "Preguntas frecuentes",
+        "about": ("/es/nossa-visao.html", "Sobre la casa"), "address_label": "Dirección",
     },
 }
 
@@ -210,9 +215,15 @@ def schema(meta: dict, rel: str, lang: str) -> list:
     # Mantém a data gravada por stamp_page_dates.py ao regenerar a página.
     existing = ROOT / rel
     if existing.exists():
-        m = re.search(r'"dateModified":\s*"([^"]+)"', existing.read_text(encoding="utf-8"))
+        old_text = existing.read_text(encoding="utf-8")
+        m = re.search(r'"datePublished":\s*"([^"]+)"', old_text)
+        if m:
+            page["datePublished"] = m.group(1)
+        m = re.search(r'"dateModified":\s*"([^"]+)"', old_text)
         if m:
             page["dateModified"] = m.group(1)
+    page["author"] = {"@id": SITE + "/#restaurant"}
+    page["publisher"] = {"@id": SITE + "/#restaurant"}
     graph = [restaurant_node(lang),
              {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/", "name": "Embaixada Carioca",
               "inLanguage": L["html"], "publisher": {"@id": SITE + "/#restaurant"}},
@@ -230,6 +241,21 @@ def schema(meta: dict, rel: str, lang: str) -> list:
     return [{"@context": "https://schema.org", "@graph": graph}]
 
 
+def responsive_variant(webp: str):
+    """Versão de 800 px gerada por scripts/make_responsive_images.py, quando existir."""
+    if not webp or not webp.endswith(".webp"):
+        return None
+    candidate = webp[:-5] + "-800w.webp"
+    return candidate if (ROOT / candidate.lstrip("/")).exists() else None
+
+
+def markdown_path(path: str) -> str:
+    """URL da versão em Markdown: / -> /index.md, /x.html -> /x.md, /en/ -> /en/index.md."""
+    if path.endswith("/"):
+        return path + "index.md"
+    return re.sub(r"\.html$", ".md", path)
+
+
 def picture(img: dict, *, eager: bool = False, cls: str = "") -> str:
     src = img["src"]
     width, height = img.get("width"), img.get("height")
@@ -240,9 +266,18 @@ def picture(img: dict, *, eager: bool = False, cls: str = "") -> str:
         candidate = re.sub(r"\.(jpe?g|png)$", ".webp", src)
         if (ROOT / candidate.lstrip("/")).exists():
             webp = candidate
-    source = f'<source type="image/webp" srcset="{esc(webp)}">' if webp and webp != src else ""
+    small = responsive_variant(webp) if webp else None
+    if webp and webp != src and small:
+        source = (f'<source type="image/webp" srcset="{esc(small)} 800w, {esc(webp)} {width or 1280}w" '
+                  f'sizes="{"100vw" if eager else "(min-width: 900px) 50vw, 100vw"}">')
+    else:
+        source = f'<source type="image/webp" srcset="{esc(webp)}">' if webp and webp != src else ""
     klass = f' class="{cls}"' if cls else ""
-    return f'<picture{klass}>{source}<img src="{esc(src)}"{size} alt="{esc(img.get("alt", ""))}"{loading}></picture>'
+    img_srcset = ""
+    if not source and src.endswith(".webp") and responsive_variant(src):
+        img_srcset = (f' srcset="{esc(responsive_variant(src))} 800w, {esc(src)} {width or 1280}w"'
+                      f' sizes="{"100vw" if eager else "(min-width: 900px) 50vw, 100vw"}"')
+    return f'<picture{klass}>{source}<img src="{esc(src)}"{img_srcset}{size} alt="{esc(img.get("alt", ""))}"{loading}></picture>'
 
 
 def render_head(meta: dict, rel: str, lang: str) -> str:
@@ -263,8 +298,11 @@ def render_head(meta: dict, rel: str, lang: str) -> str:
     if hero_img:
         webp = re.sub(r"\.(jpe?g|png)$", ".webp", hero_img["src"])
         target = webp if (ROOT / webp.lstrip("/")).exists() else hero_img["src"]
-        preload = f'<link rel="preload" as="image" href="{esc(target)}" fetchpriority="high">'
+        small = responsive_variant(target)
+        srcset = f' imagesrcset="{esc(small)} 800w, {esc(target)} {hero_img.get("width", 1280)}w" imagesizes="100vw"' if small else ""
+        preload = f'<link rel="preload" as="image" href="{esc(target)}"{srcset} fetchpriority="high">'
     extra_css = "".join(f'<link rel="stylesheet" href="{esc(c)}">' for c in meta.get("css", []))
+    md_link = "" if "noindex" in robots else f'\n<link rel="alternate" type="text/markdown" href="{markdown_path(path)}">'
     return f"""<!doctype html>
 <html lang="{L['html']}">
 <head>
@@ -273,9 +311,10 @@ def render_head(meta: dict, rel: str, lang: str) -> str:
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
 <meta name="robots" content="{robots}">
+<meta name="author" content="Embaixada Carioca">
 <meta name="theme-color" content="#00384d">
 <link rel="canonical" href="{canonical}">
-{alt_links}
+{alt_links}{md_link}
 <meta property="og:type" content="website"><meta property="og:locale" content="{L['og']}"><meta property="og:site_name" content="Embaixada Carioca">
 <meta property="og:url" content="{canonical}"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:image" content="{esc(image)}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(desc)}"><meta name="twitter:image" content="{esc(image)}">
@@ -369,8 +408,8 @@ def render_footer(lang: str, meta: dict) -> str:
         cols.append(f'<div><h2>{esc(title)}</h2>{anchors}</div>')
     mobile = "".join(f'<a href="{h}" data-intent="{i}" data-position="mobile_bar">{esc(t)}</a>' for h, i, t in L["mobile"])
     scripts = "".join(f'<script src="{esc(s)}" defer></script>' for s in meta.get("scripts", []))
-    return (f'<footer class="footer"><div class="shell footer-grid"><div class="footer-brand"><img src="/assets/logo-areia.svg" width="72" height="72" loading="lazy" alt="Embaixada Carioca"><p>{esc(L["footer_about"])}</p></div>{"".join(cols)}</div>'
-            f'<div class="shell footer-bottom"><span>© 2026 Embaixada Carioca</span><a href="/politica-de-privacidade.html">{esc(L["privacy"])}</a></div></footer>\n'
+    return (f'<footer class="footer"><div class="shell footer-grid"><div class="footer-brand"><img src="/assets/logo-areia.svg" width="72" height="72" loading="lazy" alt="Embaixada Carioca"><p>{esc(L["footer_about"])}</p>{ADDRESS_HTML}</div>{"".join(cols)}</div>'
+            f'<div class="shell footer-bottom"><span>© 2026 Embaixada Carioca</span><a href="{L["about"][0]}">{esc(L["about"][1])}</a><a href="/politica-de-privacidade.html">{esc(L["privacy"])}</a></div></footer>\n'
             f'<nav class="mobile-actions" aria-label="{esc(L["quick"])}">{mobile}<a class="mobile-reserve" href="{TAGME}" target="_blank" rel="noopener" data-intent="reserva" data-position="mobile_bar">{esc(L["reserve"])}</a></nav>\n'
             f'{MENU_JS}\n<script src="/assets/conversion-tracking.js?v=20261005p2" defer></script><script src="/assets/web-vitals-tracking.js?v=20261005p2" defer></script>{scripts}\n'
             "<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});},{once:true});}</script>\n"

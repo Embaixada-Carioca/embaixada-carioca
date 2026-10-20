@@ -59,4 +59,13 @@ for(const [from,to] of merged){
  assert.equal(alias.status,301);assert.equal(alias.headers.get('Location'),to);
 }
 
-console.log('Router regression checks: PASS (8 redirects, 3 stored pages, unknown 404, 9 revalidation cases, 404 page, 32 consolidated URLs).');
+// Markdown for agents: /x.md and Accept: text/markdown serve _md/x.md; browsers still get HTML.
+const mdAssets={fetch:async(req)=>{const u=new URL(req.url).pathname;return u==='/_md/feijoada.md'||u==='/_md/index.md'?new Response('# Feijoada'):u.startsWith('/_html/')?new Response('<h1>Page</h1>'):new Response('nf',{status:404});}};
+for(const [path,accept,type] of [['/feijoada.md','*/*','markdown'],['/feijoada.html','text/markdown, text/html;q=0.9','markdown'],['/','text/markdown','markdown'],['/feijoada.html','text/html,application/xhtml+xml,*/*;q=0.8','html']]){
+ const r=await onRequest({request:new Request('https://www.embaixadacarioca.com'+path,{headers:{Accept:accept}}),env:{ASSETS:mdAssets},next(){return new Response('nf',{status:404});}});
+ assert.equal(r.status,200);assert.match(r.headers.get('Content-Type'),type==='markdown'?/text\/markdown/:/text\/html/);
+}
+const hiddenMd=await onRequest({request:new Request('https://www.embaixadacarioca.com/_md/feijoada.md'),env:{ASSETS:mdAssets},next(){throw Error('must not reach assets');}});
+assert.equal(hiddenMd.status,404);
+
+console.log('Router regression checks: PASS (8 redirects, 3 stored pages, unknown 404, 9 revalidation cases, 404 page, 32 consolidated URLs, 4 markdown cases).');
