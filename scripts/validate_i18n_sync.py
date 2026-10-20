@@ -25,12 +25,14 @@ SLUG_MAPPING_EN = {
     'como-chegar.html': 'how-to-get-there.html',
     'avaliacoes-embaixada-carioca.html': 'reviews-embaixada-carioca.html',
     'restaurante-pao-de-acucar.html': 'restaurant-at-sugarloaf.html',
+    'planeje-sua-visita.html': 'plan-your-visit.html',
 }
 SLUG_MAPPING_ES = {
     'entardecer.html': 'atardecer.html',
     'como-chegar.html': 'como-llegar.html',
     'avaliacoes-embaixada-carioca.html': 'resenas-embaixada-carioca.html',
     'restaurante-pao-de-acucar.html': 'restaurante-pan-de-azucar.html',
+    'planeje-sua-visita.html': 'planifica-tu-visita.html',
 }
 
 
