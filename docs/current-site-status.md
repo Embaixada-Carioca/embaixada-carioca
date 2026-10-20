@@ -21,6 +21,16 @@ Este é o documento de referência para o estado operacional atual. Relatórios 
 - Fatos padronizados: nota 4,8 no Google sem número de avaliações; "único restaurante do Parque Bondinho com vista direta para o Pão de Açúcar"; café da manhã à la carte; a reserva não inclui o ingresso do Bondinho.
 - Relatório: `_audit_reports/nivel_a_2026-10-20.md`.
 
+### Design 2026 em todas as páginas — 20/10/2026
+
+- As 70 páginas internas (PT/EN/ES, mais 404, offline e política de privacidade) passam a ser geradas por `scripts/build_pages_2026.py` a partir de `content/pages/<caminho>.html`: um bloco `<!--page {JSON} -->` com metadados, hero, fatos e FAQ, seguido do HTML das seções. Com a home e os 3 guias de visita, são 74 páginas no design 2026. Fica de fora só `formulario.html`, que redireciona para o formulário de eventos.
+- CSS: 2 combinações, contra pelo menos 23 antes. A home usa `ec-home-2026.css`; todas as outras páginas usam `ec-home-2026.css` + `ec-pages-2026.css` + `ec-growth-links.css`. Para mudar o visual de todas as páginas, edite `ec-pages-2026.css` e suba `CSS_VERSION` no builder.
+- Para editar uma página: altere o arquivo em `content/pages/` e rode `build_pages_2026.py <páginas>`, depois `apply_growth_p1_p2.py` e `stamp_page_dates.py --date AAAA-MM-DD <páginas>`. Não edite o HTML publicado à mão: o CI (`growth-p1-p2.yml`) roda `build_pages_2026.py --check` e `stamp_page_dates.py --check`.
+- Conteúdo enxuto: fatos, preços (cardápio de 19/10/2026), FAQs e links mantidos. Removidos os blocos SEO repetidos e as alegações sem fonte: bylines de "especialistas", "melhor do Rio", "escolha número um", comparações nominais com concorrentes, depoimentos apresentados como avaliações, itens fora do cardápio e listas de "fontes editoriais".
+- O JSON-LD é gerado de forma padronizada: um `@graph` com Restaurant, WebSite, WebPage, BreadcrumbList e FAQPage, além de Menu e MenuItem onde houver. Saíram os VideoObject inventados e os eventos anuais genéricos.
+- As páginas passaram de 110–310 KB para 19–55 KB. axe 4.10, em 375 e 1440 px: 0 violações e nenhuma rolagem horizontal. Todos os links internos respondem 200.
+- PRs: #39 (páginas principais), #40 (guias), #41 (restaurante e gastronomia) e o lote 4 (institucionais).
+
 ### Publicação pelo GitHub Actions — 20/10/2026
 
 - A integração Git do Cloudflare Pages parou de publicar depois que o repositório foi transferido de `LeoRangel22` para a organização `Embaixada-Carioca`: o projeto continua ligado ao dono antigo ("internal issue with your Cloudflare Workers & Pages Git installation"). A produção ficou no commit `0a6764f` de 05/10/2026 até 20/10/2026.

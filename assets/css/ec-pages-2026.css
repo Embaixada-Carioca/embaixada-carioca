@@ -218,3 +218,11 @@
 .page-2026 .feature-grid img { height: 100%; }
 .direct-grid h2, .split h2, .hub-faq h2 { font-size: clamp(2rem, 3.4vw, 3.3rem); }
 .page-2026 main [id] { scroll-margin-top: 96px; }
+
+.visit-hero.no-media { min-height: 0; background: var(--blue-deep); }
+.visit-hero.no-media .visit-hero-content { padding: 150px 0 64px; }
+.legal-prose { max-width: 760px; }
+.legal-prose h2 { margin: 2.2rem 0 .8rem; font-size: clamp(1.5rem, 2.4vw, 2rem); }
+.legal-prose .meta { color: var(--muted, #4d5b61); }
+.legal-prose .note { margin: 1.4rem 0; }
+.info-card a, .prose a { overflow-wrap: anywhere; }
