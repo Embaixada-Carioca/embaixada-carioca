@@ -5,6 +5,7 @@ import html
 import json
 import re
 from pathlib import Path
+from refresh_menu_highlights import refresh_menu
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = 'https://www.embaixadacarioca.com'
@@ -124,6 +125,12 @@ def synchronize_schema(text, title, desc, rel):
 def facts(text, lang):
     # Operator confirmation on 12 October 2026: daily 08:30–21:00.
     text=re.sub(r'\b227 (metros|meters|metres)\b',r'220 \1',text)
+    # 220 m = 721.78 ft; keep the imperial caption consistent with metric copy.
+    text=re.sub(r'\b745\s*(ft|feet)\b',r'722\1',text)
+    # Exact service-hour ranges only: preserve itinerary suggestions at 16h/16h30.
+    text=re.sub(r'(11h30\s+(?:até\s+(?:as|às)|às)\s+)16h(?:00)?\b',r'\g<1>17h',text)
+    text=text.replace('11:30 AM to 4:00 PM','11:30 AM to 5:00 PM')
+    text=text.replace('11:30 a 16:00','11:30 a 17:00')
     def table_row(m):
         row=m[0];cells=re.findall(r'<td[^>]*>(.*?)</td>',row,re.S)
         if len(cells)<2: return row
@@ -180,6 +187,7 @@ def transform(row, group):
         text=text[:h.end()]+after
     text=synchronize_schema(text,title,desc,rel)
     text=facts(text,lang)
+    if group=='menu': text=refresh_menu(text,lang)
     text=align_intent_links(text,lang)
     if group in ('park','hill'):
         # Park hours are a separate authority; point to the official source.
@@ -243,17 +251,27 @@ def main():
             if new!=path.read_text():
                 changed.append(row[0])
                 if not args.check: path.write_text(new)
+    # The same facts also appear on older lunch/sunset pages and English captions.
+    scoped={row[0] for rows in GROUPS.values() for row in rows}|{row[0] for row in EXTRAS}
+    public_pages=list(ROOT.glob('*.html'))+list((ROOT/'en').glob('*.html'))+list((ROOT/'es').glob('*.html'))
+    for path in public_pages:
+        rel=path.relative_to(ROOT).as_posix()
+        if rel in scoped: continue
+        old=path.read_text();new=facts(old,locale(rel))
+        if new!=old:
+            changed.append(rel)
+            if not args.check: path.write_text(new)
     ownership={group:{lang:'/'+rows[i][0] for i,lang in enumerate(LOCALES)} for group,rows in GROUPS.items()}
     ownership['brand']={'pt':'/','en':'/en/','es':'/es/'}
     generated={'data/seo-intents.json':json.dumps(ownership,ensure_ascii=False,indent=2)+'\n'}
     for lang in LOCALES:
         generated[('' if lang=='pt' else lang+'/')+'llms.txt']=reference_file(lang)
     sitemap=ROOT/'sitemap.xml';xml=sitemap.read_text()
-    updated_urls={SITE+'/'+r[0] for rows in GROUPS.values() for r in rows}|{SITE+'/'+r[0] for r in EXTRAS}
+    updated_urls={SITE+('/' if rel=='index.html' else '/'+rel.replace('/index.html','/')) for rel in changed}
     def sitemap_url(m):
         entry=m[0];loc=re.search(r'<loc>(.*?)</loc>',entry)
         if loc and loc[1] in updated_urls:
-            entry=re.sub(r'<lastmod>(.*?)</lastmod>',lambda d:'<lastmod>'+max(d[1],'2026-10-12')+'</lastmod>',entry)
+            entry=re.sub(r'<lastmod>(.*?)</lastmod>',lambda d:'<lastmod>'+max(d[1],'2026-10-19')+'</lastmod>',entry)
         return entry
     generated['sitemap.xml']=re.sub(r'<url>.*?</url>',sitemap_url,xml,flags=re.S)
     for rel,new in generated.items():
