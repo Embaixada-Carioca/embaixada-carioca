@@ -19,7 +19,7 @@ O domínio sem `www` continua redirecionando corretamente para `www` (9 de 9 tes
 - Título, descrição, Open Graph e Twitter da página PT eram os da página de almoço; título ES trazia "La Mejor Feijoada de Río de Janeiro 4,8★".
 - H1 "A Melhor Feijoada do Rio de Janeiro" (e equivalentes EN/ES) e trechos "Nossa feijoada premiada" / "Our award-winning feijoada" / "Nuestra feijoada premiada" foram reescritos para nomear a Academia da Cachaça e a parceria formal.
 - JSON-LD: `WebPage`, `mainEntityOfPage`, `@id` e breadcrumb apontavam para `almoco.html`; agora apontam para a própria página de feijoada de cada idioma.
-- Mantido sem alteração: a frase de disponibilidade "no almoço e entardecer", pendente de confirmação do responsável.
+- Disponibilidade confirmada pelo responsável em 20/10/2026: feijoada servida no almoço, até as 17h. Corrigido "no almoço e entardecer" (PT/EN/ES) e removida a feijoada da resposta de FAQ do pôr do sol em `por-do-sol-morro-da-urca.html` (JSON-LD).
 
 ## 3. Cardápio PT/EN/ES: layout e contraste
 
