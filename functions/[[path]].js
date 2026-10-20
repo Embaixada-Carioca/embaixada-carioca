@@ -12,6 +12,38 @@ const LEGACY_REDIRECTS = new Map([
   ["/caf%C3%A9-da-manh%C3%A3-com-a-melhor-vista-do-rio", "/cafe-da-manha-com-vista-rio-de-janeiro.html"],
   ["/en/como-chegar.html", "/en/how-to-get-there.html"],
   ["/restaurante-urca.html", "/restaurante-morro-da-urca.html"],
+  // Consolidação de 20/10/2026: páginas com a mesma intenção de uma página principal
+  // (Search Console, jul–out/2026). Detalhes em _audit_reports/consolidacao_paginas_2026-10-20.md.
+  ["/feijoada-morro-da-urca.html", "/feijoada.html"],
+  ["/feijoada-com-vista-rio-de-janeiro.html", "/feijoada.html"],
+  ["/almoco-morro-da-urca.html", "/almoco.html"],
+  ["/cafe-da-manha-pao-de-acucar.html", "/cafe-da-manha.html"],
+  ["/cafe-da-manha-com-vista-rio-de-janeiro.html", "/cafe-da-manha.html"],
+  ["/por-do-sol-morro-da-urca.html", "/entardecer.html"],
+  ["/sunset-por-do-sol-rio-de-janeiro.html", "/entardecer.html"],
+  ["/restaurantes-romanticos-rio-de-janeiro.html", "/entardecer.html"],
+  ["/restaurante-com-vista-rio-de-janeiro.html", "/"],
+  ["/restaurante-pao-de-acucar.html", "/onde-comer-no-pao-de-acucar.html"],
+  ["/restaurantes-perto-do-pao-de-acucar.html", "/onde-comer-no-pao-de-acucar.html"],
+  ["/parque-bondinho-pao-de-acucar.html", "/parque-bondinho.html"],
+  ["/en/feijoada-com-vista-rio-de-janeiro.html", "/en/feijoada.html"],
+  ["/en/almoco-morro-da-urca.html", "/en/almoco.html"],
+  ["/en/cafe-da-manha-pao-de-acucar.html", "/en/cafe-da-manha.html"],
+  ["/en/por-do-sol-morro-da-urca.html", "/en/sunset.html"],
+  ["/en/sunset-por-do-sol-rio-de-janeiro.html", "/en/sunset.html"],
+  ["/en/restaurante-com-vista-rio-de-janeiro.html", "/en/"],
+  ["/en/restaurant-at-sugarloaf.html", "/en/where-to-eat-near-sugarloaf.html"],
+  ["/en/restaurants-near-sugarloaf-mountain.html", "/en/where-to-eat-near-sugarloaf.html"],
+  ["/en/sugarloaf-cable-car-park.html", "/en/parque-bondinho.html"],
+  ["/es/feijoada-com-vista-rio-de-janeiro.html", "/es/feijoada.html"],
+  ["/es/almoco-morro-da-urca.html", "/es/almoco.html"],
+  ["/es/cafe-da-manha-pao-de-acucar.html", "/es/cafe-da-manha.html"],
+  ["/es/por-do-sol-morro-da-urca.html", "/es/atardecer.html"],
+  ["/es/sunset-por-do-sol-rio-de-janeiro.html", "/es/atardecer.html"],
+  ["/es/restaurante-com-vista-rio-de-janeiro.html", "/es/"],
+  ["/es/restaurante-pan-de-azucar.html", "/es/donde-comer-cerca-del-pan-de-azucar.html"],
+  ["/es/restaurantes-cerca-del-pan-de-azucar.html", "/es/donde-comer-cerca-del-pan-de-azucar.html"],
+  ["/es/parque-bondinho-pan-de-azucar.html", "/es/parque-bondinho.html"],
 ]);
 
 function redirect(requestUrl, destination) {
@@ -26,11 +58,30 @@ function redirect(requestUrl, destination) {
   });
 }
 
-async function storedHtml(context, publicPath) {
+// Only cache-validation headers reach the asset lookup. Forwarding the whole
+// browser request made the lookup answer 304 (If-None-Match) or 206 (Range),
+// which was treated as "page not found" and became an empty 404: returning
+// visitors and recrawls got an error instead of the page.
+const VALIDATION_HEADERS = ["If-None-Match", "If-Modified-Since"];
+
+async function storedHtml(context, publicPath, { conditional = true } = {}) {
   const assetPath = `/_html${publicPath}.txt`;
   const assetUrl = new URL(assetPath, context.request.url);
-  const assetRequest = new Request(assetUrl, context.request);
+  const lookupHeaders = new Headers();
+  if (conditional) {
+    for (const name of VALIDATION_HEADERS) {
+      const value = context.request.headers.get(name);
+      if (value) lookupHeaders.set(name, value);
+    }
+  }
+  const assetRequest = new Request(assetUrl, { method: "GET", headers: lookupHeaders });
   const response = await context.env.ASSETS.fetch(assetRequest);
+
+  if (response.status === 304) {
+    const headers = new Headers(response.headers);
+    headers.set("X-Canonical-HTML", "preserved");
+    return new Response(null, { status: 304, headers });
+  }
 
   if (response.status !== 200) return null;
 
@@ -84,10 +135,28 @@ export async function onRequest(context) {
 
   if (!path.endsWith("/") && !path.split("/").pop().includes(".")) {
     const canonicalPath = `${path}.html`;
-    if (await storedHtml(context, canonicalPath)) {
+    if (LEGACY_REDIRECTS.has(canonicalPath)) {
+      return redirect(context.request.url, LEGACY_REDIRECTS.get(canonicalPath));
+    }
+    if (await storedHtml(context, canonicalPath, { conditional: false })) {
       return redirect(context.request.url, canonicalPath);
     }
   }
 
-  return context.next();
+  const fallback = await context.next();
+  if (fallback.status === 404 && wantsHtml(context.request)) {
+    const page = await storedHtml(context, "/404.html", { conditional: false });
+    if (page) {
+      const headers = new Headers(page.headers);
+      headers.set("Cache-Control", "no-store");
+      headers.delete("ETag");
+      return new Response(context.request.method === "HEAD" ? null : page.body, { status: 404, headers });
+    }
+  }
+  return fallback;
+}
+
+function wantsHtml(request) {
+  if (request.method !== "GET" && request.method !== "HEAD") return false;
+  return (request.headers.get("Accept") || "").includes("text/html");
 }

@@ -1,0 +1,62 @@
+/*
+ * Cardápio PT/EN/ES — layout e contraste (diagnóstico de 19/10/2026).
+ *
+ * Carregado apenas em cardapio.html, en/cardapio.html e es/cardapio.html.
+ *
+ * As regras ficam numa camada (@layer) de propósito: em declarações !important,
+ * regras dentro de uma camada vencem as regras !important sem camada dos arquivos
+ * de contraste legados (ec-contrast-*, ec-wcag-*, superholistic_*), sem precisar
+ * de seletores com dezenas de :not(). É o mesmo recurso já usado em
+ * ec-shared.css (@layer bnav-override).
+ *
+ * Cores (WCAG AA, texto normal ≥ 4,5:1):
+ *   #7a5000 sobre #ede2c9 (cartão) = 5,49:1 · sobre #f6efde (seção) = 6,16:1
+ *   #00405a sobre #f59b1e (botão laranja) = 5,10:1 · sobre #f5ecd9 = 9,51:1
+ *   #f5c842 sobre #00405a (faixa azul) = 7,03:1
+ */
+@layer ec-menu-fixes {
+  /* 1. Seções do cardápio e "Guias principais" na mesma largura do bloco
+        "Cardápio completo" (1100 px), em vez de colar na borda esquerda. */
+  body .menu-section > .wrap,
+  body section.topic-authority > .wrap {
+    width: min(1100px, calc(100% - 40px)) !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+    padding-inline: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 2. Numeração das seções, rótulo "Cardápio online", preços e link dourado
+        do resumo. */
+  body .menu-section .menu-section-head .tag,
+  body #cardapio-completo .kicker,
+  body .menu-section .menu-item .menu-item-price,
+  body #answer-cardapio strong,
+  body #answer-cardapio strong a {
+    color: #7a5000 !important;
+    -webkit-text-fill-color: #7a5000 !important;
+  }
+
+  /* 3. Botão laranja "Abrir cardápio completo com preços": texto azul-marinho. */
+  body #cardapio-completo a.btn,
+  body #cardapio-completo a.btn:link,
+  body #cardapio-completo a.btn:visited,
+  body #cardapio-completo a.btn:hover,
+  body #cardapio-completo a.btn:focus-visible {
+    color: #00405a !important;
+    -webkit-text-fill-color: #00405a !important;
+  }
+
+  /* 4. Título "Fotos do Restaurante" sobre fundo areia. */
+  body main section[style*="--areia-pale"] > .wrap > h2 {
+    color: #00405a !important;
+    -webkit-text-fill-color: #00405a !important;
+  }
+
+  /* 5. Rótulos sobre as faixas azuis ("Reserve sua mesa", "Guias principais"). */
+  body aside[style*="--azul1"] > .eyebrow,
+  body section.topic-authority .eyebrow {
+    color: #f5c842 !important;
+    -webkit-text-fill-color: #f5c842 !important;
+  }
+}
