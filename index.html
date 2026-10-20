@@ -63,111 +63,180 @@
     })();
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Restaurant",
-        "@id": "https://www.embaixadacarioca.com/#restaurant",
-        "name": "Embaixada Carioca",
-        "description": "Restaurante de cozinha brasileira no Morro da Urca, dentro do Parque Bondinho Pão de Açúcar, com café da manhã, almoço e drinks com vista.",
-        "url": "https://www.embaixadacarioca.com/",
-        "logo": "https://www.embaixadacarioca.com/assets/logo-azul.svg",
-        "image": [
-          "https://www.embaixadacarioca.com/assets/hero.webp",
-          "https://www.embaixadacarioca.com/assets/cafe-manha-pao-acucar-frente.webp",
-          "https://www.embaixadacarioca.com/assets/feijoada-completa-acompanhamentos.jpg"
-        ],
-        "telephone": "+55 21 96683-7556",
-        "email": "eventos@embaixadacarioca.com.br",
-        "priceRange": "$$$",
-        "servesCuisine": ["Brasileira", "Carioca", "Café da manhã"],
-        "acceptsReservations": true,
-        "hasMenu": {"@id": "https://www.embaixadacarioca.com/#menu"},
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Parque Bondinho Pão de Açúcar, Morro da Urca — acesso pela Av. Pasteur, 520",
-          "addressLocality": "Rio de Janeiro",
-          "addressRegion": "RJ",
-          "postalCode": "22290-240",
-          "addressCountry": "BR"
-        },
-        "geo": {"@type": "GeoCoordinates", "latitude": -22.9508333, "longitude": -43.1641667},
-        "containedInPlace": {"@type": "TouristAttraction", "name": "Parque Bondinho Pão de Açúcar", "url": "https://bondinho.com.br/"},
-        "sameAs": ["https://www.instagram.com/embaixadacarioca/", "https://www.facebook.com/embaixadacarioca/"],
-        "areaServed": {"@type": "City", "name": "Rio de Janeiro"},
-        "currenciesAccepted": "BRL",
-        "paymentAccepted": "Dinheiro, cartão de crédito, cartão de débito e Pix",
-        "knowsLanguage": ["pt-BR", "en", "es"]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Restaurant",
+      "@id": "https://www.embaixadacarioca.com/#restaurant",
+      "name": "Embaixada Carioca",
+      "description": "Restaurante de cozinha brasileira no Morro da Urca, dentro do Parque Bondinho Pão de Açúcar, com café da manhã, almoço e drinks com vista.",
+      "url": "https://www.embaixadacarioca.com/",
+      "logo": "https://www.embaixadacarioca.com/assets/logo-azul.svg",
+      "image": [
+        "https://www.embaixadacarioca.com/assets/hero.webp",
+        "https://www.embaixadacarioca.com/assets/cafe-manha-pao-acucar-frente.webp",
+        "https://www.embaixadacarioca.com/assets/feijoada-completa-acompanhamentos.jpg"
+      ],
+      "telephone": "+55 21 96683-7556",
+      "email": "eventos@embaixadacarioca.com.br",
+      "priceRange": "$$$",
+      "servesCuisine": [
+        "Brasileira",
+        "Carioca",
+        "Café da manhã"
+      ],
+      "acceptsReservations": true,
+      "hasMenu": {
+        "@id": "https://www.embaixadacarioca.com/#menu"
       },
-      {
-        "@type": "Menu",
-        "@id": "https://www.embaixadacarioca.com/#menu",
-        "name": "Cardápio da Embaixada Carioca",
-        "url": "https://www.embaixadacarioca.com/cardapio.html",
-        "inLanguage": "pt-BR",
-        "mainEntityOfPage": {"@id": "https://www.embaixadacarioca.com/#webpage"}
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "08:30",
+          "closes": "21:00"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Parque Bondinho Pão de Açúcar, Morro da Urca — acesso pela Av. Pasteur, 520",
+        "addressLocality": "Rio de Janeiro",
+        "addressRegion": "RJ",
+        "postalCode": "22290-240",
+        "addressCountry": "BR"
       },
-      {
-        "@type": "WebSite",
-        "@id": "https://www.embaixadacarioca.com/#website",
-        "url": "https://www.embaixadacarioca.com/",
-        "name": "Embaixada Carioca",
-        "inLanguage": "pt-BR",
-        "publisher": {"@id": "https://www.embaixadacarioca.com/#restaurant"}
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -22.9508333,
+        "longitude": -43.1641667
       },
-      {
-        "@type": "WebPage",
-        "@id": "https://www.embaixadacarioca.com/#webpage",
-        "url": "https://www.embaixadacarioca.com/",
-        "name": "Embaixada Carioca — restaurante no Morro da Urca com vista",
-        "description": "Café da manhã e almoço no Morro da Urca, dentro do Parque Bondinho, com vista para o Pão de Açúcar.",
-        "inLanguage": "pt-BR",
-        "isPartOf": {"@id": "https://www.embaixadacarioca.com/#website"},
-        "about": {"@id": "https://www.embaixadacarioca.com/#restaurant"},
-        "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", "#resposta-direta", "#planeje-visita"]}
+      "containedInPlace": {
+        "@type": "TouristAttraction",
+        "name": "Parque Bondinho Pão de Açúcar",
+        "url": "https://bondinho.com.br/"
       },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://www.embaixadacarioca.com/#breadcrumb",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Início",
-            "item": "https://www.embaixadacarioca.com/"
-          }
-        ]
+      "sameAs": [
+        "https://www.instagram.com/embaixadacarioca/",
+        "https://www.facebook.com/embaixadacarioca/"
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Rio de Janeiro"
       },
-      {
-        "@type": "FAQPage",
-        "@id": "https://www.embaixadacarioca.com/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Onde tomar café da manhã com vista para o Pão de Açúcar?",
-            "acceptedAnswer": {"@type": "Answer", "text": "A Embaixada Carioca serve café da manhã no Morro da Urca, na primeira parada do Parque Bondinho Pão de Açúcar. O serviço vai até 11h30 e tem vista direta para o Pão de Açúcar. A reserva do restaurante não inclui o ingresso do parque."}
-          },
-          {
-            "@type": "Question",
-            "name": "Onde almoçar no Morro da Urca?",
-            "acceptedAnswer": {"@type": "Answer", "text": "A Embaixada Carioca fica dentro do Parque Bondinho, no Morro da Urca, e serve almoço brasileiro das 11h30 às 17h, com vista para o Pão de Açúcar."}
-          },
-          {
-            "@type": "Question",
-            "name": "A reserva inclui o ingresso do Parque Bondinho?",
-            "acceptedAnswer": {"@type": "Answer", "text": "Não. A reserva garante a mesa no restaurante, mas o ingresso e o acesso ao Parque Bondinho são contratados separadamente."}
-          },
-          {
-            "@type": "Question",
-            "name": "Onde fica a Embaixada Carioca?",
-            "acceptedAnswer": {"@type": "Answer", "text": "A Embaixada Carioca fica no Morro da Urca, a primeira parada do Bondinho, dentro do Parque Bondinho Pão de Açúcar. O acesso principal ao parque é pela Av. Pasteur, 520, Urca, Rio de Janeiro."}
-          }
-        ]
+      "currenciesAccepted": "BRL",
+      "paymentAccepted": "Dinheiro, cartão de crédito, cartão de débito e Pix",
+      "knowsLanguage": [
+        "pt-BR",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "@type": "Menu",
+      "@id": "https://www.embaixadacarioca.com/#menu",
+      "name": "Cardápio da Embaixada Carioca",
+      "url": "https://www.embaixadacarioca.com/cardapio.html",
+      "inLanguage": "pt-BR",
+      "mainEntityOfPage": {
+        "@id": "https://www.embaixadacarioca.com/#webpage"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.embaixadacarioca.com/#website",
+      "url": "https://www.embaixadacarioca.com/",
+      "name": "Embaixada Carioca",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "https://www.embaixadacarioca.com/#restaurant"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.embaixadacarioca.com/#webpage",
+      "url": "https://www.embaixadacarioca.com/",
+      "name": "Embaixada Carioca — restaurante no Morro da Urca com vista",
+      "description": "Café da manhã e almoço no Morro da Urca, dentro do Parque Bondinho, com vista para o Pão de Açúcar.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://www.embaixadacarioca.com/#website"
+      },
+      "about": {
+        "@id": "https://www.embaixadacarioca.com/#restaurant"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "#resposta-direta",
+          "#planeje-visita"
+        ]
+      },
+      "dateModified": "2026-10-20"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.embaixadacarioca.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://www.embaixadacarioca.com/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.embaixadacarioca.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Onde tomar café da manhã com vista para o Pão de Açúcar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Embaixada Carioca serve café da manhã no Morro da Urca, na primeira parada do Parque Bondinho Pão de Açúcar. O serviço vai até 11h30 e tem vista direta para o Pão de Açúcar. A reserva do restaurante não inclui o ingresso do parque."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Onde almoçar no Morro da Urca?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Embaixada Carioca fica dentro do Parque Bondinho, no Morro da Urca, e serve almoço brasileiro das 11h30 às 17h, com vista para o Pão de Açúcar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A reserva inclui o ingresso do Parque Bondinho?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. A reserva garante a mesa no restaurante, mas o ingresso e o acesso ao Parque Bondinho são contratados separadamente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Onde fica a Embaixada Carioca?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Embaixada Carioca fica no Morro da Urca, a primeira parada do Bondinho, dentro do Parque Bondinho Pão de Açúcar. O acesso principal ao parque é pela Av. Pasteur, 520, Urca, Rio de Janeiro."
+          }
+        }
+      ],
+      "dateModified": "2026-10-20"
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
@@ -296,7 +365,8 @@
         <div class="final-actions"><a class="button" href="https://go.tagme.com.br/embaixadacarioca" target="_blank" rel="noopener" data-intent="reserva" data-position="cta_final">Reservar uma mesa</a><a class="whatsapp-link" href="https://wa.me/5521966837556?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Embaixada%20Carioca%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener" data-intent="whatsapp" data-position="cta_final">Falar pelo WhatsApp</a></div>
       </div>
     </section>
-  </main>
+  <p class="ec-updated" style="max-width:1100px;margin:28px auto 8px;padding:0 20px;font-size:13px;line-height:1.5;text-align:center">Atualizado em <time datetime="2026-10-20">20 de outubro de 2026</time> · Embaixada Carioca</p>
+</main>
   <footer class="footer">
     <div class="shell footer-grid">
       <div class="footer-brand"><img src="/assets/logo-areia.svg" width="72" height="72" loading="lazy" alt="Embaixada Carioca"><p>Restaurante no Morro da Urca, dentro do Parque Bondinho Pão de Açúcar, no Rio de Janeiro.</p></div>
@@ -327,5 +397,6 @@
       window.addEventListener('load', function(){ navigator.serviceWorker.register('/sw.js').catch(function(){}); }, {once:true});
     }
   </script>
+<script defer src="/assets/js/ec-a11y-guard.js?v=20261020"></script>
 </body>
 </html>

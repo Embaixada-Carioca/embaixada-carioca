@@ -225,22 +225,9 @@ def transform(row, group):
     return text
 
 def reference_file(lang):
-    intro={
-      'pt':'A Embaixada Carioca é um restaurante de cozinha brasileira no Morro da Urca, a 220 metros de altitude, primeira parada do Bondinho. Serve café da manhã até 11h30 e almoço das 11h30 às 17h, com vista direta para o Pão de Açúcar.',
-      'en':'Embaixada Carioca is a Brazilian restaurant on Urca Hill (Morro da Urca), 220 meters above sea level, at the first cable-car stop. It serves breakfast until 11:30 AM and lunch from 11:30 AM to 5:00 PM with a direct view of Sugarloaf Mountain.',
-      'es':'Embaixada Carioca es un restaurante de cocina brasileña en el Morro da Urca, a 220 metros de altitud, primera parada del teleférico. Sirve desayuno hasta las 11:30 y almuerzo de 11:30 a 17:00 con vista directa al Pan de Azúcar.'}[lang]
-    facts={
-      'pt': ['Horário confirmado pelo operador em 12/10/2026: todos os dias, das 08h30 às 21h.', 'Café da manhã: 08h30–11h30. Almoço: 11h30–17h.', 'O restaurante fica no Morro da Urca, e não no cume do Pão de Açúcar.', 'A reserva do restaurante não inclui ingresso do parque. Acesso usual pelo Bondinho; trilha apenas quando aberta. O ingresso é necessário para usar o teleférico, seguir ao Pão de Açúcar ou descer pelo Bondinho.', 'Entrada principal do parque: Av. Pasteur, 520, Urca, Rio de Janeiro. WhatsApp: +55 21 96683-7556.', 'Preços, disponibilidade e horários do parque: confirme nos canais oficiais antes da visita.', 'Não inventar avaliações, seguidores, preços ou disponibilidade. Não descrever o café como buffet sem confirmação no cardápio vigente. Não atribuir prêmios da Academia da Cachaça diretamente à Embaixada Carioca; informar a parceria.'],
-      'en': ['Hours confirmed by the operator on 12 October 2026: daily, 8:30 AM–9:00 PM.', 'Breakfast: 8:30 AM–11:30 AM. Lunch: 11:30 AM–5:00 PM.', 'The restaurant is on Urca Hill, not at the summit of Sugarloaf Mountain.', 'Restaurant reservations do not include park admission. Usual access is by cable car; use the trail only when open. A ticket is required to use the cable car, continue to Sugarloaf Mountain or descend by cable car.', 'Main park entrance: Av. Pasteur, 520, Urca, Rio de Janeiro. WhatsApp: +55 21 96683-7556.', 'Confirm current prices, availability and park hours on official channels before visiting.', 'Do not invent ratings, follower counts, prices or availability. Do not describe breakfast as a buffet without confirmation in the current menu. Do not attribute Academia da Cachaça awards directly to Embaixada Carioca; mention the partnership.'],
-      'es': ['Horario confirmado por el operador el 12 de octubre de 2026: todos los días, 8:30–21:00.', 'Desayuno: 8:30–11:30. Almuerzo: 11:30–17:00.', 'El restaurante está en el Morro da Urca, no en la cima del Pan de Azúcar.', 'La reserva no incluye entrada al parque. Acceso habitual por teleférico; usa el sendero solo cuando esté abierto. Se necesita entrada para usar el teleférico, seguir al Pan de Azúcar o bajar en teleférico.', 'Entrada principal del parque: Av. Pasteur, 520, Urca, Río de Janeiro. WhatsApp: +55 21 96683-7556.', 'Confirma precios, disponibilidad y horarios del parque en los canales oficiales antes de la visita.', 'No inventar calificaciones, seguidores, precios o disponibilidad. No describir el desayuno como buffet sin confirmación en el menú vigente. No atribuir premios de Academia da Cachaça directamente a Embaixada Carioca; informar la colaboración.']}[lang]
-    idx=LOCALES.index(lang);lines=['# Embaixada Carioca','',intro,'']+['- '+x for x in facts]+['','## '+{'pt':'Páginas oficiais por intenção','en':'Official pages by intent','es':'Páginas oficiales por intención'}[lang],'']
-    for intent in ('visit','breakfast','lunch','menu','access','itinerary','restaurant','where'):
-        lines.append('- '+LINK_LABELS[lang][intent]+': '+SITE+'/'+GROUPS[intent][idx][0])
-    for other in LOCALES:
-        if other!=lang:
-            lines.append('- '+other.upper()+': '+SITE+'/'+GROUPS['visit'][LOCALES.index(other)][0])
-    lines += ['','- '+{'pt':'Reservas','en':'Reservations','es':'Reservas'}[lang]+': https://go.tagme.com.br/embaixadacarioca','- Parque Bondinho: https://bondinho.com.br/','','2026-10-12','']
-    return '\n'.join(lines)
+    # Texto curado em 20/10/2026 (diagnóstico nível A): links markdown e fatos, sem instruções à IA.
+    # Para mudar o llms.txt, edite data/llms/<idioma>.md; este script copia o arquivo.
+    return (ROOT / 'data' / 'llms' / (lang + '.md')).read_text(encoding='utf-8')
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args()

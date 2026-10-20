@@ -36,3 +36,4 @@ pa11y-report.json
 
 # Saída local gerada para o Cloudflare Pages
 _site/
+.wrangler/

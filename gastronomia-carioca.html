@@ -517,8 +517,8 @@ html {
 /* ── PERFORMANCE: content-visibility para seções abaixo do fold ── */
 @media (max-width: 720px) {
   .section-below-fold {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 400px;
+    content-visibility: visible;
+    contain-intrinsic-size: auto 400px;
   }
 }
 
@@ -690,8 +690,8 @@ nav.top.scrolled .nav-rating-stars{color:#c8830a;}
 /* 2. Content-visibility para seções off-screen (melhora LCP) */
 @media (max-width: 720px) {
   section:not(.hero):not(:first-of-type) {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 500px;
+    content-visibility: visible;
+    contain-intrinsic-size: auto 500px;
   }
 }
 
@@ -2028,7 +2028,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 <link href="/assets/css/ec-shared.css" rel="stylesheet"/>
 </link></link>
 <link href="/assets/superholistic_visual_readability_lock.css" rel="stylesheet"/>
-<script type="application/ld+json">{
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -2189,7 +2190,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
           ".faq-answer"
         ]
       },
-      "inLanguage": "pt-BR"
+      "inLanguage": "pt-BR",
+      "dateModified": "2026-10-20"
     },
     {
       "@context": "https://schema.org",
@@ -2235,7 +2237,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
             "text": "Gastronomia carioca é a culinária típica do Rio de Janeiro, com pratos como feijoada, bolinho de bacalhau, moqueca, caipirinha e chope. A Embaixada Carioca celebra essa tradição com ingredientes frescos e vista para o Pão de Açúcar."
           }
         }
-      ]
+      ],
+      "dateModified": "2026-10-20"
     },
     {
       "@context": "https://schema.org",
@@ -2245,7 +2248,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
       "description": "Guia completo da gastronomia carioca: feijoada, moqueca, frutos do mar e os melhores restaurantes do Rio de Janeiro.",
       "url": "https://www.embaixadacarioca.com/gastronomia-carioca",
       "datePublished": "2026-01-15T08:30:00-03:00",
-      "dateModified": "2026-05-01T08:30:00-03:00",
+      "dateModified": "2026-10-20",
       "author": {
         "@type": "Organization",
         "name": "Embaixada Carioca",
@@ -2342,7 +2345,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
       ]
     }
   ]
-}</script><link rel="stylesheet" href="/assets/css/ec-growth-links.css"/>
+}
+</script><link rel="stylesheet" href="/assets/css/ec-growth-links.css"/>
 </head>
 <body><!-- NAV -->
 <nav aria-label="Navegação principal" class="top" id="topnav">
@@ -2359,8 +2363,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 <li><a href="/cardapio.html">Cardápio</a></li>
 <li><a href="/guia-do-rio.html">Guia do Rio</a></li>
 </ul>
-<a aria-label="Google Reviews: 4.8 estrelas · 8.847 avaliações" class="nav-rating-badge google-review-badge" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank" title="Google Reviews · 4.8 estrelas">
-<span class="gr-copy"><span class="gr-label">Google Reviews</span><span class="gr-row"><strong class="gr-score">4.8</strong><span aria-hidden="true" class="gr-stars">★★★★★</span><span class="gr-count">8.847 avaliações</span></span></span>
+<a aria-label="Google Reviews: nota 4,8 de 5" class="nav-rating-badge google-review-badge" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank" title="Google Reviews · 4.8 estrelas">
+<span class="gr-copy"><span class="gr-label">Google Reviews</span><span class="gr-row"><strong class="gr-score">4.8</strong><span aria-hidden="true" class="gr-stars">★★★★★</span></span></span>
 </a>
 <div aria-label="Selecionar idioma" class="lang-switcher" role="navigation">
 <button aria-expanded="false" aria-haspopup="true" aria-label="Idioma atual: PT" class="lang-current"><span class="lang-flag">🇧🇷</span><span>PT</span><span class="lang-arrow">▼</span></button>
@@ -2453,6 +2457,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 <p>A culinária carioca é a expressão gastronômica do Rio de Janeiro, influenciada pela herança africana (feijoada, acarajé), portuguesa (bacalhau, caldo verde) e indígena (mandioca, açaí). É caracterizada pelo uso de ingredientes frescos, frutos do mar abundantes, especiarias tropicais e técnicas de preparo que valorizam os sabores naturais. A Embaixada Carioca celebra essa herança com uma abordagem contemporânea.</p>
 </div>
 </section>
+<p class="ec-updated" style="max-width:1100px;margin:28px auto 8px;padding:0 20px;font-size:13px;line-height:1.5;text-align:center">Atualizado em <time datetime="2026-10-20">20 de outubro de 2026</time> · Embaixada Carioca</p>
 <!-- growth-p1-p2:start --><nav class="ec-growth-links" aria-label="Planeje sua pausa no passeio"><p>Planeje sua pausa no passeio</p><div><a href="/cardapio.html" data-intent="menu" data-position="related_growth">Cardápio e preços</a><a href="/almoco.html" data-intent="lunch" data-position="related_growth">Almoço com vista</a><a href="/planeje-sua-visita.html" data-intent="planejar_visita" data-position="related_growth">Planeje sua visita</a></div></nav><!-- growth-p1-p2:end -->
 </main>
 <section class="cta-section">
@@ -2481,7 +2486,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 </div>
 </footer>
 <div class="wa-widget" id="wa-widget" style="position:fixed;bottom:24px;right:24px;z-index:9999;">
-<a aria-label="Falar com a Embaixada Carioca no WhatsApp" class="wa-btn" href="https://wa.me/5521966837556?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Embaixada%20Carioca%20e%20gostaria%20de%20fazer%20uma%20reserva." id="wa-btn" rel="noopener" target="_blank" title="WhatsApp · +55 21 96683-7556" style="display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;"><img alt="Atendimento via WhatsApp — Reservas e informações Embaixada Carioca" decoding="async" height="60" loading="lazy" src="/assets/whatsapp-icon-official.png" style="display:block;width:60px;height:60px;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.3));" width="60"/><span style="background:#25D366;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;letter-spacing:0.05em;white-space:nowrap;box-shadow:0 2px 8px rgba(37,211,102,0.4);">WhatsApp</span></a>
+<a aria-label="Falar com a Embaixada Carioca no WhatsApp" class="wa-btn" href="https://wa.me/5521966837556?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Embaixada%20Carioca%20e%20gostaria%20de%20fazer%20uma%20reserva." id="wa-btn" rel="noopener" target="_blank" title="WhatsApp · +55 21 96683-7556" style="display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;"><img alt="Atendimento via WhatsApp — Reservas e informações Embaixada Carioca" decoding="async" height="60" loading="lazy" src="/assets/whatsapp-icon-official.png" style="display:block;width:60px;height:60px;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.3));" width="60"/><span style="background:#25D366;color:#063321;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;letter-spacing:0.05em;white-space:nowrap;box-shadow:0 2px 8px rgba(37,211,102,0.4);">WhatsApp</span></a>
 </div>
 <!-- MOBILE NAV DRAWER -->
 <div aria-hidden="true" class="nav-drawer-overlay" id="nav-drawer-overlay"></div>
@@ -2515,7 +2520,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 <a aria-label="Cardápio" class="" href="/cardapio.html"><span class="bnav-icon">📋</span>Cardápio</a>
 <a aria-label="Reservar" class="bnav-reservar" href="https://go.tagme.com.br/embaixadacarioca"><span class="bnav-icon">📅</span>Reservar</a>
 <div aria-label="Destaques da Embaixada Carioca" class="hero-chips" style="display:flex;flex-wrap:wrap;gap:8px;margin:0.8rem 0 1.6rem;">
-<span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:0.85rem;color:#f5f0e8;white-space:nowrap;">4.8★ · 8.847 avaliações</span>
+<span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:0.85rem;color:#f5f0e8;white-space:nowrap;">4,8★ no Google</span>
 <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:0.85rem;color:#f5f0e8;white-space:nowrap;">🏆 Feijoada da Academia da Cachaça · Melhor Feijoada · Veja Rio 2025/2026</span>
 <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:0.85rem;color:#f5f0e8;white-space:nowrap;">Dentro do Parque Bondinho</span>
 <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:0.85rem;color:#f5f0e8;white-space:nowrap;">Aberto todos os dias · 8h30–21h</span>
@@ -2891,5 +2896,6 @@ html body main .corporate-section a {
 </style>
 <link href="/assets/css/ec-light-bg-contrast-lock.css" rel="stylesheet"/>
 <link href="/assets/css/ec-wcag-final.css" rel="stylesheet"/>
+<script defer src="/assets/js/ec-a11y-guard.js?v=20261020"></script>
 </body>
 </html>

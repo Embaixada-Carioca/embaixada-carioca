@@ -118,7 +118,7 @@ Arquivos com prefixos `apply_*`, `fix_*` ou `enforce_*` podem modificar muitas p
 
 ## Fatos que exigem consistência
 
-- Google: 4,8 estrelas e 8.847 avaliações.
+- Google: nota 4,8 (sem número de avaliações no site, que fica desatualizado; decisão de 20/10/2026).
 - Instagram: 84 mil seguidores.
 - Único restaurante do Parque Bondinho com vista direta para o Pão de Açúcar.
 - Melhor Feijoada do Brasil: Prazeres da Mesa, 2017.

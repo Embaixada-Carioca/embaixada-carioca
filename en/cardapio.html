@@ -545,8 +545,8 @@ html {
 /* ── PERFORMANCE: content-visibility para seções abaixo do fold ── */
 @media (max-width: 720px) {
   .section-below-fold {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 400px;
+    content-visibility: visible;
+    contain-intrinsic-size: auto 400px;
   }
 }
 
@@ -726,8 +726,8 @@ nav.top.scrolled .nav-rating-stars{color:#c8830a;}
 /* 2. Content-visibility para seções off-screen (melhora LCP) */
 @media (max-width: 720px) {
   section:not(.hero):not(:first-of-type) {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 500px;
+    content-visibility: visible;
+    contain-intrinsic-size: auto 500px;
   }
 }
 
@@ -2320,7 +2320,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
           ".menu-section h2",
           ".menu-item-name"
         ]
-      }
+      },
+      "dateModified": "2026-10-20"
     },
     {
       "@type": "BreadcrumbList",
@@ -2407,7 +2408,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
             "text": "It is located at Morro da Urca, the first stop of the Sugarloaf Cable Car, inside Sugarloaf Cable Car Park in Rio de Janeiro."
           }
         }
-      ]
+      ],
+      "dateModified": "2026-10-20"
     },
     {
       "@type": "Menu",
@@ -3052,8 +3054,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 <li><a href="/en/cardapio.html">Menu</a></li>
 <li><a href="/en/guia-do-rio.html">Rio guide</a></li>
 </ul>
-<a aria-label="Google Reviews: 4.8 stars · 8,847 reviews" class="nav-rating-badge google-review-badge" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank" title="Google Reviews · 4.8 stars">
-<span class="gr-copy"><span class="gr-label">Google Reviews</span><span class="gr-row"><strong class="gr-score">4.8</strong><span aria-hidden="true" class="gr-stars">★★★★★</span><span class="gr-count">8,847 reviews</span></span></span>
+<a aria-label="Google Reviews: rated 4.8 out of 5" class="nav-rating-badge google-review-badge" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank" title="Google Reviews · 4.8 stars">
+<span class="gr-copy"><span class="gr-label">Google Reviews</span><span class="gr-row"><strong class="gr-score">4.8</strong><span aria-hidden="true" class="gr-stars">★★★★★</span></span></span>
 </a>
 <div aria-label="Select language" class="lang-switcher" role="navigation">
 <button aria-expanded="false" aria-haspopup="true" aria-label="Current language: English" class="lang-current"><span class="lang-flag">🇺🇸</span><span>EN</span><span class="lang-arrow">▼</span></button>
@@ -3075,7 +3077,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 <h1>Embaixada Carioca menu and prices</h1>
 <div class="ec-inner-intro"><p>Explore breakfast, Brazilian lunch, snacks and drinks on Urca Hill. Check current prices, options and availability in the online menu. <a href="https://livemenu.app/menu/61cb5857aa455a0012ebbdcf" target="_blank" rel="noopener">Full menu with prices and language options</a></p></div>
 <div class="ec-inner-actions"><a class="ec-inner-action is-primary" href="#cafe-da-manha">Explore the menu</a><a class="ec-inner-action" href="https://go.tagme.com.br/embaixadacarioca">Book a table</a></div>
-</div></header><section class="ec-inner-details"><div class="ec-inner-detail-wrap"><p>4.8★ · 8,847 reviews</p><p>Award-winning feijoada from Academia da Cachaça — served at Embaixada Carioca</p><p>Inside Sugarloaf Cable Car Park</p><p>Open every day · 8:30 AM–9:00 PM</p></div></section>
+</div></header><section class="ec-inner-details"><div class="ec-inner-detail-wrap"><p>4.8★ on Google</p><p>Award-winning feijoada from Academia da Cachaça — served at Embaixada Carioca</p><p>Inside Sugarloaf Cable Car Park</p><p>Open every day · 8:30 AM–9:00 PM</p></div></section>
 <!-- CARDÁPIO PRINCIPAL -->
 <main id="main-content">
 <!-- BREAKFAST -->
@@ -3141,6 +3143,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 </div>
 </section>
 <!-- /EC FEATURED SNIPPET ORDERED LISTS -->
+<p class="ec-updated" style="max-width:1100px;margin:28px auto 8px;padding:0 20px;font-size:13px;line-height:1.5;text-align:center">Updated on <time datetime="2026-10-20">October 20, 2026</time> · Embaixada Carioca</p>
 <!-- growth-p1-p2:start --><nav class="ec-growth-links" aria-label="Plan your food stop"><p>Plan your food stop</p><div><a href="/en/cafe-da-manha.html" data-intent="breakfast" data-position="related_growth">Breakfast with a view</a><a href="/en/almoco.html" data-intent="lunch" data-position="related_growth">Lunch with a view</a><a href="/en/plan-your-visit.html" data-intent="planejar_visita" data-position="related_growth">Plan your visit</a></div></nav><!-- growth-p1-p2:end -->
 </main>
 <!-- CTA BAND -->
@@ -3385,7 +3388,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 }
 .wa-preview-status {
   font-size: 0.75rem;
-  color: #25D366;
+  color: #0f7a3d;
   font-weight: 500;
 }
 .wa-preview-msg {
@@ -3400,7 +3403,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 .wa-preview-cta {
   display: block;
   background: #25D366;
-  color: white !important;
+  color: #063321 !important;
   text-align: center;
   padding: 10px 16px;
   border-radius: 10px;
@@ -3970,5 +3973,6 @@ html body main .corporate-section a {
 <script defer src="/assets/bondinho-ticket-notice.js"></script>
 <script defer src="/assets/menuitem-schema-enhancer.js"></script>
 <script defer src="/assets/internal-page-contrast-rescue.js"></script>
+<script defer src="/assets/js/ec-a11y-guard.js?v=20261020"></script>
 </body>
 </html>

@@ -689,8 +689,8 @@ html {
 /* ── PERFORMANCE: content-visibility para seções abaixo do fold ── */
 @media (max-width: 720px) {
   .section-below-fold {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 400px;
+    content-visibility: visible;
+    contain-intrinsic-size: auto 400px;
   }
 }
 
@@ -862,8 +862,8 @@ nav.top.scrolled .nav-rating-stars{color:#c8830a;}
 /* 2. Content-visibility para seções off-screen (melhora LCP) */
 @media (max-width: 720px) {
   section:not(.hero):not(:first-of-type) {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 500px;
+    content-visibility: visible;
+    contain-intrinsic-size: auto 500px;
   }
 }
 
@@ -2224,7 +2224,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 </style>
 <link href="/assets/css/ec-shared.css" rel="stylesheet"/>
 <link href="/assets/superholistic_visual_readability_lock.css" rel="stylesheet"/>
-<script type="application/ld+json">{
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -2374,7 +2375,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
         "es"
       ],
       "publicAccess": true,
-      "disambiguatingDescription": "Único restaurante dentro do Parque Bondinho Pão de Açúcar, localizado no Morro da Urca a 220 metros de altitude, com vista panorâmica para o Rio de Janeiro.",
+      "disambiguatingDescription": "Único restaurante do Parque Bondinho com vista direta para o Pão de Açúcar, localizado no Morro da Urca a 220 metros de altitude.",
       "foundingDate": "2010",
       "currenciesAccepted": "BRL",
       "paymentAccepted": "Cash, Credit Card, Debit Card, Pix",
@@ -2423,7 +2424,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
         ]
       },
       "inLanguage": "pt-BR",
-      "@id": "https://www.embaixadacarioca.com/morro-da-urca.html#webpage"
+      "@id": "https://www.embaixadacarioca.com/morro-da-urca.html#webpage",
+      "dateModified": "2026-10-20"
     },
     {
       "@context": "https://schema.org",
@@ -2506,7 +2508,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
           "name": "Vale a pena subir o Morro da Urca?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sim. O Morro da Urca oferece uma das vistas mais bonitas do Rio de Janeiro, com o Pão de Açúcar em primeiro plano e a Baía de Guanabara ao fundo. A Embaixada Carioca, único restaurante no alto do Morro da Urca, combina gastronomia brasileira com a vista icônica da cidade."
+            "text": "Sim. O Morro da Urca oferece uma das vistas mais bonitas do Rio de Janeiro, com o Pão de Açúcar em primeiro plano e a Baía de Guanabara ao fundo. A Embaixada Carioca, único restaurante do Parque Bondinho com vista direta para o Pão de Açúcar, combina gastronomia brasileira com a vista icônica da cidade."
           }
         },
         {
@@ -2530,7 +2532,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
           "name": "Quanto custa entrar no Morro da Urca?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "O ingresso do Bondinho Pão de Açúcar custa a partir de R$ 130 (adulto). Quem vai apenas ao Morro da Urca (primeira parada) para comer na Embaixada Carioca não precisa pagar ingresso — basta informar na entrada do Parque."
+            "text": "O ingresso do Bondinho é vendido pelo Parque Bondinho Pão de Açúcar (bondinho.com.br), que define o preço. A reserva no restaurante não inclui o ingresso. Pela trilha do Morro da Urca, quando aberta, é possível chegar ao restaurante sem comprar ingresso do Bondinho."
           }
         },
         {
@@ -2562,7 +2564,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
           "name": "Qual o melhor restaurante no Morro da Urca?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A Embaixada Carioca é o restaurante do Morro da Urca, com nota 4,8 no Google (8.847 avaliações). Fica dentro do Parque Bondinho Pão de Açúcar, com vista frontal para o Pão de Açúcar. Serve café da manhã, almoço, feijoada premiada, caipirinhas e chopp gelado."
+            "text": "A Embaixada Carioca é o restaurante do Morro da Urca, com nota 4,8 no Google. Fica dentro do Parque Bondinho Pão de Açúcar, com vista frontal para o Pão de Açúcar. Serve café da manhã, almoço, feijoada premiada, caipirinhas e chopp gelado."
           }
         },
         {
@@ -2589,7 +2591,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
             "text": "Sim! É possível subir o Morro da Urca gratuitamente pela trilha do Caminho da Costa, sem pagar ingresso do bondinho. A trilha tem cerca de 1,5 km e nível moderado. Ao chegar no topo, você pode almoçar ou tomar uma caipirinha na Embaixada Carioca com vista para o Pão de Açúcar."
           }
         }
-      ]
+      ],
+      "dateModified": "2026-10-20"
     },
     {
       "@context": "https://schema.org",
@@ -2599,7 +2602,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
       "description": "Guia completo do Morro da Urca: altitude, Parque Bondinho, vistas panorâmicas, trilhas e o melhor restaurante com vista para o Pão de Açúcar.",
       "url": "https://www.embaixadacarioca.com/morro-da-urca",
       "datePublished": "2026-01-15T08:30:00-03:00",
-      "dateModified": "2026-05-01T08:30:00-03:00",
+      "dateModified": "2026-10-20",
       "author": {
         "@type": "Organization",
         "name": "Embaixada Carioca",
@@ -2768,7 +2771,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
       }
     }
   ]
-}</script>
+}
+</script>
 <style>
 .answer-block {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
@@ -2809,8 +2813,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 <li><a href="/cardapio.html">Cardápio</a></li>
 <li><a href="/guia-do-rio.html">Guia do Rio</a></li>
 </ul>
-<a aria-label="Google Reviews: 4.8 estrelas · 8.847 avaliações" class="nav-rating-badge google-review-badge" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank" title="Google Reviews · 4.8 estrelas">
-<span class="gr-copy"><span class="gr-label">Google Reviews</span><span class="gr-row"><strong class="gr-score">4.8</strong><span aria-hidden="true" class="gr-stars">★★★★★</span><span class="gr-count">8.847 avaliações</span></span></span>
+<a aria-label="Google Reviews: nota 4,8 de 5" class="nav-rating-badge google-review-badge" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank" title="Google Reviews · 4.8 estrelas">
+<span class="gr-copy"><span class="gr-label">Google Reviews</span><span class="gr-row"><strong class="gr-score">4.8</strong><span aria-hidden="true" class="gr-stars">★★★★★</span></span></span>
 </a>
 <div aria-label="Selecionar idioma" class="lang-switcher" role="navigation">
 <button aria-expanded="false" aria-haspopup="true" aria-label="Idioma atual: PT" class="lang-current"><span class="lang-flag">🇧🇷</span><span>PT</span><span class="lang-arrow">▼</span></button>
@@ -3090,7 +3094,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 <h3>Tem feijoada no Morro da Urca?</h3>
 <p>Sim! A <strong>Embaixada Carioca</strong> serve <strong>feijoada todos os dias</strong> no Morro da Urca. É a Feijoada da Academia da Cachaça — vencedora da categoria Melhor Feijoada no Veja Rio Comer & Beber 2025/2026 — servida na Embaixada Carioca por meio de parceria formal, eleita Melhor Feijoada do Rio de Janeiro pela Revista Veja Rio Comer &amp; Beber 2025/2026. Acompanha arroz, couve, farofa, laranja e torresmo.</p>
 <h3>Qual o melhor restaurante no Morro da Urca?</h3>
-<p>A <strong>Embaixada Carioca</strong> é o restaurante do Morro da Urca, com nota <strong>4,8 no Google</strong> (8.847 avaliações). Fica dentro do Parque Bondinho Pão de Açúcar, com vista frontal para o Pão de Açúcar. Serve café da manhã, almoço, feijoada premiada, caipirinhas e chopp gelado.</p>
+<p>A <strong>Embaixada Carioca</strong> é o restaurante do Morro da Urca, com nota <strong>4,8 no Google</strong>. Fica dentro do Parque Bondinho Pão de Açúcar, com vista frontal para o Pão de Açúcar. Serve café da manhã, almoço, feijoada premiada, caipirinhas e chopp gelado.</p>
 </div>
 </section>
 <!-- EC INTERNAL LINKING KEYWORD CLUSTER FIX -->
@@ -3117,7 +3121,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 </div>
 </section>
 <!-- /EC FEATURED SNIPPET ORDERED LISTS -->
-<section aria-label="Onde comer no Morro da Urca" class="ec-semantic-section" id="ec-semantic-anchor"><p>Para quem busca <strong>onde comer no Morro da Urca</strong>, a <strong>Embaixada Carioca</strong> é o único <strong>restaurante no Morro da Urca</strong> com serviço completo, localizado dentro do Parque Bondinho Pão de Açúcar a 220m de altitude. O <strong>restaurante no Pão de Açúcar</strong> serve <strong>café da manhã no Morro da Urca</strong> todos os dias das 8h30 às 11h30 e <strong>almoço no Morro da Urca</strong> das 11h30 às 17h. O <strong>almoço na Embaixada Carioca</strong> inclui feijoada premiada pela Veja Rio Comer &amp; Beber 2025/2026, picanha grelhada e vista panorâmica para o <strong>Pão de Açúcar</strong> e a Baía de Guanabara.</p></section>
+<section aria-label="Onde comer no Morro da Urca" class="ec-semantic-section" id="ec-semantic-anchor"><p>Para quem busca <strong>onde comer no Morro da Urca</strong>, a <strong>Embaixada Carioca</strong> é o único restaurante do Parque Bondinho com vista direta para o Pão de Açúcar, no Morro da Urca a 220m de altitude. O <strong>restaurante no Pão de Açúcar</strong> serve <strong>café da manhã no Morro da Urca</strong> todos os dias das 8h30 às 11h30 e <strong>almoço no Morro da Urca</strong> das 11h30 às 17h. O <strong>almoço na Embaixada Carioca</strong> inclui feijoada premiada pela Veja Rio Comer &amp; Beber 2025/2026, picanha grelhada e vista panorâmica para o <strong>Pão de Açúcar</strong> e a Baía de Guanabara.</p></section>
 <!-- FAQ Mobile-First: respostas diretas para buscas locais -->
 <section aria-label="Perguntas frequentes sobre o Morro da Urca" id="faq-morro-da-urca">
 <h2>Perguntas Frequentes sobre o Morro da Urca</h2>
@@ -3156,6 +3160,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 <li><a href="/cardapio.html">Cardápio da Embaixada Carioca</a></li>
 </ul>
 </nav>
+<p class="ec-updated" style="max-width:1100px;margin:28px auto 8px;padding:0 20px;font-size:13px;line-height:1.5;text-align:center">Atualizado em <time datetime="2026-10-20">20 de outubro de 2026</time> · Embaixada Carioca</p>
 <!-- growth-p1-p2:start --><nav class="ec-growth-links" aria-label="Planeje sua pausa no passeio"><p>Planeje sua pausa no passeio</p><div><a href="/planeje-sua-visita.html" data-intent="planejar_visita" data-position="related_growth">Planeje sua visita</a><a href="/roteiro-meio-dia-urca-pao-de-acucar.html" data-intent="itinerary" data-position="related_growth">Roteiro de meio dia</a><a href="/onde-comer-no-pao-de-acucar.html" data-intent="where" data-position="related_growth">Onde comer no passeio</a></div></nav><!-- growth-p1-p2:end -->
 </main>
 <!-- CTA -->
@@ -3182,7 +3187,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 </footer>
 <!-- WhatsApp flutuante -->
 <div class="wa-widget" id="wa-widget" style="position:fixed;bottom:24px;right:24px;z-index:9999;">
-<a aria-label="Falar com a Embaixada Carioca no WhatsApp" class="wa-btn" href="https://wa.me/5521966837556?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Embaixada%20Carioca%20e%20gostaria%20de%20fazer%20uma%20reserva." id="wa-btn" rel="noopener" style="display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;" target="_blank" title="WhatsApp · +55 21 96683-7556"><img alt="Atendimento via WhatsApp — Reservas e informações Embaixada Carioca" decoding="async" height="60" loading="lazy" src="/assets/whatsapp-icon-official.png" style="display:block;width:60px;height:60px;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.3));" width="60"/><span style="background:#25D366;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;letter-spacing:0.05em;white-space:nowrap;box-shadow:0 2px 8px rgba(37,211,102,0.4);">WhatsApp</span></a>
+<a aria-label="Falar com a Embaixada Carioca no WhatsApp" class="wa-btn" href="https://wa.me/5521966837556?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Embaixada%20Carioca%20e%20gostaria%20de%20fazer%20uma%20reserva." id="wa-btn" rel="noopener" style="display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;" target="_blank" title="WhatsApp · +55 21 96683-7556"><img alt="Atendimento via WhatsApp — Reservas e informações Embaixada Carioca" decoding="async" height="60" loading="lazy" src="/assets/whatsapp-icon-official.png" style="display:block;width:60px;height:60px;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.3));" width="60"/><span style="background:#25D366;color:#063321;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;letter-spacing:0.05em;white-space:nowrap;box-shadow:0 2px 8px rgba(37,211,102,0.4);">WhatsApp</span></a>
 </div>
 <!-- MOBILE NAV DRAWER -->
 <div aria-hidden="true" class="nav-drawer-overlay" id="nav-drawer-overlay"></div>
@@ -3216,7 +3221,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 <a aria-label="Cardápio" class="" href="/cardapio.html"><span class="bnav-icon">📋</span>Cardápio</a>
 <a aria-label="Reservar" class="bnav-reservar" href="https://go.tagme.com.br/embaixadacarioca"><span class="bnav-icon">📅</span>Reservar</a>
 <div aria-label="Destaques da Embaixada Carioca" class="hero-chips" style="display:flex;flex-wrap:wrap;gap:8px;margin:0.8rem 0 1.6rem;">
-<span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:0.85rem;color:#f5f0e8;white-space:nowrap;">4.8★ · 8.847 avaliações</span>
+<span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:0.85rem;color:#f5f0e8;white-space:nowrap;">4,8★ no Google</span>
 <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:0.85rem;color:#f5f0e8;white-space:nowrap;">🏆 Feijoada da Academia da Cachaça — vencedora da categoria Melhor Feijoada no Veja Rio Comer & Beber 2025/2026 — servida na Embaixada Carioca por meio de parceria formal</span>
 <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:0.85rem;color:#f5f0e8;white-space:nowrap;">Dentro do Parque Bondinho</span>
 <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:0.85rem;color:#f5f0e8;white-space:nowrap;">Aberto todos os dias · 8h30–21h</span>
@@ -3601,11 +3606,12 @@ html body main .corporate-section a {
 <!-- AIO: Respostas diretas para buscadores de IA -->
 <section aria-label="O que fazer no Morro da Urca" class="aio-answers" style="display:none">
 <h2>O que fazer no Morro da Urca?</h2>
-<p>No Morro da Urca você pode: subir de bondinho pelo Parque Bondinho Pão de Açúcar, fazer a trilha da Urca, admirar a vista panorâmica para o Rio de Janeiro e a Baía de Guanabara, e almoçar ou tomar café da manhã na Embaixada Carioca — restaurante 4,8★ com 8.847 avaliações, localizado dentro do Parque Bondinho.</p>
+<p>No Morro da Urca você pode: subir de bondinho pelo Parque Bondinho Pão de Açúcar, fazer a trilha da Urca, admirar a vista panorâmica para o Rio de Janeiro e a Baía de Guanabara, e almoçar ou tomar café da manhã na Embaixada Carioca — restaurante com nota 4,8★ no Google, localizado dentro do Parque Bondinho.</p>
 <h2>Tem restaurante no Morro da Urca?</h2>
 <p>Sim. A Embaixada Carioca é o restaurante 4,8★ localizado no alto do Morro da Urca, dentro do Parque Bondinho Pão de Açúcar. Serve café da manhã a partir das 8h30, almoço, feijoada premiada e drinks com vista para o Pão de Açúcar. Funciona todos os dias.</p>
 <h2>Como chegar ao Morro da Urca?</h2>
 <p>O Morro da Urca fica na Av. Pasteur 520, Urca, Rio de Janeiro. O acesso é feito pelo Parque Bondinho Pão de Açúcar: de metrô (estação Botafogo + ônibus 511/512), de táxi/Uber ou a pé pela Praia Vermelha.</p>
 </section>
+<script defer src="/assets/js/ec-a11y-guard.js?v=20261020"></script>
 </body>
 </html>

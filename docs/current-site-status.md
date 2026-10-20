@@ -12,6 +12,15 @@ Este é o documento de referência para o estado operacional atual. Relatórios 
 
 ## Arquitetura publicada
 
+### Nível A do diagnóstico — 20/10/2026
+
+- `assets/js/ec-a11y-guard.js` roda em todas as páginas PT/EN/ES. Mede o contraste real de cada texto e, abaixo de 4,5:1 (3:1 em texto grande), aplica a cor da marca que passa sobre aquele fundo; tira da ordem de tabulação os links de menus fechados (`aria-hidden="true"`); nomeia blocos fora de landmarks; dá foco a áreas com rolagem; acerta links "pular para o conteúdo". Barras fixas (topo, WhatsApp) não são recoloridas. A causa de fundo continua nas folhas antigas (regra "HARD READABILITY FIX", que força texto creme dentro de `<main>`); o script contorna, não substitui uma revisão de CSS.
+- `content-visibility: auto` foi desligado nas seções: com tamanhos estimados, as seções mudavam de altura ao rolar e os auditores (axe, Lighthouse) mediam o fundo errado.
+- Datas: `python3 scripts/stamp_page_dates.py --date AAAA-MM-DD [páginas]` grava "Atualizado em" visível, `dateModified` no JSON-LD e `lastmod` no sitemap. `--check` lista páginas sem data.
+- `llms.txt` (PT/EN/ES) é gerado por `scripts/apply_growth_p1_p2.py` a partir de `data/llms/<idioma>.md`; edite esses arquivos, não o `llms.txt` direto.
+- Fatos padronizados: nota 4,8 no Google sem número de avaliações; "único restaurante do Parque Bondinho com vista direta para o Pão de Açúcar"; café da manhã à la carte; a reserva não inclui o ingresso do Bondinho.
+- Relatório: `_audit_reports/nivel_a_2026-10-20.md`.
+
 ### Publicação pelo GitHub Actions — 20/10/2026
 
 - A integração Git do Cloudflare Pages parou de publicar depois que o repositório foi transferido de `LeoRangel22` para a organização `Embaixada-Carioca`: o projeto continua ligado ao dono antigo ("internal issue with your Cloudflare Workers & Pages Git installation"). A produção ficou no commit `0a6764f` de 05/10/2026 até 20/10/2026.
@@ -79,8 +88,8 @@ O HSTS ainda não deve ser descrito como implantação definitiva com subdomíni
 
 ## Entidade e fatos oficiais
 
-- Diferencial: único restaurante dentro do Parque Bondinho com vista direta para o Pão de Açúcar.
-- Avaliação Google: 4,8 estrelas e 8.847 avaliações.
+- Diferencial: único restaurante do Parque Bondinho com vista direta para o Pão de Açúcar (frase oficial; não usar variantes sem "com vista direta", como "único restaurante dentro do parque" ou "único almoço").
+- Avaliação Google: nota 4,8 (sem número de avaliações no site, que fica desatualizado; decisão de 20/10/2026).
 - Instagram: 84 mil seguidores.
 - Melhor Feijoada do Brasil: Academia da Cachaça, Prazeres da Mesa, 2017.
 - Melhor Feijoada do Rio: Veja Rio Comer & Beber, 2025/2026.
