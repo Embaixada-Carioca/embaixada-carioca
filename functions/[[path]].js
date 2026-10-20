@@ -26,11 +26,30 @@ function redirect(requestUrl, destination) {
   });
 }
 
-async function storedHtml(context, publicPath) {
+// Only cache-validation headers reach the asset lookup. Forwarding the whole
+// browser request made the lookup answer 304 (If-None-Match) or 206 (Range),
+// which was treated as "page not found" and became an empty 404: returning
+// visitors and recrawls got an error instead of the page.
+const VALIDATION_HEADERS = ["If-None-Match", "If-Modified-Since"];
+
+async function storedHtml(context, publicPath, { conditional = true } = {}) {
   const assetPath = `/_html${publicPath}.txt`;
   const assetUrl = new URL(assetPath, context.request.url);
-  const assetRequest = new Request(assetUrl, context.request);
+  const lookupHeaders = new Headers();
+  if (conditional) {
+    for (const name of VALIDATION_HEADERS) {
+      const value = context.request.headers.get(name);
+      if (value) lookupHeaders.set(name, value);
+    }
+  }
+  const assetRequest = new Request(assetUrl, { method: "GET", headers: lookupHeaders });
   const response = await context.env.ASSETS.fetch(assetRequest);
+
+  if (response.status === 304) {
+    const headers = new Headers(response.headers);
+    headers.set("X-Canonical-HTML", "preserved");
+    return new Response(null, { status: 304, headers });
+  }
 
   if (response.status !== 200) return null;
 
@@ -84,10 +103,25 @@ export async function onRequest(context) {
 
   if (!path.endsWith("/") && !path.split("/").pop().includes(".")) {
     const canonicalPath = `${path}.html`;
-    if (await storedHtml(context, canonicalPath)) {
+    if (await storedHtml(context, canonicalPath, { conditional: false })) {
       return redirect(context.request.url, canonicalPath);
     }
   }
 
-  return context.next();
+  const fallback = await context.next();
+  if (fallback.status === 404 && wantsHtml(context.request)) {
+    const page = await storedHtml(context, "/404.html", { conditional: false });
+    if (page) {
+      const headers = new Headers(page.headers);
+      headers.set("Cache-Control", "no-store");
+      headers.delete("ETag");
+      return new Response(context.request.method === "HEAD" ? null : page.body, { status: 404, headers });
+    }
+  }
+  return fallback;
+}
+
+function wantsHtml(request) {
+  if (request.method !== "GET" && request.method !== "HEAD") return false;
+  return (request.headers.get("Accept") || "").includes("text/html");
 }
