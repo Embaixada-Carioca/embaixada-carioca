@@ -698,8 +698,8 @@ html {
 /* ── PERFORMANCE: content-visibility para seções abaixo do fold ── */
 @media (max-width: 720px) {
   .section-below-fold {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 400px;
+    content-visibility: visible;
+    contain-intrinsic-size: auto 400px;
   }
 }
 
@@ -871,8 +871,8 @@ nav .lang-dropdown a:visited { color: var(--azul1, #00405A); }
 /* 2. Content-visibility para seções off-screen (melhora LCP) */
 @media (max-width: 720px) {
   section:not(.hero):not(:first-of-type) {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 500px;
+    content-visibility: visible;
+    contain-intrinsic-size: auto 500px;
   }
 }
 
@@ -2407,7 +2407,8 @@ html body main .ec-featured-snippet-ol li{
 }
 </style>
 <!-- /EC EVENTOS ES PAGE CONTRAST LOCK -->
-<script type="application/ld+json">{
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -2583,7 +2584,8 @@ html body main .ec-featured-snippet-ol li{
           ".faq-answer"
         ]
       },
-      "inLanguage": "es"
+      "inLanguage": "es",
+      "dateModified": "2026-10-20"
     },
     {
       "@type": "BreadcrumbList",
@@ -2710,7 +2712,8 @@ html body main .ec-featured-snippet-ol li{
             "text": "La casa es conocida por caipirinhas, chope, comida brasileña y su ubicación en Morro da Urca."
           }
         }
-      ]
+      ],
+      "dateModified": "2026-10-20"
     },
     {
       "@type": "Place",
@@ -2937,7 +2940,8 @@ html body main .ec-featured-snippet-ol li{
       }
     }
   ]
-}</script><link rel="stylesheet" href="/assets/css/ec-design-aaa-fix.css?v=20260909-inner"/>
+}
+</script><link rel="stylesheet" href="/assets/css/ec-design-aaa-fix.css?v=20260909-inner"/>
 <link rel="stylesheet" href="/assets/css/ec-inner-pages.css?v=20260909b"/>
 <script defer src="/assets/js/ec-inner-navigation.js?v=20260909a"></script>
 <link rel="stylesheet" href="/assets/css/ec-editorial-sections.css?v=20260909a"/>
@@ -2959,8 +2963,8 @@ html body main .ec-featured-snippet-ol li{
 <li><a href="/cardapio.html">Cardápio</a></li>
 <li><a href="/guia-do-rio.html">Guia do Rio</a></li>
 </ul>
-<a aria-label="Google Reviews: 4.8 estrellas · 8.847 reseñas" class="nav-rating-badge google-review-badge" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank" title="Google Reviews · 4.8 estrellas">
-<span class="gr-copy"><span class="gr-label">Google Reviews</span><span class="gr-row"><strong class="gr-score">4.8</strong><span aria-hidden="true" class="gr-stars">★★★★★</span><span class="gr-count">8.847 reseñas</span></span></span>
+<a aria-label="Google Reviews: nota 4,8 de 5" class="nav-rating-badge google-review-badge" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank" title="Google Reviews · 4.8 estrellas">
+<span class="gr-copy"><span class="gr-label">Google Reviews</span><span class="gr-row"><strong class="gr-score">4.8</strong><span aria-hidden="true" class="gr-stars">★★★★★</span></span></span>
 </a>
 <div aria-label="Seleccionar idioma" class="lang-switcher" role="navigation">
 <button aria-expanded="false" aria-haspopup="true" aria-label="Idioma actual: ES" class="lang-current"><span class="lang-flag">🇪🇸</span><span>ES</span><span class="lang-arrow">▼</span></button>
@@ -2988,7 +2992,7 @@ html body main .ec-featured-snippet-ol li{
 <div class="ec-inner-intro"><p>
       Un <strong>espacio para eventos con vista panorámica en Río de Janeiro</strong>, en lo alto del Morro da Urca, a 220 metros, con vista al Pan de Azúcar, la Bahía de Guanabara. Reuniones ejecutivas, almuerzos corporativos, lanzamientos, aniversarios e itinerarios para grupos internacionales, con gastronomía brasileña y una de las vistas más icónicas de la ciudad.
     </p></div>
-</div></header><section class="ec-inner-details"><div class="ec-inner-detail-wrap"><p>4.8★ · 8.847 reseñas</p><p>Feijoada premiada de Academia da Cachaça — servida en Embaixada Carioca</p><p>Dentro del Parque Bondinho</p><p>Abierto todos los días · 8:30–21:00</p></div></section>
+</div></header><section class="ec-inner-details"><div class="ec-inner-detail-wrap"><p>4,8★ en Google</p><p>Feijoada premiada de Academia da Cachaça — servida en Embaixada Carioca</p><p>Dentro del Parque Bondinho</p><p>Abierto todos los días · 8:30–21:00</p></div></section>
 <!-- AUDIENCES -->
 <section id="audiences" class="ec-editorial-section light-section">
 <div class="wrap">
@@ -3399,7 +3403,7 @@ html body main .ec-featured-snippet-ol li{
 }
 .wa-preview-status {
   font-size: 0.75rem;
-  color: #25D366;
+  color: #0f7a3d;
   font-weight: 500;
 }
 .wa-preview-msg {
@@ -3414,7 +3418,7 @@ html body main .ec-featured-snippet-ol li{
 .wa-preview-cta {
   display: block;
   background: #25D366;
-  color: white !important;
+  color: #063321 !important;
   text-align: center;
   padding: 10px 16px;
   border-radius: 10px;
@@ -3778,7 +3782,7 @@ nav.top.scrolled a.nav-rating-badge:visited {
 	      Si busca el mejor <strong>restaurante morro da urca</strong> o desea saber <strong>donde comer morro da urca</strong> durante su visita al Parque Bondinho, Embaixada Carioca es la elección perfecta. Además de ofrecer una gastronomía brasileña galardonada, se ha consolidado como el principal <strong>espacio para eventos morro da urca</strong>, recibiendo desde reuniones ejecutivas hasta grandes <strong>eventos corporativos morro da urca</strong>.
 	    </p>
 <p style="font-size: 15px; color: #485156; line-height: 1.6;">
-	      Ya sea para realizar <strong>eventos bondinho</strong>, buscar un <strong>restaurante bondinho</strong> para almuerzos de grupos, o planificar <strong>eventos pan de azucar</strong> con vistas panorámicas, nuestra estructura ofrece accesibilidad y soporte completo. Descubra <strong>donde comer bondinho</strong> o <strong>donde comer pan de azucar</strong> con la mejor vista de la Bahía de Guanabara. Organice sus <strong>eventos morro da urca</strong> o celebraciones con nosotros, garantizando una experiencia inolvidable en el único <strong>restaurante pan de azucar</strong> con servicio completo y curaduría de eventos de alto nivel.
+	      Ya sea para realizar <strong>eventos bondinho</strong>, buscar un <strong>restaurante bondinho</strong> para almuerzos de grupos, o planificar <strong>eventos pan de azucar</strong> con vistas panorámicas, nuestra estructura ofrece accesibilidad y soporte completo. Descubra <strong>donde comer bondinho</strong> o <strong>donde comer pan de azucar</strong> con la mejor vista de la Bahía de Guanabara. Organice sus <strong>eventos morro da urca</strong> o celebraciones con nosotros, garantizando una experiencia inolvidable en el único restaurante del Parque Bondinho con vista directa al Pan de Azúcar, con servicio completo y curaduría de eventos de alto nivel.
 	    </p>
 </div>
 </section>
@@ -3916,6 +3920,7 @@ html body main a.btn[href*="tagme"],html body main a.btn[href*="reserv"],nav.top
 <script defer="" src="/assets/bondinho-ticket-notice.js?v=5"></script>
 <script defer="" src="/assets/bondinho-ticket-notice.js"></script>
 
+<p class="ec-updated" style="max-width:1100px;margin:28px auto 8px;padding:0 20px;font-size:13px;line-height:1.5;text-align:center">Actualizado el <time datetime="2026-10-20">20 de octubre de 2026</time> · Embaixada Carioca</p>
 </main><script defer="" src="/assets/conversion-tracking.js"></script>
 <script defer="" src="/assets/r2d2-dynamic-banner.js"></script>
 <script defer="" src="/assets/bondinho-ticket-notice.js"></script>
@@ -4034,5 +4039,6 @@ html body main .corporate-section a {
 <script defer src="/assets/internal-page-contrast-rescue.js"></script>
 
 <script defer src="/assets/event-system-link.js?v=20261004"></script>
+<script defer src="/assets/js/ec-a11y-guard.js?v=20261020"></script>
 </body>
 </html>

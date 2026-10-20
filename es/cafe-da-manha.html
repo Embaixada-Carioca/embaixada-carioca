@@ -639,8 +639,8 @@ html {
 /* ── PERFORMANCE: content-visibility para seções abaixo do fold ── */
 @media (max-width: 720px) {
   .section-below-fold {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 400px;
+    content-visibility: visible;
+    contain-intrinsic-size: auto 400px;
   }
 }
 
@@ -1136,8 +1136,8 @@ nav.top.scrolled .nav-rating-stars{color:#c8830a;}
 /* 2. Content-visibility para seções off-screen (melhora LCP) */
 @media (max-width: 720px) {
   section:not(.hero):not(:first-of-type) {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 500px;
+    content-visibility: visible;
+    contain-intrinsic-size: auto 500px;
   }
 }
 
@@ -2582,7 +2582,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 @media(max-width:900px){html body nav.top .nav-links,html body nav.top .lang-switcher,html body nav.top .nav-rating-badge{display:none!important;}html body nav.top .brand-logo{width:54px!important;height:54px!important;min-width:54px!important;min-height:54px!important;}}
 </style>
 <link href="/assets/css/ec-shared.css" rel="stylesheet"/>
-<script type="application/ld+json">{
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -2791,7 +2792,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
           ".intro-text",
           ".faq-answer"
         ]
-      }
+      },
+      "dateModified": "2026-10-20"
     },
     {
       "@type": "BreadcrumbList",
@@ -2878,10 +2880,12 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
             "text": "Sí. Puedes disfrutar de los miradores del Morro da Urca. Para continuar en Bondinho al Pan de Azúcar, consulta la entrada y las condiciones del parque. Si subiste por el sendero, planifica el regreso antes de que cierre."
           }
         }
-      ]
+      ],
+      "dateModified": "2026-10-20"
     }
   ]
-}</script><link rel="stylesheet" href="/assets/css/ec-design-aaa-fix.css?v=20260909-inner"/>
+}
+</script><link rel="stylesheet" href="/assets/css/ec-design-aaa-fix.css?v=20260909-inner"/>
 <link rel="stylesheet" href="/assets/css/ec-inner-pages.css?v=20260909b"/>
 <script defer src="/assets/js/ec-inner-navigation.js?v=20260909a"></script>
 <link rel="stylesheet" href="/assets/css/ec-legacy-reading.css?v=20260910a"/>
@@ -2902,8 +2906,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 <li><a href="/cardapio.html">Cardápio</a></li>
 <li><a href="/guia-do-rio.html">Guia do Rio</a></li>
 </ul>
-<a aria-label="Google Reviews: 4.8 estrellas · 8.847 reseñas" class="nav-rating-badge google-review-badge" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank" title="Google Reviews · 4.8 estrellas">
-<span class="gr-copy"><span class="gr-label">Google Reviews</span><span class="gr-row"><strong class="gr-score">4.8</strong><span aria-hidden="true" class="gr-stars">★★★★★</span><span class="gr-count">8.847 reseñas</span></span></span>
+<a aria-label="Google Reviews: nota 4,8 de 5" class="nav-rating-badge google-review-badge" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank" title="Google Reviews · 4.8 estrellas">
+<span class="gr-copy"><span class="gr-label">Google Reviews</span><span class="gr-row"><strong class="gr-score">4.8</strong><span aria-hidden="true" class="gr-stars">★★★★★</span></span></span>
 </a>
 <div aria-label="Seleccionar idioma" class="lang-switcher" role="navigation">
 <button aria-expanded="false" aria-haspopup="true" aria-label="Idioma actual: ES" class="lang-current"><span class="lang-flag">🇪🇸</span><span>ES</span><span class="lang-arrow">▼</span></button>
@@ -2925,7 +2929,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 <h1>Desayuno con vista al Pan de Azúcar</h1>
 <div class="ec-inner-intro"><p>Desayuna frente al Pan de Azúcar en el Morro da Urca, a 220 metros de altitud. El servicio termina a las 11:30; consulta el menú y planifica el acceso al parque.</p></div>
 <div class="ec-inner-actions"><a class="ec-inner-action is-primary" href="https://go.tagme.com.br/embaixadacarioca">Reservar desayuno</a><a class="ec-inner-action" href="/es/cardapio.html">Ver menú completo</a></div>
-</div></header><section class="ec-inner-details"><div class="ec-inner-detail-wrap"><p>4.8★ · 8.847 reseñas</p><p>Feijoada premiada de Academia da Cachaça — servida en Embaixada Carioca</p><p>Dentro del Parque Bondinho</p><p>Abierto todos los días · 8:30–21:00</p></div></section>
+</div></header><section class="ec-inner-details"><div class="ec-inner-detail-wrap"><p>4,8★ en Google</p><p>Feijoada premiada de Academia da Cachaça — servida en Embaixada Carioca</p><p>Dentro del Parque Bondinho</p><p>Abierto todos los días · 8:30–21:00</p></div></section>
 <!-- O QUE SERVIMOS -->
 <section id="o-que-servimos">
 <div class="wrap">
@@ -3383,7 +3387,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 }
 .wa-preview-status {
   font-size: 0.75rem;
-  color: #25D366;
+  color: #0f7a3d;
   font-weight: 500;
 }
 .wa-preview-msg {
@@ -3398,7 +3402,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 .wa-preview-cta {
   display: block;
   background: #25D366;
-  color: white !important;
+  color: #063321 !important;
   text-align: center;
   padding: 10px 16px;
   border-radius: 10px;
@@ -3960,6 +3964,7 @@ html body main a.btn[href*="tagme"],html body main a.btn[href*="reserv"],nav.top
     });
   })();
   </script>
+<p class="ec-updated" style="max-width:1100px;margin:28px auto 8px;padding:0 20px;font-size:13px;line-height:1.5;text-align:center">Actualizado el <time datetime="2026-10-20">20 de octubre de 2026</time> · Embaixada Carioca</p>
 <!-- growth-p1-p2:start --><nav class="ec-growth-links" aria-label="Planifica tu pausa durante el paseo"><p>Planifica tu pausa durante el paseo</p><div><a href="/es/cardapio.html" data-intent="menu" data-position="related_growth">Menú y precios</a><a href="/es/planifica-tu-visita.html" data-intent="planejar_visita" data-position="related_growth">Planifica tu visita</a><a href="/es/como-llegar.html" data-intent="access" data-position="related_growth">Cómo llegar</a></div></nav><!-- growth-p1-p2:end -->
 </main><script defer="" src="/assets/conversion-tracking.js"></script>
 <script defer="" src="/assets/r2d2-dynamic-banner.js"></script>
@@ -4082,5 +4087,6 @@ html body main .corporate-section a {
 <script defer src="/assets/bondinho-ticket-notice.js"></script>
 <script defer src="/assets/menuitem-schema-enhancer.js"></script>
 <script defer src="/assets/internal-page-contrast-rescue.js"></script>
+<script defer src="/assets/js/ec-a11y-guard.js?v=20261020"></script>
 </body>
 </html>

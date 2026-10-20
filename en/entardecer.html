@@ -639,8 +639,8 @@ html {
 /* ── PERFORMANCE: content-visibility para seções abaixo do fold ── */
 @media (max-width: 720px) {
   .section-below-fold {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 400px;
+    content-visibility: visible;
+    contain-intrinsic-size: auto 400px;
   }
 }
 
@@ -820,8 +820,8 @@ nav.top.scrolled .nav-rating-stars{color:#c8830a;}
 /* 2. Content-visibility para seções off-screen (melhora LCP) */
 @media (max-width: 720px) {
   section:not(.hero):not(:first-of-type) {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 500px;
+    content-visibility: visible;
+    contain-intrinsic-size: auto 500px;
   }
 }
 
@@ -2498,7 +2498,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://www.embaixadacarioca.com/#website"
-      }
+      },
+      "dateModified": "2026-10-20"
     },
     {
       "@type": "BreadcrumbList",
@@ -2585,7 +2586,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
             "text": "It is known for caipirinhas, draft beer, Brazilian food and its Morro da Urca location."
           }
         }
-      ]
+      ],
+      "dateModified": "2026-10-20"
     },
     {
       "@context": "https://schema.org",
@@ -2720,8 +2722,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 <li><a href="/en/cardapio.html">Menu</a></li>
 <li><a href="/en/guia-do-rio.html">Rio guide</a></li>
 </ul>
-<a aria-label="Google Reviews: 4.8 stars · 8,847 reviews" class="nav-rating-badge google-review-badge" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank" title="Google Reviews · 4.8 stars">
-<span class="gr-copy"><span class="gr-label">Google Reviews</span><span class="gr-row"><strong class="gr-score">4.8</strong><span aria-hidden="true" class="gr-stars">★★★★★</span><span class="gr-count">8,847 reviews</span></span></span>
+<a aria-label="Google Reviews: rated 4.8 out of 5" class="nav-rating-badge google-review-badge" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank" title="Google Reviews · 4.8 stars">
+<span class="gr-copy"><span class="gr-label">Google Reviews</span><span class="gr-row"><strong class="gr-score">4.8</strong><span aria-hidden="true" class="gr-stars">★★★★★</span></span></span>
 </a>
 <div aria-label="Select language" class="lang-switcher" role="navigation">
 <button aria-expanded="false" aria-haspopup="true" aria-label="Current language: EN" class="lang-current"><span class="lang-flag">🇺🇸</span><span>EN</span><span class="lang-arrow">▼</span></button>
@@ -2749,7 +2751,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
       Watch the sun set behind Sugarloaf Mountain from Urca Hill while enjoying a caipirinha made with Magnífica cachaça or an ice-cold Heineken draft beer. It is an ideal setting for a romantic evening, a birthday or a relaxed end to a day in Rio. Open daily from 5:00 PM to 9:00 PM.
     </p>
 <div aria-label="Embaixada Carioca highlights" class="hero-chips" style="display:flex;flex-wrap:wrap;gap:8px;margin:0.8rem 0 1.6rem;">
-<span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:0.85rem;color:#f5f0e8;white-space:nowrap;">4.8★ · 8,847 reviews</span>
+<span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:0.85rem;color:#f5f0e8;white-space:nowrap;">4.8★ on Google</span>
 <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:0.85rem;color:#f5f0e8;white-space:nowrap;">🏆 Award-winning feijoada from Academia da Cachaça — served at Embaixada Carioca</span>
 <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:0.85rem;color:#f5f0e8;white-space:nowrap;">Inside Parque Bondinho</span>
 <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:0.85rem;color:#f5f0e8;white-space:nowrap;">Open every day · 8:30 AM–9:00 PM</span>
@@ -3151,7 +3153,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 }
 .wa-preview-status {
   font-size: 0.75rem;
-  color: #25D366;
+  color: #0f7a3d;
   font-weight: 500;
 }
 .wa-preview-msg {
@@ -3166,7 +3168,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 .wa-preview-cta {
   display: block;
   background: #25D366;
-  color: white !important;
+  color: #063321 !important;
   text-align: center;
   padding: 10px 16px;
   border-radius: 10px;
@@ -3328,7 +3330,7 @@ footer.foot {
       Olá! Bem-vindo à <strong>Embaixada Carioca</strong> — o sabor do Rio com vista para o <strong>Pão de Açúcar</strong>! 🚡<br/><br/>
       Posso te ajudar com reservations, menu, eventos ou informações sobre horários.
     </div>
-<a aria-label="Iniciar conversa no WhatsApp com a Embaixada Carioca" class="wa-preview-cta" href="https://wa.me/5521966837556?text=Hi%21%20I%20found%20Embaixada%20Carioca%20through%20the%20website%20and%20would%20like%20to%20make%20a%20reservation." rel="noopener" target="_blank">💬 Iniciar conversa</a>
+<a aria-label="Start a WhatsApp chat with Embaixada Carioca" class="wa-preview-cta" href="https://wa.me/5521966837556?text=Hi%21%20I%20found%20Embaixada%20Carioca%20through%20the%20website%20and%20would%20like%20to%20make%20a%20reservation." rel="noopener" target="_blank">💬 Start a chat</a>
 </div>
 <!-- Botão principal -->
 <a aria-label="Falar com a Embaixada Carioca no WhatsApp" class="wa-btn" href="https://wa.me/5521966837556?text=Hi%21%20I%20found%20Embaixada%20Carioca%20through%20the%20website%20and%20would%20like%20to%20make%20a%20reservation." id="wa-btn" rel="noopener" target="_blank" title="WhatsApp · +55 21 96683-7556"><span aria-hidden="true" class="wa-badge">1</span><img alt="WhatsApp Support — Reservations and info for Embaixada Carioca" decoding="async" height="60" loading="lazy" src="/assets/whatsapp-icon-official.png" style="display:block;width:60px;height:60px;" width="60"/></a>
@@ -3740,6 +3742,7 @@ html body main a.btn[href*="tagme"],html body main a.btn[href*="reserv"],nav.top
     });
   })();
   </script>
+<p class="ec-updated" style="max-width:1100px;margin:28px auto 8px;padding:0 20px;font-size:13px;line-height:1.5;text-align:center">Updated on <time datetime="2026-10-20">October 20, 2026</time> · Embaixada Carioca</p>
 </main><script defer="" src="/assets/conversion-tracking.js"></script>
 <script defer="" src="/assets/r2d2-dynamic-banner.js"></script>
 <script defer="" src="/assets/bondinho-ticket-notice.js"></script>
@@ -3856,5 +3859,6 @@ html body main .corporate-section a {
 <script defer src="/assets/bondinho-ticket-notice.js"></script>
 <script defer src="/assets/menuitem-schema-enhancer.js"></script>
 <script defer src="/assets/internal-page-contrast-rescue.js"></script>
+<script defer src="/assets/js/ec-a11y-guard.js?v=20261020"></script>
 </body>
 </html>

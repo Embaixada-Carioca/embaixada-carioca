@@ -639,8 +639,8 @@ html {
 /* ── PERFORMANCE: content-visibility para seções abaixo do fold ── */
 @media (max-width: 720px) {
   .section-below-fold {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 400px;
+    content-visibility: visible;
+    contain-intrinsic-size: auto 400px;
   }
 }
 
@@ -821,8 +821,8 @@ nav.top.scrolled .nav-rating-stars{color:#c8830a;}
 /* 2. Content-visibility para seções off-screen (melhora LCP) */
 @media (max-width: 720px) {
   section:not(.hero):not(:first-of-type) {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 500px;
+    content-visibility: visible;
+    contain-intrinsic-size: auto 500px;
   }
 }
 
@@ -1442,7 +1442,7 @@ nav.top.scrolled .btn {
 @media (min-width: 961px){.page-hero{min-height:72vh}.page-hero-content{padding-top:160px}}
 </style>
 <style>
-.topic-authority nav a{display:inline-flex;align-items:center;padding:10px 15px;border:1px solid rgba(0,64,90,.18);border-radius:999px;text-decoration:none;color:var(--azul1,#00405a);font-weight:700;font-size:13px;background:rgba(255,255,255,.35)}
+.topic-authority nav a{display:inline-flex;align-items:center;padding:10px 15px;border:1px solid rgba(0,64,90,.18);border-radius:999px;text-decoration:none;color:var(--azul1,#00405a);font-weight:700;font-size:13px;background:#f6efde}
 .topic-authority nav a:hover{background:var(--amarelo,#f59b1e);border-color:var(--amarelo,#f59b1e)}
 </style>
 <!-- EC Final Design Consistency Lock -->
@@ -2499,7 +2499,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
           ".intro-text",
           ".faq-answer"
         ]
-      }
+      },
+      "dateModified": "2026-10-20"
     },
     {
       "@type": "BreadcrumbList",
@@ -2586,7 +2587,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
             "text": "A casa é conhecida por caipirinhas, chope, comida brasileira e localização no Morro da Urca."
           }
         }
-      ]
+      ],
+      "dateModified": "2026-10-20"
     },
     {
       "@context": "https://schema.org",
@@ -2784,8 +2786,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 <li><a href="/cardapio.html">Cardápio</a></li>
 <li><a href="/guia-do-rio.html">Guia do Rio</a></li>
 </ul>
-<a aria-label="Google Reviews: 4.8 estrelas · 8.847 avaliações" class="nav-rating-badge google-review-badge" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank" title="Google Reviews · 4.8 estrelas">
-<span class="gr-copy"><span class="gr-label">Google Reviews</span><span class="gr-row"><strong class="gr-score">4.8</strong><span aria-hidden="true" class="gr-stars">★★★★★</span><span class="gr-count">8.847 avaliações</span></span></span>
+<a aria-label="Google Reviews: nota 4,8 de 5" class="nav-rating-badge google-review-badge" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank" title="Google Reviews · 4.8 estrelas">
+<span class="gr-copy"><span class="gr-label">Google Reviews</span><span class="gr-row"><strong class="gr-score">4.8</strong><span aria-hidden="true" class="gr-stars">★★★★★</span></span></span>
 </a>
 <div aria-label="Selecionar idioma" class="lang-switcher" role="navigation">
 <button aria-expanded="false" aria-haspopup="true" aria-label="Idioma atual: PT" class="lang-current"><span class="lang-flag">🇧🇷</span><span>PT</span><span class="lang-arrow">▼</span></button>
@@ -2809,7 +2811,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
       O <strong>entardecer mais bonito do Rio de Janeiro</strong> — entardecer no Morro da Urca com o Pão de Açúcar em primeiro plano, visto do alto do Morro da Urca. Caipirinha com cachaça Magnífica e chope Heineken (2º melhor do Brasil). Um dos <strong>lugares mais bonitos do Rio de Janeiro</strong> para um momento romântico, um aniversário ou simplesmente o fim de um dia perfeito na cidade. Aberto todos os dias das 17h às 21h.
     </p></div>
 <div class="ec-inner-actions"><a class="ec-inner-action is-primary" href="https://go.tagme.com.br/embaixadacarioca">Reservar entardecer</a><a class="ec-inner-action" href="cardapio.html">Ver cardápio completo</a></div>
-</div></header><section class="ec-inner-details"><div class="ec-inner-detail-wrap"><p>4.8★ · 8.847 avaliações</p><p>Feijoada da Academia da Cachaça — vencedora da categoria Melhor Feijoada no Veja Rio Comer &amp; Beber 2025/2026 — servida na Embaixada Carioca por meio de parceria formal</p><p>Dentro do Parque Bondinho</p><p>Aberto todos os dias · 8h30–21h</p></div></section>
+</div></header><section class="ec-inner-details"><div class="ec-inner-detail-wrap"><p>4,8★ no Google</p><p>Feijoada da Academia da Cachaça — vencedora da categoria Melhor Feijoada no Veja Rio Comer &amp; Beber 2025/2026 — servida na Embaixada Carioca por meio de parceria formal</p><p>Dentro do Parque Bondinho</p><p>Aberto todos os dias · 8h30–21h</p></div></section>
 <!-- DRINKS -->
 <section id="drinks">
 <div class="wrap">
@@ -3216,7 +3218,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 }
 .wa-preview-status {
   font-size: 0.75rem;
-  color: #25D366;
+  color: #0f7a3d;
   font-weight: 500;
 }
 .wa-preview-msg {
@@ -3231,7 +3233,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 .wa-preview-cta {
   display: block;
   background: #25D366;
-  color: white !important;
+  color: #063321 !important;
   text-align: center;
   padding: 10px 16px;
   border-radius: 10px;
@@ -3783,6 +3785,7 @@ html body main a.btn[href*="tagme"],html body main a.btn[href*="reserv"],nav.top
     });
   })();
   </script>
+<p class="ec-updated" style="max-width:1100px;margin:28px auto 8px;padding:0 20px;font-size:13px;line-height:1.5;text-align:center">Atualizado em <time datetime="2026-10-20">20 de outubro de 2026</time> · Embaixada Carioca</p>
 </main><script defer="" src="/assets/conversion-tracking.js"></script>
 <script defer="" src="/assets/r2d2-dynamic-banner.js"></script>
 <script defer="" src="/assets/bondinho-ticket-notice.js"></script>
@@ -3898,5 +3901,6 @@ html body main .corporate-section a {
 <script defer src="/assets/bondinho-ticket-notice.js"></script>
 <script defer src="/assets/menuitem-schema-enhancer.js"></script>
 <script defer src="/assets/internal-page-contrast-rescue.js"></script>
+<script defer src="/assets/js/ec-a11y-guard.js?v=20261020"></script>
 </body>
 </html>

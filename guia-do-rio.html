@@ -533,8 +533,8 @@ html {
 /* ── PERFORMANCE: content-visibility para seções abaixo do fold ── */
 @media (max-width: 720px) {
   .section-below-fold {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 400px;
+    content-visibility: visible;
+    contain-intrinsic-size: auto 400px;
   }
 }
 
@@ -938,8 +938,8 @@ nav.top.scrolled .nav-rating-stars{color:#c8830a;}
 /* 2. Content-visibility para seções off-screen (melhora LCP) */
 @media (max-width: 720px) {
   section:not(.hero):not(:first-of-type) {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 500px;
+    content-visibility: visible;
+    contain-intrinsic-size: auto 500px;
   }
 }
 
@@ -1559,7 +1559,7 @@ nav.top.scrolled .btn {
 @media (min-width: 961px){.page-hero{min-height:72vh}.page-hero-content{padding-top:160px}}
 </style>
 <style>
-.topic-authority nav a{display:inline-flex;align-items:center;padding:10px 15px;border:1px solid rgba(0,64,90,.18);border-radius:999px;text-decoration:none;color:var(--azul1,#00405a);font-weight:700;font-size:13px;background:rgba(255,255,255,.35)}
+.topic-authority nav a{display:inline-flex;align-items:center;padding:10px 15px;border:1px solid rgba(0,64,90,.18);border-radius:999px;text-decoration:none;color:var(--azul1,#00405a);font-weight:700;font-size:13px;background:#f6efde}
 .topic-authority nav a:hover{background:var(--amarelo,#f59b1e);border-color:var(--amarelo,#f59b1e)}
 </style>
 <!-- EC Final Design Consistency Lock -->
@@ -2552,7 +2552,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
           ".article-body p",
           ".faq-answer"
         ]
-      }
+      },
+      "dateModified": "2026-10-20"
     },
     {
       "@type": "BreadcrumbList",
@@ -2580,7 +2581,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
           "name": "Qual o melhor restaurante no Pão de Açúcar?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A Embaixada Carioca é o único restaurante dentro do Parque Bondinho Pão de Açúcar, no Morro da Urca, com vista panorâmica para o Pão de Açúcar e Baía de Guanabara."
+            "text": "A Embaixada Carioca é o único restaurante do Parque Bondinho com vista direta para o Pão de Açúcar, no Morro da Urca, com vista também para a Baía de Guanabara."
           }
         },
         {
@@ -2596,7 +2597,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
           "name": "Onde comer no Rio de Janeiro com vista para o Pão de Açúcar?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A Embaixada Carioca oferece café da manhã e almoço com vista direta para o Pão de Açúcar no Morro da Urca. É o único restaurante com acesso pelo Parque Bondinho."
+            "text": "A Embaixada Carioca oferece café da manhã e almoço com vista direta para o Pão de Açúcar no Morro da Urca. O acesso é pelo Parque Bondinho, na primeira parada do bondinho."
           }
         },
         {
@@ -2612,7 +2613,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
           "name": "Onde comer no Morro da Urca?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A Embaixada Carioca é o único restaurante no Morro da Urca, localizado dentro do Parque Bondinho na primeira parada do teleférico. Serve café da manhã, almoço brasileiro com picanha e feijoada premiada, caipirinhas e drinks ao entardecer."
+            "text": "A Embaixada Carioca é o único restaurante do Parque Bondinho com vista direta para o Pão de Açúcar, na primeira parada do teleférico, no Morro da Urca. Serve café da manhã, almoço brasileiro com picanha e feijoada premiada, caipirinhas e drinks ao entardecer."
           }
         },
         {
@@ -2631,7 +2632,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
             "text": "Não. Quem vai à Embaixada Carioca para almoço, café da manhã ou drinks não precisa pagar o ingresso do Bondinho. Basta informar na entrada do Parque que vai ao restaurante."
           }
         }
-      ]
+      ],
+      "dateModified": "2026-10-20"
     },
     {
       "@type": "Article",
@@ -2652,7 +2654,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
         "logo": "https://www.embaixadacarioca.com/assets/logo-areia.svg"
       },
       "datePublished": "2026-01-01T08:30:00-03:00",
-      "dateModified": "2026-05-14T08:30:00-03:00",
+      "dateModified": "2026-10-20",
       "inLanguage": "pt-BR",
       "mainEntityOfPage": "https://www.embaixadacarioca.com/guia-do-rio",
       "url": "https://www.embaixadacarioca.com/guia-do-rio.html"
@@ -2721,8 +2723,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 <li><a href="/cardapio.html">Cardápio</a></li>
 <li><a href="/guia-do-rio.html">Guia do Rio</a></li>
 </ul>
-<a aria-label="Google Reviews: 4.8 estrelas · 8.847 avaliações" class="nav-rating-badge google-review-badge" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank" title="Google Reviews · 4.8 estrelas">
-<span class="gr-copy"><span class="gr-label">Google Reviews</span><span class="gr-row"><strong class="gr-score">4.8</strong><span aria-hidden="true" class="gr-stars">★★★★★</span><span class="gr-count">8.847 avaliações</span></span></span>
+<a aria-label="Google Reviews: nota 4,8 de 5" class="nav-rating-badge google-review-badge" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank" title="Google Reviews · 4.8 estrelas">
+<span class="gr-copy"><span class="gr-label">Google Reviews</span><span class="gr-row"><strong class="gr-score">4.8</strong><span aria-hidden="true" class="gr-stars">★★★★★</span></span></span>
 </a>
 <div aria-label="Selecionar idioma" class="lang-switcher" role="navigation">
 <button aria-expanded="false" aria-haspopup="true" aria-label="Idioma atual: PT" class="lang-current"><span class="lang-flag">🇧🇷</span><span>PT</span><span class="lang-arrow">▼</span></button>
@@ -2749,7 +2751,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
       Planejando uma viagem para o Rio de Janeiro? Descobrir <strong>o que fazer no Rio</strong> exige um roteiro que equilibre os cartões-postais mundiais com a autêntica gastronomia local. Para garantir que sua experiência seja inesquecível e livre de armadilhas para turistas, criamos este guia definitivo com o Top 5 de cada categoria.
     </p></div>
 <div class="ec-inner-actions"><a class="ec-inner-action is-primary" href="https://go.tagme.com.br/embaixadacarioca">Reservar no Morro da Urca</a><a class="ec-inner-action" href="/cardapio.html">Ver cardápio</a></div>
-</div></header><section class="ec-inner-details"><div class="ec-inner-detail-wrap"><p>4.8★ · 8.847 avaliações</p><p>Feijoada da Academia da Cachaça — vencedora da categoria Melhor Feijoada no Veja Rio Comer &amp; Beber 2025/2026 — servida na Embaixada Carioca por meio de parceria formal</p><p>Dentro do Parque Bondinho</p><p>Aberto todos os dias · 8h30–21h</p></div></section>
+</div></header><section class="ec-inner-details"><div class="ec-inner-detail-wrap"><p>4,8★ no Google</p><p>Feijoada da Academia da Cachaça — vencedora da categoria Melhor Feijoada no Veja Rio Comer &amp; Beber 2025/2026 — servida na Embaixada Carioca por meio de parceria formal</p><p>Dentro do Parque Bondinho</p><p>Aberto todos os dias · 8h30–21h</p></div></section>
 <!-- CONTEÚDO EDITORIAL -->
 <main id="main-content">
 
@@ -2798,12 +2800,13 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 </div>
 </section>
 <!-- /EC FEATURED SNIPPET ORDERED LISTS -->
+<p class="ec-updated" style="max-width:1100px;margin:28px auto 8px;padding:0 20px;font-size:13px;line-height:1.5;text-align:center">Atualizado em <time datetime="2026-10-20">20 de outubro de 2026</time> · Embaixada Carioca</p>
 </main>
 <!-- CTA BAND -->
 <aside style="background: var(--azul1); color: var(--areia-pale); text-align: center; padding: 80px var(--gutter);">
 <div class="eyebrow" style="color: var(--amarelo); margin-bottom: 24px;">Reserve sua experiência</div>
 <h2 style="font-family: 'Catamaran', sans-serif; font-weight: 300; font-size: clamp(32px, 4vw, 60px); line-height: 1.0; margin: 0 0 20px; letter-spacing: -0.02em; color: var(--areia-pale);">
-    O <em style="font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--amarelo);">único com vista</em><br/>para o Pão de Açúcar.
+    O único do parque com vista direta para o Pão de Açúcar.
   </h2>
 <p style="color: rgba(237,226,201,0.85); max-width: 52ch; margin: 0 auto 32px; font-size: 17px; line-height: 1.55;">
     Café da manhã, almoço ou entardecer — todos com vista de frente para o Pão de Açúcar, no alto do Morro da Urca.
@@ -3025,7 +3028,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 }
 .wa-preview-status {
   font-size: 0.75rem;
-  color: #25D366;
+  color: #0f7a3d;
   font-weight: 500;
 }
 .wa-preview-msg {
@@ -3040,7 +3043,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 .wa-preview-cta {
   display: block;
   background: #25D366;
-  color: white !important;
+  color: #063321 !important;
   text-align: center;
   padding: 10px 16px;
   border-radius: 10px;
@@ -3799,5 +3802,6 @@ html body main .corporate-section a {
 </style>
 <link href="/assets/css/ec-light-bg-contrast-lock.css" rel="stylesheet"/>
 <link href="/assets/css/ec-wcag-final.css" rel="stylesheet"/>
+<script defer src="/assets/js/ec-a11y-guard.js?v=20261020"></script>
 </body>
 </html>

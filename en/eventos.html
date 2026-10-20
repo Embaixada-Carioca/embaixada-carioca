@@ -697,8 +697,8 @@ html {
 /* ── PERFORMANCE: content-visibility para seções abaixo do fold ── */
 @media (max-width: 720px) {
   .section-below-fold {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 400px;
+    content-visibility: visible;
+    contain-intrinsic-size: auto 400px;
   }
 }
 
@@ -870,8 +870,8 @@ nav .lang-dropdown a:visited { color: var(--azul1, #00405A); }
 /* 2. Content-visibility para seções off-screen (melhora LCP) */
 @media (max-width: 720px) {
   section:not(.hero):not(:first-of-type) {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 500px;
+    content-visibility: visible;
+    contain-intrinsic-size: auto 500px;
   }
 }
 
@@ -2406,7 +2406,8 @@ html body main .ec-featured-snippet-ol li{
 }
 </style>
 <!-- /EC EVENTOS EN PAGE CONTRAST LOCK -->
-<script type="application/ld+json">{
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -2587,7 +2588,8 @@ html body main .ec-featured-snippet-ol li{
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://www.embaixadacarioca.com/#website"
-      }
+      },
+      "dateModified": "2026-10-20"
     },
     {
       "@type": "BreadcrumbList",
@@ -2714,7 +2716,8 @@ html body main .ec-featured-snippet-ol li{
             "text": "It is known for caipirinhas, draft beer, Brazilian food and its Morro da Urca location."
           }
         }
-      ]
+      ],
+      "dateModified": "2026-10-20"
     },
     {
       "@type": "Place",
@@ -2866,7 +2869,8 @@ html body main .ec-featured-snippet-ol li{
       "url": "https://www.embaixadacarioca.com/en/eventos.html"
     }
   ]
-}</script><link rel="stylesheet" href="/assets/css/ec-design-aaa-fix.css?v=20260909-inner"/>
+}
+</script><link rel="stylesheet" href="/assets/css/ec-design-aaa-fix.css?v=20260909-inner"/>
 <link rel="stylesheet" href="/assets/css/ec-inner-pages.css?v=20260909b"/>
 <script defer src="/assets/js/ec-inner-navigation.js?v=20260909a"></script>
 <link rel="stylesheet" href="/assets/css/ec-editorial-sections.css?v=20260909a"/>
@@ -2888,8 +2892,8 @@ html body main .ec-featured-snippet-ol li{
 <li><a href="/en/cardapio.html">Menu</a></li>
 <li><a href="/en/guia-do-rio.html">Rio guide</a></li>
 </ul>
-<a aria-label="Google Reviews: 4.8 stars · 8,847 reviews" class="nav-rating-badge google-review-badge" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank" title="Google Reviews · 4.8 stars">
-<span class="gr-copy"><span class="gr-label">Google Reviews</span><span class="gr-row"><strong class="gr-score">4.8</strong><span aria-hidden="true" class="gr-stars">★★★★★</span><span class="gr-count">8,847 reviews</span></span></span>
+<a aria-label="Google Reviews: rated 4.8 out of 5" class="nav-rating-badge google-review-badge" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank" title="Google Reviews · 4.8 stars">
+<span class="gr-copy"><span class="gr-label">Google Reviews</span><span class="gr-row"><strong class="gr-score">4.8</strong><span aria-hidden="true" class="gr-stars">★★★★★</span></span></span>
 </a>
 <div aria-label="Select language" class="lang-switcher" role="navigation">
 <button aria-expanded="false" aria-haspopup="true" aria-label="Current language: English" class="lang-current"><span class="lang-flag">🇺🇸</span><span>EN</span><span class="lang-arrow">▼</span></button>
@@ -2917,7 +2921,7 @@ html body main .ec-featured-snippet-ol li{
 <div class="ec-inner-intro"><p>
       The <strong>most stunning event venue in Rio de Janeiro</strong> — high above Urca Hill, 220 meters up, with panoramic views of Sugarloaf Mountain and Guanabara Bay. Executive meetings, corporate lunches, launches, birthdays and itineraries for international groups — all hosted with award-winning Brazilian cuisine and the most impressive view in the city.
     </p></div>
-</div></header><section class="ec-inner-details"><div class="ec-inner-detail-wrap"><p>4.8★ · 8,847 reviews</p><p>Award-winning feijoada from Academia da Cachaça — served at Embaixada Carioca</p><p>Inside Sugarloaf Cable Car Park</p><p>Open every day · 8:30 AM–9:00 PM</p></div></section>
+</div></header><section class="ec-inner-details"><div class="ec-inner-detail-wrap"><p>4.8★ on Google</p><p>Award-winning feijoada from Academia da Cachaça — served at Embaixada Carioca</p><p>Inside Sugarloaf Cable Car Park</p><p>Open every day · 8:30 AM–9:00 PM</p></div></section>
 <!-- AUDIENCES -->
 <section id="audiences" class="ec-editorial-section light-section">
 <div class="wrap">
@@ -2925,7 +2929,7 @@ html body main .ec-featured-snippet-ol li{
 <div class="num"><b>01</b> Who it's for</div>
 <h2>Two worlds, <span class="serif">one view</span> — events at Urca Hill for companies and agencies.</h2>
 <p class="lede">
-        From corporate events to premium itineraries for international groups — we host every format with tailor-made curation at the <strong>event venue at Urca Hill</strong>. Among all <strong>celebration venues in Rio de Janeiro</strong>, this is the only one with panoramic views of Sugarloaf Mountain and Guanabara Bay. Award-winning Brazilian cuisine completes the experience.
+        From corporate events to premium itineraries for international groups — we host every format with tailor-made curation at the <strong>event venue at Urca Hill</strong>. Among all <strong>celebration venues in Rio de Janeiro</strong>, this one has panoramic views of Sugarloaf Mountain and Guanabara Bay. Award-winning Brazilian cuisine completes the experience.
       </p>
 </div>
 <div class="audience-grid">
@@ -3324,7 +3328,7 @@ html body main .ec-featured-snippet-ol li{
 }
 .wa-preview-status {
   font-size: 0.75rem;
-  color: #25D366;
+  color: #0f7a3d;
   font-weight: 500;
 }
 .wa-preview-msg {
@@ -3339,7 +3343,7 @@ html body main .ec-featured-snippet-ol li{
 .wa-preview-cta {
   display: block;
   background: #25D366;
-  color: white !important;
+  color: #063321 !important;
   text-align: center;
   padding: 10px 16px;
   border-radius: 10px;
@@ -3703,7 +3707,7 @@ nav.top.scrolled a.nav-rating-badge:visited {
 	      If you are looking for the best <strong>restaurant urca hill</strong> or want to know <strong>where to eat urca hill</strong> during your visit to the Cable Car Park, Embaixada Carioca is the perfect choice. In addition to offering award-winning Brazilian gastronomy, it has established itself as the premier <strong>event venue urca hill</strong>, hosting everything from intimate gatherings to major <strong>corporate events urca hill</strong>.
 	    </p>
 <p style="font-size: 15px; color: #485156; line-height: 1.6;">
-	      Whether you want to organize <strong>events sugarloaf</strong>, search for a <strong>restaurant sugarloaf</strong> for group dining, or plan <strong>events at urca hill</strong> with panoramic views, our structure provides full accessibility and support. Discover <strong>where to eat sugarloaf</strong> or find a premium <strong>restaurant cable car</strong> with the best view of Guanabara Bay. Host your <strong>events urca hill</strong> or corporate celebrations with us and guarantee an unforgettable experience in the only full-service restaurant on the mountain.
+	      Whether you want to organize <strong>events sugarloaf</strong>, search for a <strong>restaurant sugarloaf</strong> for group dining, or plan <strong>events at urca hill</strong> with panoramic views, our structure provides full accessibility and support. Discover <strong>where to eat sugarloaf</strong> or find a premium <strong>restaurant cable car</strong> with the best view of Guanabara Bay. Host your <strong>events urca hill</strong> or corporate celebrations with us and guarantee an unforgettable experience at the only restaurant in Bondinho Pão de Açúcar Park with a direct view of Sugarloaf Mountain.
 	    </p>
 </div>
 </section>
@@ -3841,6 +3845,7 @@ html body main a.btn[href*="tagme"],html body main a.btn[href*="reserv"],nav.top
 <script defer="" src="/assets/bondinho-ticket-notice.js?v=5"></script>
 <script defer="" src="/assets/bondinho-ticket-notice.js"></script>
 
+<p class="ec-updated" style="max-width:1100px;margin:28px auto 8px;padding:0 20px;font-size:13px;line-height:1.5;text-align:center">Updated on <time datetime="2026-10-20">October 20, 2026</time> · Embaixada Carioca</p>
 </main><script defer="" src="/assets/conversion-tracking.js"></script>
 <script defer="" src="/assets/r2d2-dynamic-banner.js"></script>
 <script defer="" src="/assets/bondinho-ticket-notice.js"></script>
@@ -3959,5 +3964,6 @@ html body main .corporate-section a {
 <script defer src="/assets/internal-page-contrast-rescue.js"></script>
 
 <script defer src="/assets/event-system-link.js?v=20261004"></script>
+<script defer src="/assets/js/ec-a11y-guard.js?v=20261020"></script>
 </body>
 </html>

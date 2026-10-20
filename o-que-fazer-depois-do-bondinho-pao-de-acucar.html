@@ -532,8 +532,8 @@ html {
 /* ── PERFORMANCE: content-visibility para seções abaixo do fold ── */
 @media (max-width: 720px) {
   .section-below-fold {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 400px;
+    content-visibility: visible;
+    contain-intrinsic-size: auto 400px;
   }
 }
 
@@ -937,8 +937,8 @@ nav.top.scrolled .nav-rating-stars{color:#c8830a;}
 /* 2. Content-visibility para seções off-screen (melhora LCP) */
 @media (max-width: 720px) {
   section:not(.hero):not(:first-of-type) {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 500px;
+    content-visibility: visible;
+    contain-intrinsic-size: auto 500px;
   }
 }
 
@@ -1573,7 +1573,7 @@ nav.top.scrolled a.nav-rating-badge:visited {
 }
 @media(max-width:900px){ a.nav-rating-badge { display: none !important; } }
 </style>
-<meta content="O que fazer depois do Bondinho do Pão de Açúcar: coma na Embaixada Carioca no Morro da Urca, tire fotos com vista panorâmica, tome caipirinha e veja o pôr do sol. Dicas de quem mora lá." name="description"/>
+<meta content="O que fazer depois do Bondinho do Pão de Açúcar: almoce na Embaixada Carioca no Morro da Urca, tome uma caipirinha e veja o pôr do sol." name="description"/>
 <!-- EC Sprint 5 Quality Schema -->
 <!-- /EC Sprint 5 Quality Schema -->
 <!-- EC Final Design Consistency Lock -->
@@ -2567,7 +2567,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
       "inLanguage": "pt-BR",
       "isPartOf": {
         "@id": "https://www.embaixadacarioca.com/#website"
-      }
+      },
+      "dateModified": "2026-10-20"
     },
     {
       "@type": "BreadcrumbList",
@@ -2614,7 +2615,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
             "text": "Sim! Com o ingresso do Parque Bondinho você pode almoçar na Embaixada Carioca no Morro da Urca, com vista para o Pão de Açúcar e a Baía de Guanabara, das 11h30 às 17h."
           }
         }
-      ]
+      ],
+      "dateModified": "2026-10-20"
     },
     {
       "@type": "Article",
@@ -2635,84 +2637,10 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
         "logo": "https://www.embaixadacarioca.com/assets/logo-areia.svg"
       },
       "datePublished": "2026-01-01T08:30:00-03:00",
-      "dateModified": "2026-05-14T08:30:00-03:00",
+      "dateModified": "2026-10-20",
       "inLanguage": "pt-BR",
       "mainEntityOfPage": "https://www.embaixadacarioca.com/o-que-fazer-depois-do-bondinho-pao-de-acucar",
       "url": "https://www.embaixadacarioca.com/o-que-fazer-depois-do-bondinho-pao-de-acucar.html"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "HowTo",
-      "name": "Como chegar à Embaixada Carioca no Morro da Urca",
-      "description": "Passo a passo para visitar a Embaixada Carioca, o restaurante com vista para o Pão de Açúcar no Morro da Urca, Rio de Janeiro.",
-      "totalTime": "PT30M",
-      "estimatedCost": {
-        "@type": "MonetaryAmount",
-        "currency": "BRL",
-        "value": "130"
-      },
-      "step": [
-        {
-          "@type": "HowToStep",
-          "position": 1,
-          "name": "Compre o ingresso do Bondinho",
-          "text": "Adquira o ingresso do Parque Bondinho Pão de Açúcar pelo site oficial do Bondinho. O ingresso dá acesso ao teleférico que sobe ao Morro da Urca e ao Pão de Açúcar.",
-          "url": "https://www.embaixadacarioca.com/guia-do-rio.html"
-        },
-        {
-          "@type": "HowToStep",
-          "position": 2,
-          "name": "Vá até a Praia Vermelha",
-          "text": "A estação do bondinho fica na Praia Vermelha, no bairro da Urca, Rio de Janeiro. De táxi ou Uber, informe 'Parque Bondinho Pão de Açúcar, Praia Vermelha, Urca'.",
-          "url": "https://www.embaixadacarioca.com/guia-do-rio.html"
-        },
-        {
-          "@type": "HowToStep",
-          "position": 3,
-          "name": "Suba de teleférico até o Morro da Urca",
-          "text": "o Bondinho sai da estação da Praia Vermelha e faz a primeira parada no Morro da Urca, a 220 metros de altitude. A viagem dura cerca de 3 minutos.",
-          "url": "https://www.embaixadacarioca.com/guia-do-rio.html"
-        },
-        {
-          "@type": "HowToStep",
-          "position": 4,
-          "name": "Encontre a Embaixada Carioca",
-          "text": "Ao desembarcar no Morro da Urca, a Embaixada Carioca está à direita, com os janelões voltados para o Pão de Açúcar. Aberta todos os dias das 8h30 às 21h.",
-          "url": "https://www.embaixadacarioca.com/guia-do-rio.html"
-        },
-        {
-          "@type": "Question",
-          "name": "Tem restaurante dentro do Parque Bondinho Pão de Açúcar?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sim! A Embaixada Carioca é o único restaurante dentro do Parque Bondinho Pão de Açúcar, localizado no Morro da Urca (primeira parada do bondinho). Serve café da manhã a partir das 8h30 e almoço a partir das 11h30, todos os dias."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "O que fazer no Morro da Urca além de subir ao Pão de Açúcar?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No Morro da Urca você pode: almoçar ou tomar café da manhã na Embaixada Carioca com vista panorâmica, assistir ao pôr do sol com DJ nos eventos Sunset Bondinho, fazer trilhas, visitar a loja de souvenirs e aproveitar a vista para o Corcovado e a Baía de Guanabara."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Qual o melhor horário para visitar o Morro da Urca e o Pão de Açúcar?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "O melhor horário é pela manhã (8h30–11h) para evitar filas e aproveitar a luz para fotos, ou no fim da tarde (17h–21h) para o pôr do sol. A Embaixada Carioca abre às 8h30 e fecha às 21h, todos os dias."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Qual o preço do ingresso do Bondinho Pão de Açúcar em 2025?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "O ingresso do Bondinho Pão de Açúcar custa R$ 160 (adulto) e R$ 80 (meia-entrada) em 2025. Clientes da Embaixada Carioca não precisam pagar o ingresso para acessar o restaurante no Morro da Urca — basta informar na entrada que vai ao restaurante."
-          }
-        }
-      ]
     }
   ]
 }
@@ -2732,8 +2660,8 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 <li><a href="/cardapio.html">Cardápio</a></li>
 <li><a href="/guia-do-rio.html">Guia do Rio</a></li>
 </ul>
-<a aria-label="Google Reviews: 4.8 estrelas · 8.847 avaliações" class="nav-rating-badge google-review-badge" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank" title="Google Reviews · 4.8 estrelas">
-<span class="gr-copy"><span class="gr-label">Google Reviews</span><span class="gr-row"><strong class="gr-score">4.8</strong><span aria-hidden="true" class="gr-stars">★★★★★</span><span class="gr-count">8.847 avaliações</span></span></span>
+<a aria-label="Google Reviews: nota 4,8 de 5" class="nav-rating-badge google-review-badge" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank" title="Google Reviews · 4.8 estrelas">
+<span class="gr-copy"><span class="gr-label">Google Reviews</span><span class="gr-row"><strong class="gr-score">4.8</strong><span aria-hidden="true" class="gr-stars">★★★★★</span></span></span>
 </a>
 <div aria-label="Selecionar idioma" class="lang-switcher" role="navigation">
 <button aria-expanded="false" aria-haspopup="true" aria-label="Idioma atual: PT" class="lang-current"><span class="lang-flag">🇧🇷</span><span>PT</span><span class="lang-arrow">▼</span></button>
@@ -2790,6 +2718,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 <!-- EC Sprint 5.1 Source-Based Excellence Block -->
 <section aria-label="Source-based editorial content" class="ec-sprint51-source-quality"><div class="wrap"><h2>O que fazer depois do Bondinho do Pão de Açúcar</h2><p>Esta página de roteiro deve ajudar o visitante a decidir o que fazer antes e depois do Bondinho sem virar um guia genérico da cidade. O caminho mais útil é conectar informação oficial do destino, acesso prático e o fluxo real entre Urca, Praia Vermelha, Morro da Urca e restaurante.</p><div class="ec-sprint51-grid"><article class="ec-sprint51-card"><strong>Antes do passeio</strong>Praia Vermelha e Urca ajudam o visitante a entender a geografia e o ritmo do bairro.</article><article class="ec-sprint51-card"><strong>Durante o passeio</strong>O Morro da Urca é a pausa natural para vista, fotos e refeição sem sair da rota.</article><article class="ec-sprint51-card"><strong>Depois da refeição</strong>O visitante pode seguir o passeio, ficar mais tempo pela vista ou voltar para explorar a Urca.</article><article class="ec-sprint51-card"><strong>Valor editorial</strong>A página deve orientar decisões, não apenas listar atrações.</article></div><h3>Como decidir com segurança</h3><ol><li>Comece pelo planejamento de acesso.</li><li>Escolha se a refeição acontecerá antes, durante ou depois da rota do Bondinho.</li><li>Mantenha o roteiro flexível por clima, luz e movimento.</li><li>Use fontes oficiais para evitar dados operacionais desatualizados.</li></ol><div class="ec-sprint51-sources"><h3>Fontes editoriais consultadas</h3><p>Este bloco foi escrito a partir de fontes oficiais e guias reconhecidos, sem copiar texto de terceiros, e cruzado com a operação real da Embaixada Carioca.</p><ul><li><a href="https://bondinho.com.br/" rel="noopener" target="_blank">Parque Bondinho Pão de Açúcar</a></li><li><a href="https://visitrio.com.br/" rel="noopener" target="_blank">Visit Rio</a></li><li><a href="https://riotur.rio/" rel="noopener" target="_blank">Riotur</a></li><li><a href="https://www.turisrio.rj.gov.br/" rel="noopener" target="_blank">TurisRio</a></li><li><a href="https://visitbrasil.com/" rel="noopener" target="_blank">Visit Brasil</a></li><li><a href="https://www.timeout.com/rio-de-janeiro" rel="noopener" target="_blank">Time Out Rio de Janeiro</a></li></ul></div></div></section>
 <!-- /EC Sprint 5.1 Source-Based Excellence Block -->
+<p class="ec-updated" style="max-width:1100px;margin:28px auto 8px;padding:0 20px;font-size:13px;line-height:1.5;text-align:center">Atualizado em <time datetime="2026-10-20">20 de outubro de 2026</time> · Embaixada Carioca</p>
 </main>
 <footer class="foot">
 <div class="wrap">
@@ -2835,7 +2764,7 @@ html body .page-hero-content .eyebrow.hero-eyebrow::before{background:#f59b1e!im
 <div>© 2026 · Todos os direitos reservados</div>
 </div>
 <div aria-label="Destaques da Embaixada Carioca" class="hero-chips" style="display:flex;flex-wrap:wrap;gap:8px;margin:0.8rem 0 1.6rem;">
-<span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:0.85rem;color:#f5f0e8;white-space:nowrap;">4.8★ · 8.847 avaliações</span>
+<span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:0.85rem;color:#f5f0e8;white-space:nowrap;">4,8★ no Google</span>
 <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:0.85rem;color:#f5f0e8;white-space:nowrap;">🏆 Feijoada da Academia da Cachaça — vencedora da categoria Melhor Feijoada no Veja Rio Comer & Beber 2025/2026 — servida na Embaixada Carioca por meio de parceria formal</span>
 <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:0.85rem;color:#f5f0e8;white-space:nowrap;">Dentro do Parque Bondinho</span>
 <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:0.85rem;color:#f5f0e8;white-space:nowrap;">Aberto todos os dias · 8h30–21h</span>
@@ -3090,5 +3019,6 @@ html body main .corporate-section a {
 </style>
 <link href="/assets/css/ec-light-bg-contrast-lock.css" rel="stylesheet"/>
 <link href="/assets/css/ec-wcag-final.css" rel="stylesheet"/>
+<script defer src="/assets/js/ec-a11y-guard.js?v=20261020"></script>
 </body>
 </html>

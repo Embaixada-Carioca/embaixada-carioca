@@ -63,8 +63,8 @@ python scripts/validate_restaurant_search_cluster.py
 
 ## Fatos editoriais de referência
 
-- Diferencial: único restaurante dentro do Parque Bondinho com vista direta para o Pão de Açúcar.
-- Google: 4,8 estrelas e 8.847 avaliações.
+- Diferencial: único restaurante do Parque Bondinho com vista direta para o Pão de Açúcar (frase oficial; não usar variantes sem "com vista direta", como "único restaurante dentro do parque" ou "único almoço").
+- Google: nota 4,8 (sem número de avaliações no site, que fica desatualizado; decisão de 20/10/2026).
 - Instagram: 84 mil seguidores.
 - Feijoada da Academia da Cachaça: Melhor Feijoada do Brasil pela Prazeres da Mesa em 2017 e Melhor Feijoada do Rio pela Veja Rio Comer & Beber 2025/2026, servida na Embaixada Carioca por parceria formal.
 
