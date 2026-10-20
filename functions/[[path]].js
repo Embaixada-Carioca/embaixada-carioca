@@ -44,6 +44,9 @@ const LEGACY_REDIRECTS = new Map([
   ["/es/restaurante-pan-de-azucar.html", "/es/donde-comer-cerca-del-pan-de-azucar.html"],
   ["/es/restaurantes-cerca-del-pan-de-azucar.html", "/es/donde-comer-cerca-del-pan-de-azucar.html"],
   ["/es/parque-bondinho-pan-de-azucar.html", "/es/parque-bondinho.html"],
+  // 20/10/2026 (design 2026): duplicatas do entardecer em EN/ES.
+  ["/en/entardecer.html", "/en/sunset.html"],
+  ["/es/entardecer.html", "/es/atardecer.html"],
 ]);
 
 function redirect(requestUrl, destination) {

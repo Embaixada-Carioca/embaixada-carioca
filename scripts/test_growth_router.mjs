@@ -49,7 +49,7 @@ assert.equal(missingAsset.status,404);assert.equal(await missingAsset.text(),'')
 // Consolidation of 2026-10-20: every merged page answers one 301 to its main page, with or without ".html".
 const block=source.slice(source.indexOf('// Consolidação de 20/10/2026'),source.indexOf(']);'));
 const merged=[...block.matchAll(/\["([^"]+)", "([^"]+)"\]/g)].map(m=>[m[1],m[2]]);
-assert.equal(merged.length,30,'expected 30 consolidated URLs');
+assert.equal(merged.length,32,'expected 32 consolidated URLs');
 const noAssets={fetch(){throw Error('Redirect must precede asset fetch');}};
 for(const [from,to] of merged){
  const direct=await onRequest({request:new Request('https://www.embaixadacarioca.com'+from+'?utm_source=test'),env:{ASSETS:noAssets},next(){throw Error('Redirect missing');}});
@@ -59,4 +59,4 @@ for(const [from,to] of merged){
  assert.equal(alias.status,301);assert.equal(alias.headers.get('Location'),to);
 }
 
-console.log('Router regression checks: PASS (8 redirects, 3 stored pages, unknown 404, 9 revalidation cases, 404 page, 30 consolidated URLs).');
+console.log('Router regression checks: PASS (8 redirects, 3 stored pages, unknown 404, 9 revalidation cases, 404 page, 32 consolidated URLs).');
