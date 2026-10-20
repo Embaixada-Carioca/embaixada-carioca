@@ -33,6 +33,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content" / "pages"
 SITE = "https://www.embaixadacarioca.com"
 CSS_VERSION = "20261020b"
+EXT_ATTRS = ' target="_blank" rel="noopener"'
 TAGME = "https://go.tagme.com.br/embaixadacarioca"
 WHATSAPP = "https://wa.me/5521966837556"
 
@@ -364,7 +365,7 @@ def render_footer(lang: str, meta: dict) -> str:
     cols = []
     for title, links in L["footer_cols"]:
         anchors = "".join(
-            f'<a href="{esc(h)}"{" target=\"_blank\" rel=\"noopener\"" if h.startswith("http") else ""}>{esc(t)}</a>' for h, t in links)
+            f'<a href="{esc(h)}"{EXT_ATTRS if h.startswith("http") else ""}>{esc(t)}</a>' for h, t in links)
         cols.append(f'<div><h2>{esc(title)}</h2>{anchors}</div>')
     mobile = "".join(f'<a href="{h}" data-intent="{i}" data-position="mobile_bar">{esc(t)}</a>' for h, i, t in L["mobile"])
     scripts = "".join(f'<script src="{esc(s)}" defer></script>' for s in meta.get("scripts", []))
