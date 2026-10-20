@@ -1,16 +1,23 @@
 # Estado atual do site — Embaixada Carioca
 
-**Atualizado em:** 09/09/2026
+**Atualizado em:** 20/10/2026
 
 **Domínio canônico:** `https://www.embaixadacarioca.com/`
 
-**Repositório:** `LeoRangel22/embaixada-carioca`
+**Repositório:** `Embaixada-Carioca/embaixada-carioca` (antes `LeoRangel22/embaixada-carioca`)
 
 **Branch de produção:** `master`
 
 Este é o documento de referência para o estado operacional atual. Relatórios datados em `_audit_reports/` registram o momento em que foram gerados e podem conter limitações já superadas.
 
 ## Arquitetura publicada
+
+### Publicação pelo GitHub Actions — 20/10/2026
+
+- A integração Git do Cloudflare Pages parou de publicar depois que o repositório foi transferido de `LeoRangel22` para a organização `Embaixada-Carioca`: o projeto continua ligado ao dono antigo ("internal issue with your Cloudflare Workers & Pages Git installation"). A produção ficou no commit `0a6764f` de 05/10/2026 até 20/10/2026.
+- Desde 20/10/2026, cada push no `master` roda `.github/workflows/cloudflare-pages-deploy.yml`: build (`scripts/build_cloudflare_pages.py`), teste do roteador e `wrangler pages deploy` no projeto `embaixada-carioca`, com o mesmo domínio. O token fica no secret `CLOUDFLARE_API_TOKEN` (permissão Cloudflare Pages: Edit) e é validado antes do deploy.
+- O app "Cloudflare Workers and Pages" foi instalado na organização, só neste repositório. O aviso da integração Git continua no painel do Cloudflare e não afeta o deploy pelo Actions.
+- O workflow "Verify live site" não detectou a produção desatualizada; conferir o deploy pelo resultado do workflow de publicação.
 
 ### Lote de design interno — 09/09/2026
 
@@ -38,7 +45,7 @@ Ver relatório do lote em `_audit_reports/home_visit_experience_2026-09-08.md`.
 | Projeto Pages | `embaixada-carioca.pages.dev` |
 | Plano Cloudflare | Free — suficiente para o uso atual |
 | DNS de `www` | CNAME para o projeto Cloudflare Pages |
-| Fonte de produção | GitHub, branch `master` |
+| Fonte de produção | GitHub, branch `master`, publicado pelo workflow `Cloudflare Pages deploy` (`.github/workflows/cloudflare-pages-deploy.yml`, secret `CLOUDFLARE_API_TOKEN`) |
 | GitHub Pages | publicação secundária mantida; não é o destino canônico do DNS |
 
 ## Rede, redirecionamentos e segurança
