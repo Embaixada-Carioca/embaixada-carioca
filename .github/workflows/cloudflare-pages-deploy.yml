@@ -27,14 +27,30 @@ jobs:
     runs-on: ubuntu-latest
     env:
       CLOUDFLARE_ACCOUNT_ID: 834b3bc751aec01030073d384b0c579e
-      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
     steps:
       - name: Check token
+        env:
+          RAW_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
-          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+          if [ -z "$RAW_TOKEN" ]; then
             echo "::error::Secret CLOUDFLARE_API_TOKEN ausente. Crie um token com permissão Cloudflare Pages: Edit e cadastre em Settings > Secrets and variables > Actions."
             exit 1
           fi
+          # Tokens do Cloudflare não têm espaços nem quebras de linha: usa a primeira
+          # linha não vazia, sem espaços nas pontas (cobre colagens com sobras).
+          lines=$(printf '%s\n' "$RAW_TOKEN" | grep -c '[^[:space:]]' || true)
+          TOKEN=$(printf '%s\n' "$RAW_TOKEN" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' | grep -m1 .)
+          echo "::add-mask::$TOKEN"
+          if [ "$lines" -gt 1 ]; then
+            echo "::warning::O secret CLOUDFLARE_API_TOKEN tem $lines linhas; usando só a primeira. Recadastre só o token para evitar dúvida."
+          fi
+          status=$(curl -s -o /tmp/verify.json -w '%{http_code}' -H "Authorization: Bearer $TOKEN" https://api.cloudflare.com/client/v4/user/tokens/verify)
+          if [ "$status" != "200" ] || ! grep -q '"status":"active"' /tmp/verify.json; then
+            echo "::error::O Cloudflare não aceitou o token (HTTP $status). Recrie o token (Cloudflare Pages: Edit) e recadastre o secret só com ele."
+            exit 1
+          fi
+          echo "CLOUDFLARE_API_TOKEN=$TOKEN" >> "$GITHUB_ENV"
+          echo "Token aceito pelo Cloudflare."
 
       - uses: actions/checkout@v4
 
