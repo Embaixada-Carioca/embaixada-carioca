@@ -21,6 +21,16 @@ Este é o documento de referência para o estado operacional atual. Relatórios 
 - Fatos padronizados: nota 4,8 no Google sem número de avaliações; "único restaurante do Parque Bondinho com vista direta para o Pão de Açúcar"; café da manhã à la carte; a reserva não inclui o ingresso do Bondinho.
 - Relatório: `_audit_reports/nivel_a_2026-10-20.md`.
 
+### A+ — 20/10/2026 (noite)
+
+- 17/17 checagens. O formulário de eventos (LeoRangel22/main, PR #62) agora tem contraste AA e um aviso curto de privacidade com link; a política ganhou a seção "Formulário de eventos".
+- Markdown para agentes de IA: `/pagina.md` e `Accept: text/markdown` (gerado por `scripts/build_markdown.py` no build e servido pela Function). Browsers continuam recebendo HTML.
+- robots.txt com `Content-Signal: search=yes, ai-input=yes, ai-train=no`.
+- Autoria: Embaixada Carioca (meta author, author/publisher no JSON-LD, endereço no rodapé).
+- Imagens de 800 px para celular: rode `scripts/make_responsive_images.py` ao adicionar fotos.
+- Chope: "2º lugar no Heineken Masters 2025", com link da Heineken.
+- Sem `datePublished`: o histórico do repositório começa em 14/05/2026 e não há data real de publicação mais antiga.
+
 ### Design 2026 em todas as páginas — 20/10/2026
 
 - As 70 páginas internas (PT/EN/ES, mais 404, offline e política de privacidade) passam a ser geradas por `scripts/build_pages_2026.py` a partir de `content/pages/<caminho>.html`: um bloco `<!--page {JSON} -->` com metadados, hero, fatos e FAQ, seguido do HTML das seções. Com a home e os 3 guias de visita, são 74 páginas no design 2026. Fica de fora só `formulario.html`, que redireciona para o formulário de eventos.
