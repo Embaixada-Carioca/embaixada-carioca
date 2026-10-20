@@ -400,7 +400,11 @@ def render(rel: str) -> str:
 def generated_core(text: str) -> str:
     """Trecho gerado por este script, sem o que os outros geradores acrescentam."""
     a, b = text.find(GEN_START), text.find(GEN_END)
-    return text[a:b] if a >= 0 and b > a else ""
+    body = text[a:b] if a >= 0 and b > a else ""
+    head = [m.group(0) for pat in (r"<title>.*?</title>", r'<meta name="description" content="[^"]*">',
+                                   r'<link rel="canonical" href="[^"]*">')
+            for m in [re.search(pat, text, re.S)] if m]
+    return "\n".join(head) + body
 
 
 def merge_existing(rel: str, fresh: str) -> str:
