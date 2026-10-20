@@ -9,6 +9,10 @@ on:
       - 'es/llms.txt'
       - 'functions/**'
       - 'scripts/apply_growth_p1_p2.py'
+      - 'scripts/build_pages_2026.py'
+      - 'scripts/stamp_page_dates.py'
+      - 'content/pages/**'
+      - 'assets/css/ec-pages-2026.css'
       - 'scripts/refresh_menu_highlights.py'
       - 'scripts/test_growth_router.mjs'
       - 'data/seo-intents.json'
@@ -28,6 +32,8 @@ jobs:
         with:
           node-version: '22'
       - run: python3 scripts/apply_growth_p1_p2.py --check
+      - run: python3 scripts/build_pages_2026.py --check
+      - run: python3 scripts/stamp_page_dates.py --check
       - run: node scripts/test_growth_router.mjs
       - run: python3 scripts/schema_jsonld_duplicate_key_guard.py --check
       - run: python3 scripts/schema_rating_guard.py --check

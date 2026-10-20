@@ -1,64 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<!-- EC Analytics Foundation v2 -->
-<script id="ec-ga4-base">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  window.ecLoadGA4 = window.ecLoadGA4 || function(){
-    if (window.ecGA4Loaded) return;
-    window.ecGA4Loaded = true;
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-9GRXVZ55CB';
-    document.head.appendChild(s);
-    gtag('js', new Date());
-    gtag('config', 'G-9GRXVZ55CB', { send_page_view: true });
-  };
-  (function(){
-    var load = window.ecLoadGA4;
-    var idle = function(){
-      if ('requestIdleCallback' in window) requestIdleCallback(load, { timeout: 2600 });
-      else setTimeout(load, 1800);
-    };
-    ['pointerdown','keydown','touchstart','scroll'].forEach(function(evt){
-      window.addEventListener(evt, load, { once:true, passive:true });
-    });
-    if (document.readyState === 'complete') idle();
-    else window.addEventListener('load', idle, { once:true });
-  })();
-</script>
-<!-- /EC Analytics Foundation v2 -->
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
-<title>Reseñas de Embaixada Carioca | Restaurante en Morro da Urca</title>
-<meta content="Vea lo que los visitantes destacan sobre Embaixada Carioca en Morro da Urca: vista, desayuno, almuerzo brasileño, feijoada, caipirinhas y reservas." name="description"/>
-<link href="https://www.embaixadacarioca.com/es/resenas-embaixada-carioca.html" rel="canonical"/>
-<link href="https://www.embaixadacarioca.com/avaliacoes-embaixada-carioca.html" hreflang="pt-BR" rel="alternate"/>
-<link href="https://www.embaixadacarioca.com/en/reviews-embaixada-carioca.html" hreflang="en" rel="alternate"/>
-<link href="https://www.embaixadacarioca.com/es/resenas-embaixada-carioca.html" hreflang="es" rel="alternate"/>
-<link href="https://www.embaixadacarioca.com/avaliacoes-embaixada-carioca.html" hreflang="x-default" rel="alternate"/>
-<meta content="website" property="og:type"/>
-<meta content="Reseñas de Embaixada Carioca | Restaurante en Morro da Urca" property="og:title"/>
-<meta content="Lo que los clientes destacan sobre Embaixada Carioca: vista al Pan de Azúcar, comida brasileña, desayuno, feijoada y caipirinhas." property="og:description"/>
-<meta content="https://www.embaixadacarioca.com/es/resenas-embaixada-carioca.html" property="og:url"/>
-<meta content="https://www.embaixadacarioca.com/assets/hero.jpg" property="og:image"/>
-<link href="/assets/fonts/fonts.css" rel="stylesheet"/>
-<link href="/assets/css/ec-shared.css" rel="stylesheet"/>
-<style>
-:root{--azul1:#00405a;--verde:#335d4a;--amarelo:#f59b1e;--areia:#ede2c9;--paper:#f6efde;--ink:#00405a;--muted:#485156;}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Catamaran,Verdana,system-ui,sans-serif;line-height:1.65}.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}.hero{padding:120px 0 72px;background:linear-gradient(135deg,rgba(0,64,90,.94),rgba(51,93,74,.90)),url('/assets/hero.webp') center/cover;color:var(--areia)}.eyebrow{font-family:'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--amarelo);font-weight:800}.hero h1{font-size:clamp(42px,7vw,84px);line-height:.96;margin:18px 0 20px;letter-spacing:-.04em}.hero p{max-width:760px;font-size:clamp(18px,2.2vw,23px);color:rgba(246,239,222,.92)}main{padding:72px 0}.answer{background:#fffaf0;border:1px solid rgba(0,64,90,.12);border-radius:24px;padding:32px;box-shadow:0 18px 45px rgba(0,32,46,.08);margin-bottom:32px}.answer h2{font-size:clamp(28px,4vw,44px);line-height:1.05;margin:0 0 14px;color:var(--verde)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:26px}.card{background:#fff;border:1px solid rgba(0,64,90,.12);border-radius:18px;padding:22px}.card strong{display:block;color:var(--verde);font-size:20px;margin-bottom:8px}.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:999px;background:var(--amarelo);color:var(--azul1);font-weight:900;text-decoration:none;text-transform:uppercase;letter-spacing:.08em;font-size:13px}.btn.ghost{background:transparent;border:1px solid rgba(0,64,90,.25)}.note{font-size:14px;color:var(--muted);margin-top:18px}@media(max-width:760px){.grid{grid-template-columns:1fr}.hero{padding-top:92px}.answer{padding:24px}}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reseñas de Embaixada Carioca | Restaurante en el Morro da Urca</title>
+<meta name="description" content="Lo que destacan los visitantes de Embaixada Carioca en el Morro da Urca: la vista, el desayuno, el almuerzo brasileño, la feijoada y las caipiriñas. Nota 4,8 en Google.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="theme-color" content="#00384d">
+<link rel="canonical" href="https://www.embaixadacarioca.com/es/resenas-embaixada-carioca.html">
+<link rel="alternate" hreflang="pt-BR" href="https://www.embaixadacarioca.com/avaliacoes-embaixada-carioca.html"><link rel="alternate" hreflang="en" href="https://www.embaixadacarioca.com/en/reviews-embaixada-carioca.html"><link rel="alternate" hreflang="es" href="https://www.embaixadacarioca.com/es/resenas-embaixada-carioca.html"><link rel="alternate" hreflang="x-default" href="https://www.embaixadacarioca.com/avaliacoes-embaixada-carioca.html">
+<meta property="og:type" content="website"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="Embaixada Carioca">
+<meta property="og:url" content="https://www.embaixadacarioca.com/es/resenas-embaixada-carioca.html"><meta property="og:title" content="Reseñas de Embaixada Carioca | Restaurante en el Morro da Urca"><meta property="og:description" content="Lo que destacan los visitantes de Embaixada Carioca en el Morro da Urca: la vista, el desayuno, el almuerzo brasileño, la feijoada y las caipiriñas. Nota 4,8 en Google."><meta property="og:image" content="https://www.embaixadacarioca.com/assets/terraco-movimento-entardecer.jpg">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Reseñas de Embaixada Carioca | Restaurante en el Morro da Urca"><meta name="twitter:description" content="Lo que destacan los visitantes de Embaixada Carioca en el Morro da Urca: la vista, el desayuno, el almuerzo brasileño, la feijoada y las caipiriñas. Nota 4,8 en Google."><meta name="twitter:image" content="https://www.embaixadacarioca.com/assets/terraco-movimento-entardecer.jpg">
+<link rel="icon" href="/assets/icon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/assets/icon-180.png" sizes="180x180">
+<link rel="preconnect" href="https://go.tagme.com.br"><link rel="dns-prefetch" href="//bondinho.com.br">
+<link rel="preload" href="/assets/fonts/fonts.css" as="style"><link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="preload" as="image" href="/assets/terraco-movimento-entardecer.webp" fetchpriority="high">
+<link rel="stylesheet" href="/assets/css/ec-home-2026.css?v=20261020b"><link rel="stylesheet" href="/assets/css/ec-pages-2026.css?v=20261020b"><link rel="stylesheet" href="/assets/css/ec-growth-links.css"/>
+<script id="ec-ga4-base">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.ecLoadGA4=window.ecLoadGA4||function(){if(window.ecGA4Loaded)return;window.ecGA4Loaded=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-9GRXVZ55CB';document.head.appendChild(s);gtag('js',new Date());gtag('config','G-9GRXVZ55CB',{send_page_view:true})};(function(){var l=window.ecLoadGA4;['pointerdown','keydown','touchstart','scroll'].forEach(function(e){window.addEventListener(e,l,{once:true,passive:true})});window.addEventListener('load',function(){'requestIdleCallback'in window?requestIdleCallback(l,{timeout:2200}):setTimeout(l,1400)},{once:true})})();</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Restaurant",
+      "@id": "https://www.embaixadacarioca.com/#restaurant",
+      "name": "Embaixada Carioca",
+      "description": "Restaurante de cocina brasileña en el Morro da Urca, dentro del Parque Bondinho Pão de Açúcar, con desayuno, almuerzo y bebidas con vista.",
+      "url": "https://www.embaixadacarioca.com/",
+      "logo": "https://www.embaixadacarioca.com/assets/logo-azul.svg",
+      "image": [
+        "https://www.embaixadacarioca.com/assets/hero.webp",
+        "https://www.embaixadacarioca.com/assets/cafe-manha-pao-acucar-frente.webp",
+        "https://www.embaixadacarioca.com/assets/feijoada-completa-acompanhamentos.jpg"
+      ],
+      "telephone": "+55 21 96683-7556",
+      "email": "eventos@embaixadacarioca.com.br",
+      "priceRange": "$$$",
+      "servesCuisine": [
+        "Brasileira",
+        "Carioca",
+        "Café da manhã"
+      ],
+      "acceptsReservations": true,
+      "hasMenu": {
+        "@id": "https://www.embaixadacarioca.com/#menu"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "08:30",
+          "closes": "21:00"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Parque Bondinho Pão de Açúcar, Morro da Urca — acesso pela Av. Pasteur, 520",
+        "addressLocality": "Rio de Janeiro",
+        "addressRegion": "RJ",
+        "postalCode": "22290-240",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -22.9508333,
+        "longitude": -43.1641667
+      },
+      "containedInPlace": {
+        "@type": "TouristAttraction",
+        "name": "Parque Bondinho Pão de Açúcar",
+        "url": "https://bondinho.com.br/"
+      },
+      "sameAs": [
+        "https://www.instagram.com/embaixadacarioca/",
+        "https://www.facebook.com/embaixadacarioca/"
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Rio de Janeiro"
+      },
+      "currenciesAccepted": "BRL",
+      "paymentAccepted": "Dinheiro, cartão de crédito, cartão de débito e Pix",
+      "knowsLanguage": [
+        "pt-BR",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.embaixadacarioca.com/#website",
+      "url": "https://www.embaixadacarioca.com/",
+      "name": "Embaixada Carioca",
+      "inLanguage": "es",
+      "publisher": {
+        "@id": "https://www.embaixadacarioca.com/#restaurant"
+      }
+    },
+    {
       "@type": "WebPage",
       "@id": "https://www.embaixadacarioca.com/es/resenas-embaixada-carioca.html#webpage",
       "url": "https://www.embaixadacarioca.com/es/resenas-embaixada-carioca.html",
-      "name": "Reseñas de Embaixada Carioca | Restaurante en Morro da Urca",
-      "description": "Resumen editorial de lo que los visitantes destacan sobre Embaixada Carioca en Morro da Urca.",
+      "name": "Reseñas de Embaixada Carioca | Restaurante en el Morro da Urca",
+      "description": "Lo que destacan los visitantes de Embaixada Carioca en el Morro da Urca: la vista, el desayuno, el almuerzo brasileño, la feijoada y las caipiriñas. Nota 4,8 en Google.",
       "inLanguage": "es",
       "isPartOf": {
         "@id": "https://www.embaixadacarioca.com/#website"
@@ -69,6 +122,15 @@
       "breadcrumb": {
         "@id": "https://www.embaixadacarioca.com/es/resenas-embaixada-carioca.html#breadcrumb"
       },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          ".visit-hero-copy",
+          ".direct-answer"
+        ]
+      },
+      "primaryImageOfPage": "https://www.embaixadacarioca.com/assets/terraco-movimento-entardecer.jpg",
       "dateModified": "2026-10-20"
     },
     {
@@ -90,113 +152,92 @@
       ]
     },
     {
-      "@type": "Restaurant",
-      "@id": "https://www.embaixadacarioca.com/#restaurant",
-      "name": "Embaixada Carioca",
-      "url": "https://www.embaixadacarioca.com/",
-      "image": "https://www.embaixadacarioca.com/assets/hero.jpg",
-      "telephone": "+55 21 96683-7556",
-      "servesCuisine": [
-        "Brasileña",
-        "Carioca",
-        "Desayuno",
-        "Almuerzo"
-      ],
-      "priceRange": "$$$",
-      "openingHoursSpecification": [
+      "@type": "FAQPage",
+      "@id": "https://www.embaixadacarioca.com/es/resenas-embaixada-carioca.html#faq",
+      "isPartOf": {
+        "@id": "https://www.embaixadacarioca.com/es/resenas-embaixada-carioca.html#webpage"
+      },
+      "mainEntity": [
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
-          ],
-          "opens": "08:30",
-          "closes": "21:00"
+          "@type": "Question",
+          "name": "¿Qué nota tiene Embaixada Carioca en Google?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "4,8. Las reseñas completas y actualizadas están en Google Maps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo dejo una reseña?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Con el enlace Opinar en Google. Los comentarios ayudan al equipo y a otros visitantes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Esta página reproduce reseñas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Resume, de forma editorial, los temas que más citan los visitantes. Para leer las reseñas individuales, consulta Google."
+          }
         }
       ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Av. Pasteur, 520 - Urca",
-        "addressLocality": "Rio de Janeiro",
-        "addressRegion": "RJ",
-        "postalCode": "22290-240",
-        "addressCountry": "BR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -22.9508333,
-        "longitude": -43.1641667
-      }
+      "dateModified": "2026-10-20"
     }
   ]
 }
 </script>
-<link href="/assets/css/ec-visual-alerts-closeout.css?v=20260823" rel="stylesheet"/>
 </head>
-<body class="ec-aaa-visual-page ec-reviews-page">
-<a class="ec-skip-link" href="#contenido-principal">Saltar al contenido principal</a>
-<nav aria-label="Navegación principal" class="top ec-aaa-top">
-<div class="nav ec-aaa-nav">
-<a class="brand" href="/es/"><img alt="Embaixada Carioca" decoding="async" fetchpriority="high" src="/assets/logo-areia.svg"/><span>Embaixada<br/>Carioca.</span></a>
-<div class="links"><a href="/es/cafe-da-manha.html">Desayuno</a><a href="/es/almoco.html">Almuerzo</a><a href="/es/como-llegar.html">Cómo Llegar</a><a href="/es/eventos.html">Eventos</a><a href="/es/cardapio.html">Menú</a></div>
-<a class="ec-nav-rating" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank">Google Reviews · 4.8★<small>ver reseñas</small></a>
-<details class="ec-lang-switcher">
-<summary aria-label="Language"><span class="lang-current">ES</span></summary>
-<div class="ec-lang-menu"><a href="/avaliacoes-embaixada-carioca.html">Português</a><a href="/en/reviews-embaixada-carioca.html">English</a><a href="/es/resenas-embaixada-carioca.html">Español</a></div>
-</details>
-<a class="btn ec-nav-cta" href="https://go.tagme.com.br/embaixadacarioca">Reservar</a>
-</div>
-</nav>
-<header class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Reseñas · Morro da Urca · Parque Bondinho Pan de Azúcar</div>
-    <h1>Lo que los visitantes dicen sobre Embaixada Carioca.</h1>
-    <p>Los comentarios de los clientes suelen destacar la vista al Pan de Azúcar, el almuerzo brasileño, la feijoada premiada servida en colaboración con Academia da Cachaça, el desayuno en el parque y la atención carioca.</p>
-  </div>
-</header>
+<body class="page-2026">
+<a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+<nav class="topbar" id="topbar" aria-label="Navegación principal"><div class="shell nav-shell"><a class="brand" href="/es/" aria-label="Embaixada Carioca — inicio"><img src="/assets/logo-areia.svg" width="58" height="58" alt="Embaixada Carioca"></a><button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-links"><span class="sr-only">Abrir menú</span><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button><div class="nav-links" id="primary-links"><a href="/es/cafe-da-manha.html" data-intent="cafe_da_manha" data-position="nav">Desayuno</a><a href="/es/almoco.html" data-intent="almoco" data-position="nav">Almuerzo</a><a href="/es/cardapio.html" data-intent="cardapio" data-position="nav">Menú</a><a href="/es/eventos.html" data-intent="eventos" data-position="nav">Eventos</a><a href="/es/como-llegar.html" data-intent="como_chegar" data-position="nav">Cómo llegar</a></div><div class="nav-actions"><div class="language-links" aria-label="Idiomas"><a href="/avaliacoes-embaixada-carioca.html" lang="pt-BR" hreflang="pt-BR">PT</a><a href="/en/reviews-embaixada-carioca.html" lang="en" hreflang="en">EN</a><a href="/es/resenas-embaixada-carioca.html" lang="es" aria-current="page">ES</a></div><a class="button button-small" href="https://go.tagme.com.br/embaixadacarioca" target="_blank" rel="noopener" data-intent="reserva" data-position="nav">Reservar</a></div></div></nav>
 <main id="contenido-principal">
-  <div class="wrap">
-    <section class="answer" id="answer-resenas-es">
-      <h2>¿Por qué los turistas eligen Embaixada Carioca?</h2>
-      <p>Embaixada Carioca está en Morro da Urca, dentro del Parque Bondinho Pão de Açúcar. Es una parada práctica para desayuno, almuerzo, caipirinhas y aperitivos durante el paseo, con vista directa al Pan de Azúcar.</p>
-      <div class="grid" aria-label="Temas frecuentes en las reseñas de visitantes">
-        <article class="card"><strong>Vista</strong><p>Los visitantes mencionan la vista panorámica y la ubicación singular dentro del parque.</p></article>
-        <article class="card"><strong>Comida brasileña</strong><p>Picanha, feijoada, aperitivos y caipirinhas son los pedidos más recordados por los clientes.</p></article>
-        <article class="card"><strong>Conveniencia</strong><p>El restaurante permite comer bien sin salir de la experiencia de Morro da Urca.</p></article>
-      </div>
-      <p class="note">Esta página resume reseñas de forma editorial. Las reseñas individuales no están marcadas con datos estructurados Review, evitando errores de snippets de reseñas en Search Console.</p>
-      <div class="cta">
-        <a class="btn" href="https://go.tagme.com.br/embaixadacarioca" rel="noopener">Reservar mesa</a>
-        <a class="btn ghost" href="/es/cardapio.html">Ver menú</a>
-        <a class="btn ghost" href="https://g.page/r/CU-tJiJIjBUcEAE/review" rel="noopener" target="_blank">Deja tu reseña en Google</a>
-      </div>
-      <p class="note"><strong>Embaixada Carioca</strong> · Av. Pasteur, 520 - Urca · Río de Janeiro - RJ · 22290-240 · <a href="tel:+5521966837556">+55 21 96683-7556</a></p>
-    </section>
+<!-- page-2026:start -->
+<header class="visit-hero page-hero-compact"><picture class="visit-hero-media"><source type="image/webp" srcset="/assets/terraco-movimento-entardecer.webp"><img src="/assets/terraco-movimento-entardecer.jpg" width="1280" height="720" alt="Visitantes en las mesas de la terraza de Embaixada Carioca" fetchpriority="high"></picture><div class="visit-hero-shade" aria-hidden="true"></div><div class="shell visit-hero-content"><nav class="visit-breadcrumbs" aria-label="Ruta de navegación"><ol><li><a href="/es/">Inicio</a></li><li aria-current="page">Reseñas</li></ol></nav><p class="eyebrow">Nota 4,8 en Google</p><h1>Lo que dicen los visitantes de Embaixada Carioca</h1><p class="visit-hero-copy">Los comentarios suelen destacar la vista al Pan de Azúcar, el almuerzo brasileño, la feijoada de Academia da Cachaça, el desayuno en el parque y la atención carioca.</p><div class="visit-hero-actions"><a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=Embaixada+Carioca+Morro+da+Urca" target="_blank" rel="noopener" data-intent="mapa" data-position="hero">Ver reseñas en Google</a><a class="button button-outline" href="https://g.page/r/CU-tJiJIjBUcEAE/review" target="_blank" rel="noopener" data-intent="avaliar" data-position="hero">Opinar en Google</a></div></div></header>
+<section class="decision-strip" aria-label="Resumen"><div class="shell decision-grid"><div><strong>Google</strong><span>Nota 4,8</span></div><div><strong>Lo más citado</strong><span>La vista al Pan de Azúcar</span></div><div><strong>Pedidos</strong><span>Picanha, feijoada, picoteo y caipiriñas</span></div><div><strong>Desde</strong><span>2010, en el Morro da Urca</span></div></div></section>
+<section class="visit-section is-sand" id="resposta-direta" aria-labelledby="direct-title">
+ <div class="shell direct-grid">
+  <div><p class="eyebrow eyebrow-dark">Respuesta directa</p><h2 id="direct-title">¿Por qué los visitantes eligen Embaixada Carioca?</h2></div>
+  <div class="direct-answer">
+   <p><strong>Por la vista directa al Pan de Azúcar, la ubicación dentro del Parque Bondinho y la cocina brasileña.</strong> La casa tiene una nota de 4,8 en Google.</p>
+   <p>Es una parada práctica para desayunar, almorzar o tomar caipiriñas y picoteo durante el paseo, sin salir del Morro da Urca.</p>
   </div>
+ </div>
+</section>
+
+<section class="visit-section is-paper" aria-labelledby="temas-title">
+ <div class="shell">
+  <div class="section-intro"><p class="eyebrow eyebrow-dark">Temas</p><h2 id="temas-title">Lo que más aparece en los comentarios</h2></div>
+  <div class="card-grid">
+   <article class="info-card"><h3>La vista</h3><p>Los visitantes mencionan la vista panorámica y la ubicación poco común dentro del parque.</p></article>
+   <article class="info-card"><h3>La comida</h3><p>Picanha, feijoada, picoteo y caipiriñas son los pedidos más recordados.</p><a href="/es/cardapio.html" data-intent="cardapio" data-position="themes">Menú →</a></article>
+   <article class="info-card"><h3>La practicidad</h3><p>Comer bien sin salir del Morro da Urca, entre un tramo y otro del teleférico.</p><a href="/es/planifica-tu-visita.html" data-intent="planejar_visita" data-position="themes">Planifica tu visita →</a></article>
+  </div>
+  <p class="note">Esta página resume las reseñas de forma editorial. Las reseñas individuales no se reproducen aquí ni se marcan con datos estructurados de Review.</p>
+ </div>
+</section>
+<section class="visit-section is-paper" id="perguntas" aria-labelledby="faq-title"><div class="shell hub-faq"><div><p class="eyebrow eyebrow-dark">Preguntas frecuentes</p><h2 id="faq-title">Dudas sobre las reseñas</h2></div><div class="faq-list"><details><summary>¿Qué nota tiene Embaixada Carioca en Google?</summary><p>4,8. Las reseñas completas y actualizadas están en <a href="https://www.google.com/maps/search/?api=1&amp;query=Embaixada+Carioca+Morro+da+Urca">Google Maps</a>.</p></details><details><summary>¿Cómo dejo una reseña?</summary><p>Con el enlace <a href="https://g.page/r/CU-tJiJIjBUcEAE/review">Opinar en Google</a>. Los comentarios ayudan al equipo y a otros visitantes.</p></details><details><summary>¿Esta página reproduce reseñas?</summary><p>No. Resume, de forma editorial, los temas que más citan los visitantes. Para leer las reseñas individuales, consulta Google.</p></details></div></div></section>
+<!-- page-2026:end -->
 <p class="ec-updated" style="max-width:1100px;margin:28px auto 8px;padding:0 20px;font-size:13px;line-height:1.5;text-align:center">Actualizado el <time datetime="2026-10-20">20 de octubre de 2026</time> · Embaixada Carioca</p>
 </main>
-<!-- EC Real Visual Alerts Closeout -->
-<style id="ec-visual-readability-reality-fix">
-/* EC AAA Closeout Design Lock — final, scoped contrast layer. */
-:root{--ec-vr-blue:#00405a;--ec-vr-green:#335d4a;--ec-vr-yellow:#f59b1e;--ec-vr-paper:#f6efde;--ec-vr-gray:#485156;}
-html body.ec-aaa-visual-page main *{-webkit-text-fill-color:currentColor!important;}
-html body.ec-aaa-visual-page{font-family:Catamaran,Verdana,system-ui,sans-serif!important;}
-html body.ec-aaa-visual-page main :is(.card,.answer,.ficha,.format,.qa,.menu-item,.gallery figure,details){color:var(--ec-vr-gray)!important;}
-html body.ec-aaa-visual-page main :is(.card,.answer,.ficha,.format,.qa,.menu-item,.gallery figure,details) :is(h1,h2,h3,h4,strong,summary){color:var(--ec-vr-blue)!important;}
-html body.ec-aaa-visual-page main :is(.dark,.contact) :is(p,li,span,small,.lede){color:rgba(246,239,222,.90)!important;}
-html body.ec-aaa-visual-page main :is(.light-section,.paper-section,.section-paper,.bg-paper,.gallery-section,.ec-lunch-gallery) :is(p,li,span,small,figcaption){color:var(--ec-vr-gray)!important;}
-html body.ec-aaa-visual-page main #ec-lunch-light-content{background:var(--ec-vr-paper)!important;color:var(--ec-vr-gray)!important;}
-html body.ec-aaa-visual-page main #ec-lunch-light-content :is(h1,h2,h3,h4,h5,h6){color:var(--ec-vr-blue)!important;-webkit-text-fill-color:var(--ec-vr-blue)!important;}
-html body.ec-aaa-visual-page main #ec-lunch-light-content :is(p,li,span,small,strong){color:var(--ec-vr-gray)!important;-webkit-text-fill-color:var(--ec-vr-gray)!important;}
-html body.ec-aaa-visual-page main a.btn[href*="tagme"],html body.ec-aaa-visual-page main a.btn[href*="reserv"],html body.ec-aaa-visual-page nav.top a.ec-nav-cta{background:var(--ec-vr-yellow)!important;border-color:var(--ec-vr-yellow)!important;color:var(--ec-vr-blue)!important;}
-</style>
-<!-- /EC Real Visual Alerts Closeout -->
-<script defer src="/assets/conversion-tracking.js"></script>
+<footer class="footer"><div class="shell footer-grid"><div class="footer-brand"><img src="/assets/logo-areia.svg" width="72" height="72" loading="lazy" alt="Embaixada Carioca"><p>Restaurante en el Morro da Urca, dentro del Parque Bondinho Pão de Açúcar, en Río de Janeiro.</p></div><div><h2>Planifica</h2><a href="/es/planifica-tu-visita.html">Guía de la visita</a><a href="/es/como-llegar.html">Cómo llegar</a><a href="/es/cardapio.html">Menú</a><a href="https://go.tagme.com.br/embaixadacarioca" target="_blank" rel="noopener">Reservas</a></div><div><h2>Experiencias</h2><a href="/es/cafe-da-manha.html">Desayuno</a><a href="/es/almoco.html">Almuerzo</a><a href="/es/feijoada.html">Feijoada</a><a href="/es/atardecer.html">Atardecer</a><a href="/es/eventos.html">Eventos</a></div><div><h2>Contacto</h2><a href="https://wa.me/5521966837556" target="_blank" rel="noopener">+55 21 96683-7556</a><a href="mailto:eventos@embaixadacarioca.com.br">eventos@embaixadacarioca.com.br</a><a href="https://www.instagram.com/embaixadacarioca/" target="_blank" rel="noopener">Instagram</a><a href="/es/contato.html">Contacto</a></div></div><div class="shell footer-bottom"><span>© 2026 Embaixada Carioca</span><a href="/politica-de-privacidade.html">Política de privacidad</a></div></footer>
+<nav class="mobile-actions" aria-label="Acciones rápidas"><a href="/es/cardapio.html" data-intent="cardapio" data-position="mobile_bar">Menú</a><a href="/es/como-llegar.html" data-intent="como_chegar" data-position="mobile_bar">Cómo llegar</a><a class="mobile-reserve" href="https://go.tagme.com.br/embaixadacarioca" target="_blank" rel="noopener" data-intent="reserva" data-position="mobile_bar">Reservar</a></nav>
+<script>
+(function(){
+  var topbar = document.getElementById('topbar');
+  var toggle = document.getElementById('menu-toggle');
+  var links = document.getElementById('primary-links');
+  function closeMenu(){ toggle.setAttribute('aria-expanded', 'false'); links.classList.remove('is-open'); }
+  toggle.addEventListener('click', function(){ var open = toggle.getAttribute('aria-expanded') === 'true'; toggle.setAttribute('aria-expanded', String(!open)); links.classList.toggle('is-open', !open); });
+  links.addEventListener('click', function(event){ if (event.target.closest('a')) closeMenu(); });
+  document.addEventListener('keydown', function(event){ if (event.key === 'Escape') closeMenu(); });
+  function onScroll(){ topbar.classList.toggle('is-scrolled', window.scrollY > 24); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+})();
+</script>
+<script src="/assets/conversion-tracking.js?v=20261005p2" defer></script><script src="/assets/web-vitals-tracking.js?v=20261005p2" defer></script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});},{once:true});}</script>
 <script defer src="/assets/js/ec-a11y-guard.js?v=20261020"></script>
 </body>
 </html>

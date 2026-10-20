@@ -32,7 +32,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content" / "pages"
 SITE = "https://www.embaixadacarioca.com"
-CSS_VERSION = "20261020"
+CSS_VERSION = "20261020b"
 TAGME = "https://go.tagme.com.br/embaixadacarioca"
 WHATSAPP = "https://wa.me/5521966837556"
 
@@ -206,6 +206,12 @@ def schema(meta: dict, rel: str, lang: str) -> list:
             "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".visit-hero-copy", ".direct-answer"]}}
     if meta["hero"].get("image"):
         page["primaryImageOfPage"] = url_of(meta["hero"]["image"]["src"])
+    # Mantém a data gravada por stamp_page_dates.py ao regenerar a página.
+    existing = ROOT / rel
+    if existing.exists():
+        m = re.search(r'"dateModified":\s*"([^"]+)"', existing.read_text(encoding="utf-8"))
+        if m:
+            page["dateModified"] = m.group(1)
     graph = [restaurant_node(lang),
              {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/", "name": "Embaixada Carioca",
               "inLanguage": L["html"], "publisher": {"@id": SITE + "/#restaurant"}},
@@ -326,7 +332,7 @@ def render_hero(meta: dict, lang: str) -> str:
     if h.get("image"):
         media = picture(h["image"], eager=True, cls="visit-hero-media") + '<div class="visit-hero-shade" aria-hidden="true"></div>'
     eyebrow = f'<p class="eyebrow">{esc(h["eyebrow"])}</p>' if h.get("eyebrow") else ""
-    return (f'<header class="visit-hero{" page-hero-compact" if h.get("compact") else ""}">{media}<div class="shell visit-hero-content">'
+    return (f'<header class="visit-hero{" page-hero-compact" if h.get("compact") else ""}{"" if h.get("image") else " no-media"}">{media}<div class="shell visit-hero-content">'
             f'{crumb_html}{eyebrow}<h1>{esc(h["h1"])}</h1><p class="visit-hero-copy">{h["lead"]}</p>'
             f'<div class="visit-hero-actions">{"".join(actions)}</div></div></header>')
 
