@@ -9,6 +9,7 @@
 - The restaurant is on Urca Hill, not at the summit of Sugarloaf Mountain.
 - Restaurant reservations do not include the park ticket. A ticket is required to ride the cable car, continue to Sugarloaf Mountain or ride down. Via the Urca Hill trail, when open, you can arrive without a cable car ticket.
 - The feijoada served is Academia da Cachaça's, winner of Best Feijoada at Veja Rio Comer & Beber 2025/2026. Embaixada Carioca serves it through a formal partnership; the award belongs to Academia da Cachaça.
+- Heineken draft beer: Embaixada Carioca placed 2nd in Heineken Masters 2025 (Star Quality), a Grupo HEINEKEN program that evaluates draft beer service at bars and restaurants across Brazil.
 - Rated 4.8 on Google.
 - Main park entrance: Av. Pasteur, 520, Urca, Rio de Janeiro. WhatsApp: +55 21 96683-7556.
 - Park prices, availability and cable car hours change: the park's official channels are the reference.

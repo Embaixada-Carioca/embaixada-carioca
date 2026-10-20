@@ -9,6 +9,7 @@
 - El restaurante está en el Morro da Urca, no en la cima del Pan de Azúcar.
 - La reserva del restaurante no incluye la entrada del Parque Bondinho. Se necesita entrada para usar el teleférico, seguir al Pan de Azúcar o bajar en teleférico. Por el sendero del Morro da Urca, cuando está abierto, se puede llegar sin entrada del teleférico.
 - La feijoada servida es la de Academia da Cachaça, ganadora de Mejor Feijoada en Veja Rio Comer & Beber 2025/2026. Embaixada Carioca la sirve mediante una colaboración formal; el premio es de Academia da Cachaça.
+- Cerveza Heineken de barril: Embaixada Carioca obtuvo el 2.º lugar en el Heineken Masters 2025 (Star Quality), programa del Grupo HEINEKEN que evalúa el servicio de cerveza de barril de bares y restaurantes de Brasil.
 - Nota 4,8 en Google.
 - Entrada principal del parque: Av. Pasteur, 520, Urca, Río de Janeiro. WhatsApp: +55 21 96683-7556.
 - Los precios del parque, la disponibilidad y los horarios del teleférico cambian: los canales oficiales del parque son la referencia.

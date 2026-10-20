@@ -91,10 +91,46 @@ async function storedHtml(context, publicPath, { conditional = true } = {}) {
   const headers = new Headers(response.headers);
   headers.set("Content-Type", "text/html; charset=UTF-8");
   headers.set("X-Canonical-HTML", "preserved");
+  headers.append("Vary", "Accept");
   return new Response(context.request.method === "HEAD" ? null : response.body, {
     status: 200,
     headers,
   });
+}
+
+// Markdown for AI agents: scripts/build_markdown.py writes _site/_md/<page>.md.
+// Served at /<page>.md and when the request prefers "Accept: text/markdown".
+function markdownPathFor(path) {
+  if (path.endsWith("/")) return `${path}index.md`;
+  if (path.endsWith(".html")) return path.slice(0, -".html".length) + ".md";
+  return null;
+}
+
+function prefersMarkdown(request) {
+  const accept = (request.headers.get("Accept") || "").toLowerCase();
+  if (!accept.includes("text/markdown")) return false;
+  const q = (type) => {
+    for (const part of accept.split(",")) {
+      const [name, ...params] = part.trim().split(";");
+      if (name.trim() !== type) continue;
+      const qp = params.map((x) => x.trim()).find((x) => x.startsWith("q="));
+      return qp ? Number(qp.slice(2)) || 0 : 1;
+    }
+    return -1;
+  };
+  return q("text/markdown") >= q("text/html");
+}
+
+async function storedMarkdown(context, mdPath) {
+  const response = await context.env.ASSETS.fetch(new Request(new URL(`/_md${mdPath}`, context.request.url), { method: "GET" }));
+  if (response.status !== 200) return null;
+  const headers = new Headers();
+  headers.set("Content-Type", "text/markdown; charset=utf-8");
+  headers.set("Vary", "Accept");
+  headers.set("Cache-Control", "public, max-age=3600");
+  headers.set("X-Robots-Tag", "noindex");
+  headers.set("Link", `<https://www.embaixadacarioca.com${mdPath.endsWith("/index.md") ? mdPath.slice(0, -"index.md".length) : mdPath.slice(0, -3) + ".html"}>; rel="canonical"`);
+  return new Response(context.request.method === "HEAD" ? null : response.body, { status: 200, headers });
 }
 
 export async function onRequest(context) {
@@ -112,8 +148,20 @@ export async function onRequest(context) {
     });
   }
 
-  if (path.startsWith("/_html/")) {
+  if (path.startsWith("/_html/") || path.startsWith("/_md/")) {
     return new Response("Not found", { status: 404 });
+  }
+
+  if (path.endsWith(".md")) {
+    return (await storedMarkdown(context, path)) || context.next();
+  }
+
+  if (prefersMarkdown(context.request)) {
+    const mdPath = markdownPathFor(path === "/" || path === "/en/" || path === "/es/" ? path : path);
+    if (mdPath && !LEGACY_REDIRECTS.has(path)) {
+      const md = await storedMarkdown(context, mdPath);
+      if (md) return md;
+    }
   }
 
   if (LEGACY_REDIRECTS.has(path)) {

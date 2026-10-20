@@ -1,8 +1,10 @@
 # robots.txt — Embaixada Carioca
-# Atualizado em 2026-10-05.
+# Atualizado em 2026-10-20.
 
 # Regras globais
+# Content Signals (https://contentsignals.org/): busca e respostas de IA sim, treino de modelos não.
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 Disallow: /_api/
 Disallow: /_partials/

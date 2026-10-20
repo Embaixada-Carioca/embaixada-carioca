@@ -149,6 +149,8 @@ h3 { font-size: clamp(1.45rem, 2.2vw, 2rem); letter-spacing: -.02em; }
 .footer-grid { display: grid; grid-template-columns: 1.7fr repeat(3, 1fr); gap: 44px; }
 .footer-brand img { margin-bottom: 20px; }
 .footer-brand p { max-width: 360px; color: #edf4f5; }
+.footer-address { margin-top: 14px; max-width: 360px; color: #edf4f5; font-style: normal; font-size: .92rem; line-height: 1.55; }
+.footer-bottom a + a { margin-left: 18px; }
 .footer h2 { margin-bottom: 16px; color: var(--yellow); font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; }
 .footer a { display: block; min-height: 42px; padding: 7px 0; color: var(--white); text-underline-offset: 4px; }
 .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 36px; margin-top: 48px; border-top: 1px solid rgba(255,255,255,.22); color: #dce8eb; font-size: .86rem; }
