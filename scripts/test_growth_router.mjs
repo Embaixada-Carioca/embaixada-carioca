@@ -46,4 +46,17 @@ assert.equal(missingPage.status,404);assert.match(missingPage.headers.get('Conte
 const missingAsset=await onRequest({request:new Request('https://www.embaixadacarioca.com/assets/missing.webp',{headers:{Accept:'image/webp,*/*'}}),env:{ASSETS:notFoundAssets},next:()=>new Response(null,{status:404})});
 assert.equal(missingAsset.status,404);assert.equal(await missingAsset.text(),'');
 
-console.log('Router regression checks: PASS (8 redirects, 3 stored pages, unknown 404, 9 revalidation cases, 404 page).');
+// Consolidation of 2026-10-20: every merged page answers one 301 to its main page, with or without ".html".
+const block=source.slice(source.indexOf('// Consolidação de 20/10/2026'),source.indexOf(']);'));
+const merged=[...block.matchAll(/\["([^"]+)", "([^"]+)"\]/g)].map(m=>[m[1],m[2]]);
+assert.equal(merged.length,30,'expected 30 consolidated URLs');
+const noAssets={fetch(){throw Error('Redirect must precede asset fetch');}};
+for(const [from,to] of merged){
+ const direct=await onRequest({request:new Request('https://www.embaixadacarioca.com'+from+'?utm_source=test'),env:{ASSETS:noAssets},next(){throw Error('Redirect missing');}});
+ assert.equal(direct.status,301);assert.equal(direct.headers.get('Location'),to+'?utm_source=test');
+ assert.ok(!merged.some(([source])=>source===to),'redirect chain: '+to);
+ const alias=await onRequest({request:new Request('https://www.embaixadacarioca.com'+from.replace(/\.html$/,'')),env:{ASSETS:noAssets},next(){throw Error('Alias redirect missing');}});
+ assert.equal(alias.status,301);assert.equal(alias.headers.get('Location'),to);
+}
+
+console.log('Router regression checks: PASS (8 redirects, 3 stored pages, unknown 404, 9 revalidation cases, 404 page, 30 consolidated URLs).');

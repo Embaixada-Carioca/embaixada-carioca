@@ -12,6 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / "_audit_reports" / "restaurant_restaurants_search_cluster_2026-08-27.md"
 TODAY = "2026-08-27"
 
+# 20/10/2026: restaurantes-perto-do-pao-de-acucar (e EN/ES) consolidadas em onde-comer
+# com 301; ver _audit_reports/consolidacao_paginas_2026-10-20.md.
 PAGES = {
     "restaurante-morro-da-urca.html": {
         "intent": "restaurante na Urca / restaurante no Morro da Urca",
@@ -21,11 +23,6 @@ PAGES = {
     "restaurante-bondinho-pao-de-acucar.html": {
         "intent": "restaurante no/do Bondinho Pão de Açúcar",
         "title_terms": ("Restaurante no Bondinho", "Pão de Açúcar"),
-        "differentiator": "único restaurante do Parque Bondinho com vista direta para o Pão de Açúcar",
-    },
-    "restaurantes-perto-do-pao-de-acucar.html": {
-        "intent": "restaurantes na Urca / perto e no Pão de Açúcar",
-        "title_terms": ("Restaurantes Perto", "Pão de Açúcar"),
         "differentiator": "único restaurante do Parque Bondinho com vista direta para o Pão de Açúcar",
     },
     "en/restaurant-at-urca-hill.html": {
@@ -38,11 +35,6 @@ PAGES = {
         "title_terms": ("Sugarloaf Cable Car Restaurant",),
         "differentiator": "only restaurant in Sugarloaf Cable Car Park with a direct view of Sugarloaf Mountain",
     },
-    "en/restaurants-near-sugarloaf-mountain.html": {
-        "intent": "restaurants near Sugarloaf Mountain",
-        "title_terms": ("Restaurants Near Sugarloaf Mountain",),
-        "differentiator": "only restaurant in the park with a direct view of Sugarloaf Mountain",
-    },
     "es/restaurante-morro-da-urca.html": {
         "intent": "restaurante en Urca / Morro da Urca",
         "title_terms": ("Restaurante en Urca", "Morro da Urca"),
@@ -52,11 +44,6 @@ PAGES = {
         "intent": "restaurante del Bondinho / teleférico Pan de Azúcar",
         "title_terms": ("Restaurante Teleférico Pan de Azúcar",),
         "differentiator": "único restaurante del Parque Bondinho con vista directa al Pan de Azúcar",
-    },
-    "es/restaurantes-cerca-del-pan-de-azucar.html": {
-        "intent": "restaurantes cerca del Pan de Azúcar",
-        "title_terms": ("Restaurantes Cerca del Pan de Azúcar",),
-        "differentiator": "único restaurante del parque con vista directa al Pan de Azúcar",
     },
 }
 
