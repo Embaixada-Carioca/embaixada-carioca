@@ -1,0 +1,62 @@
+# Publica o site no projeto Cloudflare Pages "embaixada-carioca" a cada push no master.
+#
+# Por quê: em 2026-10-05 o repositório saiu de LeoRangel22 para a organização
+# Embaixada-Carioca. O projeto do Cloudflare continua ligado ao dono antigo e a
+# integração Git deixou de publicar ("internal issue with your Cloudflare Workers
+# & Pages Git installation"). A documentação do Cloudflare indica devolver o repo
+# ou criar outro projeto; este workflow mantém o projeto e o domínio atuais e
+# publica por upload direto.
+#
+# Requer o secret CLOUDFLARE_API_TOKEN (token com permissão Cloudflare Pages: Edit).
+name: Cloudflare Pages deploy
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+concurrency:
+  group: cloudflare-pages-production
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_ACCOUNT_ID: 834b3bc751aec01030073d384b0c579e
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - name: Check token
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::error::Secret CLOUDFLARE_API_TOKEN ausente. Crie um token com permissão Cloudflare Pages: Edit e cadastre em Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Build
+        run: python3 scripts/build_cloudflare_pages.py
+
+      - name: Router regression test
+        run: node scripts/test_growth_router.mjs
+
+      - name: Deploy to Cloudflare Pages (production)
+        # Roda na raiz do repositório para o wrangler compilar ./functions junto com _site.
+        run: |
+          npx --yes wrangler@3.114.0 pages deploy _site \
+            --project-name=embaixada-carioca \
+            --branch=master \
+            --commit-hash="$GITHUB_SHA" \
+            --commit-message="$(git log -1 --format=%s "$GITHUB_SHA" | cut -c1-200)"
