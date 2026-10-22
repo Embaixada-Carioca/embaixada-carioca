@@ -4,13 +4,14 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 import json
 from pathlib import Path
 import threading
-from urllib.parse import urlparse
+from urllib.parse import urlparse, parse_qs
 from playwright.sync_api import sync_playwright, expect
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'browser-qa'
-ROUTES = [('index.html','pt'),('en/index.html','en'),('es/index.html','es'),
-          ('eventos.html','pt'),('en/eventos.html','en'),('es/eventos.html','es')]
+ROUTES = [(prefix + name + '.html', language)
+          for prefix, language in (('', 'pt'), ('en/', 'en'), ('es/', 'es'))
+          for name in ('index', 'eventos', 'eventos-corporativos', 'contato')]
 
 def assert_mobile_menu(page, opened, timeout=3000):
     toggle=page.locator('#menu-toggle'); navigation=page.locator('#primary-links')
@@ -54,7 +55,7 @@ def main():
                     page=browser.new_page(viewport={'width':width,'height':900})
                     page.route('**/*',lambda route: route.continue_() if urlparse(route.request.url).netloc==urlparse(origin).netloc else route.abort())
                     try:
-                        page.goto(origin+'/'+path,wait_until='networkidle')
+                        page.goto(origin+'/'+path+'?email=synthetic@example.test&utm_source=untrusted',wait_until='networkidle')
                         page.evaluate('document.fonts.ready')
                         page.add_style_tag(content='html { scroll-behavior: auto !important; }')
                         page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
@@ -86,7 +87,22 @@ def main():
                             toggle.click(); assert_mobile_menu(page,False)
                             toggle.press('Enter'); assert_mobile_menu(page,True)
                             toggle.press('Enter'); assert_mobile_menu(page,False)
-                        assert page.locator('a[href*="leorangel22.github.io/main/formulario.html"]').count()>0, 'missing central form'
+                        handoffs = page.locator('a[href*="leorangel22.github.io/main/formulario.html"]')
+                        assert handoffs.count() > 0, 'missing central form'
+                        for link in handoffs.all():
+                            target = urlparse(link.get_attribute('href'))
+                            query = parse_qs(target.query)
+                            assert target.netloc == 'leorangel22.github.io' and target.path == '/main/formulario.html'
+                            assert set(query) == {'lang','utm_source','utm_medium','utm_campaign','utm_content'}
+                            assert query['lang'] == [language], 'handoff lost page language'
+                            assert query['utm_source'] == ['embaixadacarioca']
+                            assert query['utm_medium'] == ['website'] and query['utm_campaign'] == ['eventos']
+                            assert not any('synthetic' in value or 'untrusted' in value for values in query.values() for value in values)
+                            assert link.get_attribute('data-event-system-link') is not None
+                        if path.endswith(('eventos.html','eventos-corporativos.html')):
+                            primary = page.locator('.mobile-actions .mobile-reserve')
+                            assert primary.get_attribute('data-intent') == 'eventos'
+                            assert 'leorangel22.github.io/main/formulario.html' in primary.get_attribute('href')
                         row['violations']=audit_accessibility(page)
                         assert not row['violations'], 'accessibility violations'
                     except Exception as error:

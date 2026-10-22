@@ -7,7 +7,7 @@ from urllib.parse import urlsplit, parse_qs
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = [f'{prefix}{name}.html' for prefix in ('', 'en/', 'es/')
-         for name in ('index', 'eventos', 'eventos-corporativos')]
+         for name in ('index', 'eventos', 'eventos-corporativos', 'contato')]
 
 
 class Page(HTMLParser):
@@ -38,8 +38,16 @@ class EventSystemLinks(unittest.TestCase):
                     self.assertEqual((url.scheme, url.netloc, url.path),
                                      ('https', 'leorangel22.github.io', '/main/formulario.html'))
                     query = parse_qs(url.query)
-                    self.assertEqual(set(query), {'utm_source', 'utm_medium', 'utm_campaign', 'utm_content'})
-                    self.assertEqual(query['utm_content'], [path.replace('/', '-').removesuffix('.html')])
+                    self.assertEqual(set(query), {'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'lang'})
+                    language = 'en' if path.startswith('en/') else 'es' if path.startswith('es/') else 'pt'
+                    self.assertEqual(query['lang'], [language])
+                    self.assertEqual(query['utm_source'], ['embaixadacarioca'])
+                    self.assertEqual(query['utm_medium'], ['website'])
+                    self.assertEqual(query['utm_campaign'], ['eventos'])
+                    expected = path.replace('/', '-').removesuffix('.html')
+                    if path.endswith('index.html'): expected = 'index' + ('_' + language if language != 'pt' else '')
+                    if path.endswith('/eventos.html'): expected = 'eventos'
+                    self.assertEqual(query['utm_content'], [expected])
                     self.assertNotIn('onclick', link)
                 scripts = [s.get('src', '') for s in page.scripts]
                 self.assertEqual(sum('/assets/event-system-link.js' in s for s in scripts), 1)
@@ -50,7 +58,7 @@ class EventSystemLinks(unittest.TestCase):
             source = (ROOT / f'{prefix}eventos.html').read_text(encoding='utf-8')
             page = Page(source)
             self.assertFalse(any(f.get('id', '').startswith('ec-event-lead-form') for f in page.forms))
-            self.assertIn('ec-event-system-card', source)
+            self.assertIn('data-position="form"', source)
             self.assertNotIn('confirma o envio pelo WhatsApp', source)
             self.assertTrue(any(a.get('href', '').startswith('mailto:') for a in page.links))
             self.assertTrue(any('wa.me/' in a.get('href', '') for a in page.links))
@@ -61,30 +69,28 @@ class EventSystemLinks(unittest.TestCase):
         self.assertIn('https://leorangel22.github.io/main/formulario.html', source)
         self.assertIn('noindex, follow', source)
 
-    def test_events_layout_and_context(self):
+    def test_event_mobile_action_keeps_the_quote_journey(self):
         for prefix in ('', 'en/', 'es/'):
-            source = (ROOT / f'{prefix}eventos.html').read_text(encoding='utf-8')
-            self.assertNotIn('class="ec-online-menu"', source)
-            self.assertIn('ec-events-layout.css?v=20261004a', source)
-            self.assertLess(source.index('ec-inner-actions'), source.index('ec-inner-intro'))
-        pt = (ROOT / 'eventos.html').read_text(encoding='utf-8')
-        self.assertLess(pt.index('id="event-formats"'), pt.index('id="event-gallery"'))
-        self.assertLess(pt.index('id="event-gallery"'), pt.index('id="event-structure"'))
-        self.assertIn('class="btn ec-event-step-cta" data-event-system-link', pt)
-        self.assertIn('>Abrir formulário</a>', pt)
-        self.assertEqual(pt.count('<figure>'), 10)
-        self.assertEqual(pt.count('src="/assets/fotos/salao-entardecer-vista.webp"'), 1)
-        self.assertIn('Ver mais fotos do espaço e dos eventos', pt)
-        self.assertNotIn('class="ec-featured-snippet-ol', pt)
-        self.assertNotIn('aria-label="SEO e Informações Úteis"', pt)
+            for name in ('eventos', 'eventos-corporativos'):
+                with self.subTest(page=prefix+name):
+                    source = (ROOT / f'{prefix}{name}.html').read_text(encoding='utf-8')
+                    page = Page(source)
+                    mobile = [a for a in page.links if a.get('class') == 'mobile-reserve']
+                    self.assertEqual(len(mobile), 1)
+                    self.assertIn('data-event-system-link', mobile[0])
+                    self.assertEqual(mobile[0].get('data-intent'), 'eventos')
+                    self.assertIn('leorangel22.github.io/main/formulario.html', mobile[0]['href'])
+                    self.assertNotIn('tagme', mobile[0]['href'])
+                    self.assertEqual(source.count('<h1>'), 1)
+                    self.assertIn('class="visit-hero-actions"', source)
+                    self.assertTrue(any('tagme' in a.get('href', '') and 'data-event-system-link' not in a for a in page.links))
+
+    def test_regular_reservations_are_not_event_leads(self):
         for prefix in ('', 'en/', 'es/'):
-            source = (ROOT / f'{prefix}eventos.html').read_text(encoding='utf-8')
-            mobile_quote = [a for a in Page(source).links if a.get('class') == 'bnav-reservar']
-            self.assertEqual(len(mobile_quote), 1)
-            self.assertIn('data-event-system-link', mobile_quote[0])
-            self.assertNotIn('tagme', mobile_quote[0]['href'])
-        es = (ROOT / 'es/eventos.html').read_text(encoding='utf-8')
-        self.assertNotIn('Solicitar cotización</a>', es)
+            page = Page((ROOT / f'{prefix}index.html').read_text(encoding='utf-8'))
+            reservations = [a for a in page.links if 'go.tagme.com.br' in a.get('href', '')]
+            self.assertTrue(reservations)
+            self.assertTrue(all('data-event-system-link' not in a for a in reservations))
 
 
 if __name__ == '__main__':

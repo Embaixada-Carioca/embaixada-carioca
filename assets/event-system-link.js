@@ -11,7 +11,8 @@
     try { target = new URL(link.href); } catch (_) { return; }
     if (target.origin !== 'https://leorangel22.github.io' ||
         target.pathname !== '/main/formulario.html') return;
-    var position = link.closest('nav') ? 'top_navigation'
+    var position = link.closest('.mobile-actions') ? 'mobile_bar'
+      : link.closest('nav') ? 'top_navigation'
       : link.closest('header, .hero') ? 'hero'
       : link.closest('footer') ? 'footer'
       : link.closest('.contact, .ec-event-system-card, #cotacao') ? 'form_section'
