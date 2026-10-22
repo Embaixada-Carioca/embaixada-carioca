@@ -23,9 +23,12 @@ for (const gtagAvailable of [true, false]) {
   assert.equal(payload.page_language, 'en');
   assert.equal(payload.cta_destination, 'event_system');
   assert.ok(!JSON.stringify(payload).includes('private@'));
+  link.closest = selector => selector === '.mobile-actions' ? {} : null;
+  handlers[0]({target: {closest: () => link}});
+  assert.equal((gtagAvailable ? calls[1][2] : window.dataLayer[1]).cta_location, 'mobile_bar');
   link.href = 'https://go.tagme.com.br/embaixadacarioca';
   handlers[0]({target: {closest: () => link}});
-  assert.equal(gtagAvailable ? calls.length : window.dataLayer.length, 1, 'reservations are not event leads');
+  assert.equal(gtagAvailable ? calls.length : window.dataLayer.length, 2, 'reservations are not event leads');
 }
 
 (async () => {
