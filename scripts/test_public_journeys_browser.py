@@ -30,6 +30,7 @@ def main():
                     try:
                         page.goto(origin+'/'+path,wait_until='networkidle')
                         page.evaluate('document.fonts.ready')
+                        page.add_style_tag(content='html { scroll-behavior: auto !important; }')
                         page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
                         page.wait_for_timeout(300)
                         page.evaluate('window.scrollTo(0, 0)')
@@ -48,6 +49,8 @@ def main():
                     except Exception as error:
                         row['status']='fail';row['reason']=str(error)
                     finally:
+                        page.evaluate('document.activeElement?.blur(); window.scrollTo(0, 0)')
+                        page.wait_for_function('window.scrollY === 0')
                         page.screenshot(path=str(OUT/(path.replace('/','-')+f'-{width}.png')),full_page=True)
                         results.append(row);page.close()
         finally:
