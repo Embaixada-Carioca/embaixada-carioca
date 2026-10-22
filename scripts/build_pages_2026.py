@@ -32,7 +32,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content" / "pages"
 SITE = "https://www.embaixadacarioca.com"
-CSS_VERSION = "20261020c"
+CSS_VERSION = "20261021"
 EXT_ATTRS = ' target="_blank" rel="noopener"'
 TAGME = "https://go.tagme.com.br/embaixadacarioca"
 ADDRESS_HTML = ('<address class="footer-address">Embaixada Carioca<br>Morro da Urca · Parque Bondinho Pão de Açúcar<br>'
@@ -105,6 +105,29 @@ GA4 = ("<script id=\"ec-ga4-base\">window.dataLayer=window.dataLayer||[];functio
        "document.head.appendChild(s);gtag('js',new Date());gtag('config','G-9GRXVZ55CB',{send_page_view:true})};"
        "(function(){var l=window.ecLoadGA4;['pointerdown','keydown','touchstart','scroll'].forEach(function(e){window.addEventListener(e,l,{once:true,passive:true})});"
        "window.addEventListener('load',function(){'requestIdleCallback'in window?requestIdleCallback(l,{timeout:2200}):setTimeout(l,1400)},{once:true})})();</script>")
+
+LANG_NAMES = (("pt-BR", "Português", "/"), ("en", "English", "/en/"), ("es", "Español", "/es/"))
+
+# Aviso para quem chega com o navegador em outro idioma do site: oferece a versão equivalente.
+LANG_OFFER_JS = """<script>
+(function(){
+  try { if (localStorage.getItem('ec-lang-offer') === 'off') return; } catch (e) {}
+  var page = (document.documentElement.lang || '').slice(0, 2).toLowerCase();
+  var prefs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || '']);
+  var want = null;
+  for (var i = 0; i < prefs.length; i++) { var l = (prefs[i] || '').slice(0, 2).toLowerCase(); if (l === 'pt' || l === 'en' || l === 'es') { want = l; break; } }
+  if (!want || want === page) return;
+  var alt = document.querySelector('link[rel="alternate"][hreflang^="' + want + '"]');
+  if (!alt) return;
+  var T = { pt: ['Esta página também existe em português.', 'Ver em português', 'Fechar'], en: ['This page is also available in English.', 'View in English', 'Dismiss'], es: ['Esta página también está disponible en español.', 'Ver en español', 'Cerrar'] }[want];
+  var box = document.createElement('div'); box.className = 'lang-offer'; box.setAttribute('role', 'region'); box.setAttribute('lang', want === 'pt' ? 'pt-BR' : want); box.setAttribute('aria-label', T[0]);
+  box.innerHTML = '<span>' + T[0] + '</span><a class="button button-small" href="' + alt.getAttribute('href') + '" hreflang="' + alt.getAttribute('hreflang') + '">' + T[1] + '</a><button type="button" class="lang-offer-close" aria-label="' + T[2] + '">\u00d7</button>';
+  function off(){ try { localStorage.setItem('ec-lang-offer', 'off'); } catch (e) {} }
+  box.querySelector('button').addEventListener('click', function(){ box.remove(); off(); });
+  box.querySelector('a').addEventListener('click', off);
+  document.body.appendChild(box);
+})();
+</script>"""
 
 MENU_JS = """<script>
 (function(){
@@ -407,11 +430,17 @@ def render_footer(lang: str, meta: dict) -> str:
             f'<a href="{esc(h)}"{EXT_ATTRS if h.startswith("http") else ""}>{esc(t)}</a>' for h, t in links)
         cols.append(f'<div><h2>{esc(title)}</h2>{anchors}</div>')
     mobile = "".join(f'<a href="{h}" data-intent="{i}" data-position="mobile_bar">{esc(t)}</a>' for h, i, t in L["mobile"])
+    alts = meta.get("alternates", {})
+    langs = ""
+    for code, name, home in LANG_NAMES:
+        current = ' aria-current="page"' if code == L["html"] else ""
+        langs += f'<a href="{esc(alts.get(code, home))}" lang="{code}" hreflang="{code}"{current}>{name}</a>'
+    footer_langs = f'<nav class="footer-langs" aria-label="{esc(L["languages"])}">{langs}</nav>'
     scripts = "".join(f'<script src="{esc(s)}" defer></script>' for s in meta.get("scripts", []))
     return (f'<footer class="footer"><div class="shell footer-grid"><div class="footer-brand"><img src="/assets/logo-areia.svg" width="72" height="72" loading="lazy" alt="Embaixada Carioca"><p>{esc(L["footer_about"])}</p>{ADDRESS_HTML}</div>{"".join(cols)}</div>'
-            f'<div class="shell footer-bottom"><span>© 2026 Embaixada Carioca</span><a href="{L["about"][0]}">{esc(L["about"][1])}</a><a href="/politica-de-privacidade.html">{esc(L["privacy"])}</a></div></footer>\n'
+            f'<div class="shell footer-bottom">{footer_langs}<span>© 2026 Embaixada Carioca</span><a href="{L["about"][0]}">{esc(L["about"][1])}</a><a href="/politica-de-privacidade.html">{esc(L["privacy"])}</a></div></footer>\n'
             f'<nav class="mobile-actions" aria-label="{esc(L["quick"])}">{mobile}<a class="mobile-reserve" href="{TAGME}" target="_blank" rel="noopener" data-intent="reserva" data-position="mobile_bar">{esc(L["reserve"])}</a></nav>\n'
-            f'{MENU_JS}\n<script src="/assets/conversion-tracking.js?v=20261005p2" defer></script><script src="/assets/web-vitals-tracking.js?v=20261005p2" defer></script>{scripts}\n'
+            f'{MENU_JS}\n{LANG_OFFER_JS}\n<script src="/assets/conversion-tracking.js?v=20261005p2" defer></script><script src="/assets/web-vitals-tracking.js?v=20261005p2" defer></script>{scripts}\n'
             "<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});},{once:true});}</script>\n"
             '<script defer src="/assets/js/ec-a11y-guard.js?v=20261020"></script>')
 
