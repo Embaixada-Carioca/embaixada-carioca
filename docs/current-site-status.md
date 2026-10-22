@@ -1,6 +1,6 @@
 # Estado atual do site — Embaixada Carioca
 
-**Atualizado em:** 20/10/2026
+**Atualizado em:** 22/10/2026
 
 **Domínio canônico:** `https://www.embaixadacarioca.com/`
 
@@ -9,6 +9,16 @@
 **Branch de produção:** `master`
 
 Este é o documento de referência para o estado operacional atual. Relatórios datados em `_audit_reports/` registram o momento em que foram gerados e podem conter limitações já superadas.
+
+## Estado verificado em 22/10/2026
+
+- Pacote A: PR #46, commit `88b9c31a9f38fc0f2eb77c7fcf1ba3fc891b6997`, deployment e monitor pós-publicação aprovados. `version.json` público é gerado no build, com SHA real e hashes dos quatro assets críticos. O arquivo histórico da raiz não é mais copiado para produção.
+- O monitor verifica oito páginas de forma independente: homes PT/EN/ES, almoço, café da manhã e eventos PT/EN/ES. Um erro não pula os outros idiomas. O postflight compara o SHA com o deployment concluído; o monitor periódico confere manifesto, páginas e hashes, sem afirmar que há uma versão nova quando apenas o Git avançou.
+- Inventário estático atual: 70 páginas produzidas pelo builder; 72 URLs no sitemap. Números de auditorias anteriores abaixo são históricos, não novas medições.
+- Os relatos de dois cabeçalhos e 23 combinações CSS antecedem a consolidação de 20/10. Não justificam refazer o site. Manter builder e componentes existentes; migração fica para planejamento posterior às férias.
+- O gate antigo Pa11y permite até 840 erros de sua baseline histórica. Não interpretar seu verde como zero violações. O novo gate de jornadas em Chromium verifica homes e páginas de eventos em PT/EN/ES, 375 e 1440 px, menu e overflow, com zero violações nas regras axe WCAG selecionadas. Isso não certifica toda a acessibilidade nem as jornadas comerciais externas.
+- Nenhum teste submete formulário ou envia mensagens. Reservas reais e operação comercial exigem validação separada. Métricas internas de web-vitals são aproximações, não certificação Core Web Vitals.
+- PR #14 permanece separado: alterações antigas de responsive safety lock não foram incorporadas nem sobrescritas por estes pacotes.
 
 ## Arquitetura publicada
 
@@ -93,7 +103,7 @@ O HSTS ainda não deve ser descrito como implantação definitiva com subdomíni
 
 ## Indexação
 
-- `sitemap.xml`: 97 URLs canônicas.
+- `sitemap.xml`: 72 URLs canônicas no inventário de 22/10/2026.
 - Sitemap reenviado ao Search Console em 27/08/2026 e processado com 97 páginas.
 - URLs alternativas e aliases não devem ser solicitados para indexação; o destino é sempre a canonical.
 - O próximo passo é acompanhar recrawl, indexação e CTR, não reenviar repetidamente sem mudança material.
@@ -146,7 +156,7 @@ Os títulos do cluster restaurante/Bondinho também foram estabilizados. Não re
 
 ## Governança de automações
 
-Ativos: 7 workflows.
+Inventário histórico de workflows (anterior ao deploy Actions de 20/10 e aos gates de 22/10; não representa a lista ativa atual):
 
 1. Pages build and deployment.
 2. Verify live site.
