@@ -19,7 +19,7 @@ PUBLIC_ROOT_SUFFIXES = {
     ".ico",
     ".webmanifest",
 }
-PUBLIC_ROOT_FILES = {"_headers", "_redirects", "manifest.json", "version.json"}
+PUBLIC_ROOT_FILES = {"_headers", "_redirects", "manifest.json"}
 
 
 def copy_public_site() -> None:
@@ -67,6 +67,9 @@ def copy_public_site() -> None:
     from build_markdown import write_all
     md_count = write_all(OUTPUT)
     print(f"Markdown para agentes: {md_count} páginas")
+
+    from site_release import write_manifest
+    write_manifest(ROOT, OUTPUT)
 
     routes = {
         "version": 1,
