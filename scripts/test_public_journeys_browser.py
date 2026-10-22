@@ -5,12 +5,38 @@ import json
 from pathlib import Path
 import threading
 from urllib.parse import urlparse
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, expect
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'browser-qa'
 ROUTES = [('index.html','pt'),('en/index.html','en'),('es/index.html','es'),
           ('eventos.html','pt'),('en/eventos.html','en'),('es/eventos.html','es')]
+
+def assert_mobile_menu(page, opened, timeout=3000):
+    toggle=page.locator('#menu-toggle'); navigation=page.locator('#primary-links')
+    expect(toggle).to_have_attribute('aria-expanded',str(opened).lower(),timeout=timeout)
+    links=navigation.locator('a[href]')
+    assert links.count()>0, 'mobile navigation has no links'
+    if opened:
+        expect(navigation).to_be_visible(timeout=timeout)
+        expect(navigation).to_be_in_viewport(timeout=timeout)
+        for link in links.all():
+            expect(link).to_be_visible(timeout=timeout)
+            expect(link).to_be_in_viewport(timeout=timeout)
+    else:
+        expect(navigation).to_be_hidden(timeout=timeout)
+        for link in links.all(): expect(link).to_be_hidden(timeout=timeout)
+
+def expect_broken_menu_detected(page):
+    # The old aria-only assertion still passes for these intentional mutations.
+    assert page.locator('#menu-toggle').get_attribute('aria-expanded')=='true'
+    try: assert_mobile_menu(page,True,timeout=100)
+    except AssertionError: return
+    raise AssertionError('menu visibility regression was not detected')
+
+def audit_accessibility(page):
+    audit=page.evaluate("async () => await axe.run(document, {runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']}})")
+    return [{'id':v['id'],'impact':v['impact'],'nodes':len(v['nodes'])} for v in audit['violations']]
 
 def main():
     OUT.mkdir(exist_ok=True)
@@ -37,14 +63,31 @@ def main():
                         assert page.locator('html').get_attribute('lang').startswith(language)
                         assert page.locator('h1').count()==1
                         assert not page.evaluate('document.documentElement.scrollWidth > innerWidth'), 'horizontal overflow'
+                        page.add_script_tag(path=str(ROOT/'node_modules/axe-core/axe.min.js'))
                         if width==375:
                             toggle=page.locator('#menu-toggle')
-                            toggle.click(); assert toggle.get_attribute('aria-expanded')=='true', 'menu did not open'
-                            toggle.click(); assert toggle.get_attribute('aria-expanded')=='false', 'menu did not close'
+                            assert_mobile_menu(page,False)
+                            toggle.click(); assert_mobile_menu(page,True)
+                            row['open_menu_violations']=audit_accessibility(page)
+                            assert not row['open_menu_violations'], 'open menu accessibility violations'
+                            page.screenshot(path=str(OUT/(path.replace('/','-')+f'-{width}-menu-open.png')))
+                            if path=='index.html':
+                                page.locator('#primary-links').evaluate("node => node.classList.remove('is-open')")
+                                try: expect_broken_menu_detected(page)
+                                finally: page.locator('#primary-links').evaluate("node => node.classList.add('is-open')")
+                                style=page.add_style_tag(content='#primary-links { display: none !important; }')
+                                try: expect_broken_menu_detected(page)
+                                finally: style.evaluate('node => node.remove()')
+                                link=page.locator('#primary-links a').first
+                                link.evaluate("node => node.style.display='none'")
+                                try: expect_broken_menu_detected(page)
+                                finally: link.evaluate("node => node.style.removeProperty('display')")
+                                row['negative_menu_checks']=['missing_open_class','hidden_navigation','hidden_link']
+                            toggle.click(); assert_mobile_menu(page,False)
+                            toggle.press('Enter'); assert_mobile_menu(page,True)
+                            toggle.press('Enter'); assert_mobile_menu(page,False)
                         assert page.locator('a[href*="leorangel22.github.io/main/formulario.html"]').count()>0, 'missing central form'
-                        page.add_script_tag(path=str(ROOT/'node_modules/axe-core/axe.min.js'))
-                        audit=page.evaluate("async () => await axe.run(document, {runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']}})")
-                        row['violations']=[{'id':v['id'],'impact':v['impact'],'nodes':len(v['nodes'])} for v in audit['violations']]
+                        row['violations']=audit_accessibility(page)
                         assert not row['violations'], 'accessibility violations'
                     except Exception as error:
                         row['status']='fail';row['reason']=str(error)

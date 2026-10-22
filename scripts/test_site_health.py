@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 from site_release import write_manifest, CRITICAL_ASSETS
-from verify_live_site import run, validate_manifest, validate_page, PAGES
+from verify_live_site import run, validate_manifest, validate_page, normalized_public_path, fetch, PAGES
 
 ROOT = Path(__file__).resolve().parents[1]
 class SiteHealthTests(unittest.TestCase):
@@ -13,6 +13,31 @@ class SiteHealthTests(unittest.TestCase):
         for path, language in PAGES.items():
             name = 'index.html' if path == '/' else path.strip('/') + ('/index.html' if path.endswith('/') else '.html')
             with self.subTest(path=path): validate_page((ROOT/name).read_bytes(), path, language)
+    def test_home_cannot_impersonate_subpages(self):
+        for path, home, lang in [('/almoco','index.html','pt'),('/cafe-da-manha','index.html','pt'),
+                                ('/eventos','index.html','pt'),('/en/eventos','en/index.html','en'),('/es/eventos','es/index.html','es')]:
+            with self.subTest(path=path), self.assertRaisesRegex(AssertionError, 'canonical journey'):
+                validate_page((ROOT/home).read_bytes(),path,lang)
+    def test_same_language_subpage_cannot_impersonate_another(self):
+        with self.assertRaisesRegex(AssertionError, 'canonical journey'):
+            validate_page((ROOT/'almoco.html').read_bytes(),'/cafe-da-manha','pt')
+    def test_only_supported_path_aliases_are_equivalent(self):
+        for left,right in [('/','/index.html'),('/en/','/en/index.html'),('/es/','/es/index.html'),('/almoco','/almoco.html'),('/en/eventos','/en/eventos.html')]:
+            self.assertEqual(normalized_public_path(left),normalized_public_path(right))
+        self.assertNotEqual(normalized_public_path('/en/'),normalized_public_path('/en/eventos'))
+    def test_wrong_canonical_origin_and_query_fail(self):
+        body=(ROOT/'almoco.html').read_bytes()
+        for url in [b'https://www.embaixadacarioca.com.evil.test/almoco.html',b'http://www.embaixadacarioca.com/almoco.html',b'https://www.embaixadacarioca.com/almoco.html?other=1']:
+            with self.subTest(url=url),self.assertRaises(AssertionError):
+                validate_page(body.replace(b'https://www.embaixadacarioca.com/almoco.html',url),'/almoco','pt')
+    def test_fetch_rejects_same_domain_home_redirect(self):
+        from unittest.mock import MagicMock
+        response=MagicMock();response.__enter__.return_value=response;response.status=200
+        response.url='https://www.embaixadacarioca.com/';response.read.return_value=b'home'
+        with patch('verify_live_site.urlopen',return_value=response),self.assertRaisesRegex(AssertionError,'another journey'):
+            fetch('/eventos')
+        response.url='https://www.embaixadacarioca.com/eventos.html?health=fixture'
+        with patch('verify_live_site.urlopen',return_value=response): self.assertEqual(fetch('/eventos'),b'home')
     def test_corrupt_translation_fails(self):
         body = (ROOT/'en/index.html').read_bytes() + b'Bondinhel'
         with self.assertRaises(AssertionError): validate_page(body, '/en/', 'en')

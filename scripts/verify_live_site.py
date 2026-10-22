@@ -26,11 +26,22 @@ class Page(HTMLParser):
         if tag == 'a': self.links.append(a.get('href', ''))
         if tag == 'link' and a.get('rel') == 'canonical': self.canonical = a.get('href', '')
 
+def normalized_public_path(path):
+    # Public extensionless routes and their .html redirects are the same journey.
+    if path.endswith('/index.html'):
+        path = path[:-len('index.html')]
+    elif path.endswith('.html'):
+        path = path[:-len('.html')]
+    return path.rstrip('/') or '/'
+
 def validate_page(body, path, language):
     text = body.decode('utf-8'); page = Page(text)
     assert page.lang.lower().startswith(language), 'wrong document language'
     assert page.h1 == 1, 'expected one H1'
-    assert page.canonical.startswith(BASE + '/'), 'missing canonical domain'
+    canonical = urlparse(page.canonical)
+    assert canonical.scheme == 'https' and canonical.netloc == urlparse(BASE).netloc, 'wrong canonical origin'
+    assert not canonical.query and not canonical.fragment, 'canonical must not contain query or fragment'
+    assert normalized_public_path(canonical.path) == normalized_public_path(path), 'wrong canonical journey'
     assert any('tagme.com.br' in link for link in page.links), 'missing reservation link'
     assert 'Bondinho' in text, 'missing park identity'
     if language in ('en', 'es'):
@@ -61,6 +72,7 @@ def fetch(path):
     with urlopen(request, timeout=25) as response:
         assert response.status == 200, 'unexpected HTTP status'
         assert urlparse(response.url).netloc == urlparse(BASE).netloc, 'unexpected cross-domain redirect'
+        assert normalized_public_path(urlparse(response.url).path) == normalized_public_path(path), 'unexpected redirect to another journey'
         return response.read(4 * 1024 * 1024)
 
 def run(fetcher=fetch, expected_sha=''):
