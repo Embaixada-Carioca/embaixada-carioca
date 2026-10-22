@@ -142,7 +142,7 @@ export async function onRequest(context) {
     return new Response(null, {
       status: 301,
       headers: {
-        Location: "https://leorangel22.github.io/main/formulario.html?utm_source=embaixadacarioca&utm_medium=website&utm_campaign=eventos&utm_content=formulario",
+        Location: "https://leorangel22.github.io/main/formulario.html?utm_source=embaixadacarioca&utm_medium=website&utm_campaign=eventos&utm_content=formulario&lang=pt",
         "Cache-Control": "public, max-age=3600",
       },
     });

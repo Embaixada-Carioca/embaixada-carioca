@@ -37,6 +37,8 @@ for (const gtagAvailable of [true, false]) {
     const target = new URL(response.headers.get('Location'));
     assert.equal(target.origin, 'https://leorangel22.github.io');
     assert.equal(target.pathname, '/main/formulario.html');
+    assert.equal(target.searchParams.get('lang'), 'pt');
+    assert.deepEqual([...target.searchParams.keys()].sort(), ['lang','utm_campaign','utm_content','utm_medium','utm_source']);
     assert.ok(!target.search.includes('private'));
     assert.ok(!target.search.includes('evil'));
   }

@@ -430,6 +430,12 @@ def render_footer(lang: str, meta: dict) -> str:
             f'<a href="{esc(h)}"{EXT_ATTRS if h.startswith("http") else ""}>{esc(t)}</a>' for h, t in links)
         cols.append(f'<div><h2>{esc(title)}</h2>{anchors}</div>')
     mobile = "".join(f'<a href="{h}" data-intent="{i}" data-position="mobile_bar">{esc(t)}</a>' for h, i, t in L["mobile"])
+    event_action = next((a for a in meta.get("hero", {}).get("actions", [])
+                         if a.get("href", "").startswith("https://leorangel22.github.io/main/formulario.html?")), None)
+    if event_action:
+        primary = f'<a class="mobile-reserve" href="{esc(event_action["href"])}" target="_blank" rel="noopener" data-intent="eventos" data-position="mobile_bar" data-event-system-link>{esc(event_action["label"])}</a>'
+    else:
+        primary = f'<a class="mobile-reserve" href="{TAGME}" target="_blank" rel="noopener" data-intent="reserva" data-position="mobile_bar">{esc(L["reserve"])}</a>'
     alts = meta.get("alternates", {})
     langs = ""
     for code, name, home in LANG_NAMES:
@@ -439,7 +445,7 @@ def render_footer(lang: str, meta: dict) -> str:
     scripts = "".join(f'<script src="{esc(s)}" defer></script>' for s in meta.get("scripts", []))
     return (f'<footer class="footer"><div class="shell footer-grid"><div class="footer-brand"><img src="/assets/logo-areia.svg" width="72" height="72" loading="lazy" alt="Embaixada Carioca"><p>{esc(L["footer_about"])}</p>{ADDRESS_HTML}</div>{"".join(cols)}</div>'
             f'<div class="shell footer-bottom">{footer_langs}<span>© 2026 Embaixada Carioca</span><a href="{L["about"][0]}">{esc(L["about"][1])}</a><a href="/politica-de-privacidade.html">{esc(L["privacy"])}</a></div></footer>\n'
-            f'<nav class="mobile-actions" aria-label="{esc(L["quick"])}">{mobile}<a class="mobile-reserve" href="{TAGME}" target="_blank" rel="noopener" data-intent="reserva" data-position="mobile_bar">{esc(L["reserve"])}</a></nav>\n'
+            f'<nav class="mobile-actions" aria-label="{esc(L["quick"])}">{mobile}{primary}</nav>\n'
             f'{MENU_JS}\n{LANG_OFFER_JS}\n<script src="/assets/conversion-tracking.js?v=20261005p2" defer></script><script src="/assets/web-vitals-tracking.js?v=20261005p2" defer></script>{scripts}\n'
             "<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});},{once:true});}</script>\n"
             '<script defer src="/assets/js/ec-a11y-guard.js?v=20261020"></script>')
