@@ -540,7 +540,7 @@ template = """<!DOCTYPE html>
         "streetAddress": "Av. Pasteur, 520 - Morro da Urca",
         "addressLocality": "Rio de Janeiro",
         "addressRegion": "RJ",
-        "postalCode": "22290-240",
+        "postalCode": "22290-255",
         "addressCountry": "BR"
       }}
     }}

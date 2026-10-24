@@ -289,7 +289,7 @@ def build_schema(rel: str, text: str, lang: str) -> str:
             "streetAddress": "Av. Pasteur, 520 — Morro da Urca",
             "addressLocality": "Rio de Janeiro",
             "addressRegion": "RJ",
-            "postalCode": "22290-240",
+            "postalCode": "22290-255",
             "addressCountry": "BR",
         },
         "geo": {"@type": "GeoCoordinates", "latitude": -22.9511223, "longitude": -43.1642121},

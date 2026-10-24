@@ -35,7 +35,7 @@ TOURIST_PT = {
         "streetAddress": "Avenida Pasteur, 520",
         "addressLocality": "Urca",
         "addressRegion": "Rio de Janeiro",
-        "postalCode": "22290-240",
+        "postalCode": "22290-255",
         "addressCountry": "BR"
     },
     "geo": {
@@ -114,7 +114,7 @@ TOURIST_EN = {
         "streetAddress": "Avenida Pasteur, 520",
         "addressLocality": "Urca",
         "addressRegion": "Rio de Janeiro",
-        "postalCode": "22290-240",
+        "postalCode": "22290-255",
         "addressCountry": "BR"
     },
     "geo": {
@@ -192,7 +192,7 @@ TOURIST_ES = {
         "streetAddress": "Avenida Pasteur, 520",
         "addressLocality": "Urca",
         "addressRegion": "Rio de Janeiro",
-        "postalCode": "22290-240",
+        "postalCode": "22290-255",
         "addressCountry": "BR"
     },
     "geo": {
@@ -257,7 +257,7 @@ CAFE_EVENT_PT = {
             "streetAddress": "Avenida Pasteur, 520 — Morro da Urca",
             "addressLocality": "Urca",
             "addressRegion": "Rio de Janeiro",
-            "postalCode": "22290-240",
+            "postalCode": "22290-255",
             "addressCountry": "BR"
         },
         "geo": {
@@ -319,7 +319,7 @@ CAFE_EVENT_EN = {
             "streetAddress": "Avenida Pasteur, 520 — Urca Hill",
             "addressLocality": "Urca",
             "addressRegion": "Rio de Janeiro",
-            "postalCode": "22290-240",
+            "postalCode": "22290-255",
             "addressCountry": "BR"
         },
         "geo": {
@@ -378,7 +378,7 @@ CAFE_EVENT_ES = {
             "streetAddress": "Avenida Pasteur, 520 — Morro da Urca",
             "addressLocality": "Urca",
             "addressRegion": "Rio de Janeiro",
-            "postalCode": "22290-240",
+            "postalCode": "22290-255",
             "addressCountry": "BR"
         }
     },
@@ -427,7 +427,7 @@ SUNSET_EVENT_PT = {
             "streetAddress": "Avenida Pasteur, 520 — Morro da Urca",
             "addressLocality": "Urca",
             "addressRegion": "Rio de Janeiro",
-            "postalCode": "22290-240",
+            "postalCode": "22290-255",
             "addressCountry": "BR"
         },
         "geo": {
@@ -491,7 +491,7 @@ SUNSET_EVENT_EN = {
             "streetAddress": "Avenida Pasteur, 520 — Urca Hill",
             "addressLocality": "Urca",
             "addressRegion": "Rio de Janeiro",
-            "postalCode": "22290-240",
+            "postalCode": "22290-255",
             "addressCountry": "BR"
         },
         "geo": {
@@ -550,7 +550,7 @@ SUNSET_EVENT_ES = {
             "streetAddress": "Avenida Pasteur, 520 — Morro da Urca",
             "addressLocality": "Urca",
             "addressRegion": "Rio de Janeiro",
-            "postalCode": "22290-240",
+            "postalCode": "22290-255",
             "addressCountry": "BR"
         }
     },

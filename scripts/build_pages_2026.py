@@ -37,7 +37,7 @@ CSS_VERSION = "20261024"
 EXT_ATTRS = ' target="_blank" rel="noopener"'
 TAGME = "https://go.tagme.com.br/embaixadacarioca"
 ADDRESS_HTML = ('<address class="footer-address">Embaixada Carioca<br>Morro da Urca · Parque Bondinho Pão de Açúcar<br>'
-                'Av. Pasteur, 520 · Urca · Rio de Janeiro · RJ · 22290-240</address>')
+                'Av. Pasteur, 520 · Urca · Rio de Janeiro · RJ · 22290-255</address>')
 WHATSAPP = "https://wa.me/5521966837556"
 
 LANG = {
