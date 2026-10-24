@@ -226,3 +226,7 @@
 .legal-prose .meta { color: var(--muted, #4d5b61); }
 .legal-prose .note { margin: 1.4rem 0; }
 .info-card a, .prose a { overflow-wrap: anywhere; }
+.review-card blockquote { margin: 0 0 14px; }
+.review-card blockquote p { color: var(--ink); font-size: 1.04rem; line-height: 1.55; }
+.review-card .review-stars { margin-bottom: 8px; color: var(--blue); font-size: 1rem; letter-spacing: .1em; }
+.review-card .review-meta { margin: auto 0 0; color: var(--muted); font-size: .9rem; }

@@ -32,7 +32,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content" / "pages"
 SITE = "https://www.embaixadacarioca.com"
-CSS_VERSION = "20261021"
+CSS_VERSION = "20261024"
 EXT_ATTRS = ' target="_blank" rel="noopener"'
 TAGME = "https://go.tagme.com.br/embaixadacarioca"
 ADDRESS_HTML = ('<address class="footer-address">Embaixada Carioca<br>Morro da Urca · Parque Bondinho Pão de Açúcar<br>'
