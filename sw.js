@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'ec-assets-v2026-10-20';
+const CACHE_VERSION = 'ec-assets-v2026-10-24';
 const ASSET_PATTERNS = [/^\/assets\//, /^\/fonts\//];
 const OFFLINE_URL = '/offline.html';
 
