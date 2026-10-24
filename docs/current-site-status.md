@@ -1,6 +1,6 @@
 # Estado atual do site — Embaixada Carioca
 
-**Atualizado em:** 22/10/2026
+**Atualizado em:** 24/10/2026
 
 **Domínio canônico:** `https://www.embaixadacarioca.com/`
 
@@ -9,6 +9,16 @@
 **Branch de produção:** `master`
 
 Este é o documento de referência para o estado operacional atual. Relatórios datados em `_audit_reports/` registram o momento em que foram gerados e podem conter limitações já superadas.
+
+## Estado verificado em 24/10/2026 — crescimento (itens 1–4 do plano de 24/10)
+
+Avaliação de impacto (GSC + GA4, 17–23/10 vs 10–16/10): tráfego humano estável, conversões sem regressão após o design 2026 (click_reservar 73 vs 81 usuários; click_cardapio 143 = 143; whatsapp 11 = 11), ganho de SEO ainda não mensurável com 3 dias. O "+84%" de usuários no GA4 era automação (auditorias Playwright/Lighthouse e previews, Direct de datacenters nos EUA). Baseline GSC para novembro: semana 16–22/10 = 208 cliques / 13.030 impressões / CTR 1,6%.
+
+- PR #51 — medição limpa: `ec-ga4-base` não carrega o gtag quando `navigator.webdriver` é verdadeiro, o user-agent é HeadlessChrome/Lighthouse/bot/crawl/spider ou o hostname não é `embaixadacarioca.com`. Eventos-chave no GA4 já estavam marcados (ec_reservation_click, whatsapp_click, ec_event_lead_outbound). O atalho `go.tagme.com.br/embaixadacarioca` descarta parâmetros no redirecionamento: origem das reservas só pelo relatório da Tagme.
+- PR #52 — CTR: parque-bondinho, morro-da-urca e como-chegar (PT/EN/ES) com title/description reescritos e o horário do Parque Bondinho datado (outubro de 2026, fonte bondinho.com.br: seg–sex 8h30–21h, sáb–dom 7h30–21h, último embarque 19h30). Reavaliar o horário a cada temporada.
+- PR #53 — prova social: página de avaliações (PT/EN/ES) com seis trechos transcritos de avaliações públicas do Google (primeiro nome · mês), sem Review/AggregateRating no JSON-LD; home PT/EN/ES com link "4,8 no Google" no hero. CSS v20261024, SW `ec-assets-v2026-10-24`.
+- PR #54 — barra fixa do celular: o link para a própria página vira WhatsApp (cardápio e como-chegar, PT/EN/ES).
+- Próximos itens do plano: formulário curto de eventos (44 cliques no CTA → 4 leads em 28 dias), internacional (medir 2 semanas após PR #47), Meta Ads só com medição limpa.
 
 ## Estado verificado em 22/10/2026
 
