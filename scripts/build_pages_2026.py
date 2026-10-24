@@ -100,7 +100,7 @@ LANG = {
 }
 
 GA4 = ("<script id=\"ec-ga4-base\">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}"
-       "window.ecLoadGA4=window.ecLoadGA4||function(){if(window.ecGA4Loaded)return;window.ecGA4Loaded=true;"
+       "window.ecLoadGA4=window.ecLoadGA4||function(){if(window.ecGA4Loaded)return;if(navigator.webdriver||/HeadlessChrome|Lighthouse|bot|crawl|spider/i.test(navigator.userAgent)||!/(^|\\.)embaixadacarioca\\.com$/.test(location.hostname))return;window.ecGA4Loaded=true;"
        "var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-9GRXVZ55CB';"
        "document.head.appendChild(s);gtag('js',new Date());gtag('config','G-9GRXVZ55CB',{send_page_view:true})};"
        "(function(){var l=window.ecLoadGA4;['pointerdown','keydown','touchstart','scroll'].forEach(function(e){window.addEventListener(e,l,{once:true,passive:true})});"
