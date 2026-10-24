@@ -25,6 +25,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+from urllib.parse import quote
 import re
 import sys
 from pathlib import Path
@@ -45,6 +46,7 @@ LANG = {
         "skip": "Pular para o conteúdo principal", "nav_label": "Navegação principal",
         "home": "/", "home_label": "Embaixada Carioca — início", "open_menu": "Abrir menu",
         "languages": "Idiomas", "reserve": "Reservar", "quick": "Ações rápidas",
+        "whatsapp_text": "Olá! Vim pelo site da Embaixada Carioca e gostaria de tirar uma dúvida.",
         "breadcrumb": "Trilha de navegação", "start": "Início",
         "nav": [("/cafe-da-manha.html", "cafe_da_manha", "Café da manhã"), ("/almoco.html", "almoco", "Almoço"),
                 ("/cardapio.html", "cardapio", "Cardápio"), ("/eventos.html", "eventos", "Eventos"),
@@ -64,6 +66,7 @@ LANG = {
         "skip": "Skip to main content", "nav_label": "Main navigation",
         "home": "/en/", "home_label": "Embaixada Carioca — home", "open_menu": "Open menu",
         "languages": "Languages", "reserve": "Reserve", "quick": "Quick actions",
+        "whatsapp_text": "Hello! I found the Embaixada Carioca website and have a question.",
         "breadcrumb": "Breadcrumb", "start": "Home",
         "nav": [("/en/cafe-da-manha.html", "cafe_da_manha", "Breakfast"), ("/en/almoco.html", "almoco", "Lunch"),
                 ("/en/cardapio.html", "cardapio", "Menu"), ("/en/eventos.html", "eventos", "Events"),
@@ -83,6 +86,7 @@ LANG = {
         "skip": "Saltar al contenido principal", "nav_label": "Navegación principal",
         "home": "/es/", "home_label": "Embaixada Carioca — inicio", "open_menu": "Abrir menú",
         "languages": "Idiomas", "reserve": "Reservar", "quick": "Acciones rápidas",
+        "whatsapp_text": "¡Hola! Vi el sitio de Embaixada Carioca y tengo una pregunta.",
         "breadcrumb": "Ruta de navegación", "start": "Inicio",
         "nav": [("/es/cafe-da-manha.html", "cafe_da_manha", "Desayuno"), ("/es/almoco.html", "almoco", "Almuerzo"),
                 ("/es/cardapio.html", "cardapio", "Menú"), ("/es/eventos.html", "eventos", "Eventos"),
@@ -429,7 +433,12 @@ def render_footer(lang: str, meta: dict) -> str:
         anchors = "".join(
             f'<a href="{esc(h)}"{EXT_ATTRS if h.startswith("http") else ""}>{esc(t)}</a>' for h, t in links)
         cols.append(f'<div><h2>{esc(title)}</h2>{anchors}</div>')
-    mobile = "".join(f'<a href="{h}" data-intent="{i}" data-position="mobile_bar">{esc(t)}</a>' for h, i, t in L["mobile"])
+    # Na barra fixa do celular, o link para a própria página vira WhatsApp (ex.: no cardápio, "Cardápio" → "WhatsApp").
+    current = meta.get("alternates", {}).get(L["html"], "")
+    mobile_links = [(WHATSAPP + "?text=" + quote(L["whatsapp_text"]), "whatsapp", "WhatsApp") if h == current else (h, i, t)
+                    for h, i, t in L["mobile"]]
+    mobile = "".join(f'<a href="{esc(h)}"{EXT_ATTRS if h.startswith("http") else ""} data-intent="{i}" data-position="mobile_bar">{esc(t)}</a>'
+                     for h, i, t in mobile_links)
     event_action = next((a for a in meta.get("hero", {}).get("actions", [])
                          if a.get("href", "").startswith("https://leorangel22.github.io/main/formulario.html?")), None)
     if event_action:
