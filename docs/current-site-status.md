@@ -18,6 +18,7 @@ Avaliação de impacto (GSC + GA4, 17–23/10 vs 10–16/10): tráfego humano es
 - PR #52 — CTR: parque-bondinho, morro-da-urca e como-chegar (PT/EN/ES) com title/description reescritos e o horário do Parque Bondinho datado (outubro de 2026, fonte bondinho.com.br: seg–sex 8h30–21h, sáb–dom 7h30–21h, último embarque 19h30). Reavaliar o horário a cada temporada.
 - PR #53 — prova social: página de avaliações (PT/EN/ES) com seis trechos transcritos de avaliações públicas do Google (primeiro nome · mês), sem Review/AggregateRating no JSON-LD; home PT/EN/ES com link "4,8 no Google" no hero. CSS v20261024, SW `ec-assets-v2026-10-24`.
 - PR #54 — barra fixa do celular: o link para a própria página vira WhatsApp (cardápio e como-chegar, PT/EN/ES).
+- PR #55 — horários reais do restaurante (confirmados por Leonardo em 24/10/2026): seg–sex 8h45–20h45, sáb–dom 7h45–20h45; almoço 11h30–17h (até 18h nos fins de semana); café da manhã da abertura às 11h30. Aplicado em texto (PT/EN/ES), llms.txt e `openingHoursSpecification`/`openingHours` (fonte: Restaurant em index.html + apply_growth_p1_p2.py). O Perfil da Empresa no Google tinha horários diferentes (seg–qui até 20h, café 9h, almoço sex–sáb até 18h) e endereço com texto extra — alinhar pelo mesmo horário.
 - Próximos itens do plano: formulário curto de eventos (44 cliques no CTA → 4 leads em 28 dias), internacional (medir 2 semanas após PR #47), Meta Ads só com medição limpa.
 
 ## Estado verificado em 22/10/2026

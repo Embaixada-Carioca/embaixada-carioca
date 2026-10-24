@@ -114,7 +114,7 @@ def restaurant_schema(lang: str) -> dict:
         'currenciesAccepted': 'BRL',
         'servesCuisine': ['Brasileira', 'Carioca', 'Brazilian', 'Frutos do mar', 'Café da manhã'],
         'hasMap': 'https://www.google.com/maps/dir/?api=1&destination=-22.9508333,-43.1641667',
-        'openingHoursSpecification': [{'@type': 'OpeningHoursSpecification', 'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], 'opens': '08:30', 'closes': '21:00'}],
+        'openingHoursSpecification': [{'@type': 'OpeningHoursSpecification', 'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], 'opens': '08:45', 'closes': '20:45'}, {'@type': 'OpeningHoursSpecification', 'dayOfWeek': ['Saturday', 'Sunday'], 'opens': '07:45', 'closes': '20:45'}],
         'acceptsReservations': True,
         'hasMenu': BASE + '/cardapio.html',
         'award': ['Melhor Feijoada do Rio de Janeiro — Veja Rio Comer & Beber 2025/2026', '2º melhor chope Heineken do Brasil'],
@@ -141,8 +141,8 @@ def menu_schema(lang: str) -> dict:
         'url': BASE + '/cardapio.html',
         'provider': {'@id': BASE + '/#restaurant'},
         'hasMenuSection': [
-            {'@type': 'MenuSection', 'name': 'Café da Manhã', 'description': 'Todos os dias, das 8h30 às 11h30', 'hasMenuItem': [{'@type': 'MenuItem', 'name': 'Café da manhã', 'description': 'Café da manhã diário no Morro da Urca.'}]},
-            {'@type': 'MenuSection', 'name': 'Almoço Brasileiro', 'description': 'Todos os dias, das 11h30 às 17h', 'hasMenuItem': [
+            {'@type': 'MenuSection', 'name': 'Café da Manhã', 'description': 'todos os dias até 11h30 (abre às 8h45; 7h45 nos fins de semana)', 'hasMenuItem': [{'@type': 'MenuItem', 'name': 'Café da manhã', 'description': 'Café da manhã diário no Morro da Urca.'}]},
+            {'@type': 'MenuSection', 'name': 'Almoço Brasileiro', 'description': 'Todos os dias, das 11h30 às 17h (até 18h aos sábados e domingos)', 'hasMenuItem': [
                 {'@type': 'MenuItem', 'name': 'Feijoada da Academia da Cachaça', 'description': 'Feijoada premiada pela Veja Rio 2025/2026.'},
                 {'@type': 'MenuItem', 'name': 'Picanha à brasileira', 'description': 'Picanha grelhada com acompanhamentos brasileiros.'},
                 {'@type': 'MenuItem', 'name': 'Bobó de camarão', 'description': 'Camarão em creme de mandioca com tempero brasileiro.'},
