@@ -1,10 +1,10 @@
 # Embaixada Carioca
 
-> Restaurante de cocina brasileña en el Morro da Urca, a 220 metros de altitud, en la primera parada del teleférico del Pan de Azúcar, en Río de Janeiro. Es el único restaurante del Parque Bondinho con vista directa al Pan de Azúcar. Abierto todos los días, de 8:30 a 21:00.
+> Restaurante de cocina brasileña en el Morro da Urca, a 220 metros de altitud, en la primera parada del teleférico del Pan de Azúcar, en Río de Janeiro. Es el único restaurante del Parque Bondinho con vista directa al Pan de Azúcar. Abierto de lunes a viernes de 8:45 a 20:45 y los fines de semana de 7:45 a 20:45.
 
 ## Datos
 
-- Horario (confirmado por el operador el 12 de octubre de 2026): todos los días, de 8:30 a 21:00. Desayuno de 8:30 a 11:30; almuerzo de 11:30 a 17:00.
+- Horario (confirmado por el operador el 12 de octubre de 2026): de lunes a viernes de 8:45 a 20:45 y los fines de semana de 7:45 a 20:45. Desayuno de 8:45 (7:45 los fines de semana) a 11:30; almuerzo de 11:30 a 17:00 (hasta las 18:00 los fines de semana).
 - Desayuno a la carta.
 - El restaurante está en el Morro da Urca, no en la cima del Pan de Azúcar.
 - La reserva del restaurante no incluye la entrada del Parque Bondinho. Se necesita entrada para usar el teleférico, seguir al Pan de Azúcar o bajar en teleférico. Por el sendero del Morro da Urca, cuando está abierto, se puede llegar sin entrada del teleférico.
@@ -17,8 +17,8 @@
 ## Páginas principales
 
 - [Planifica tu visita](https://www.embaixadacarioca.com/es/planifica-tu-visita.html): horarios, acceso y qué esperar
-- [Desayuno con vista](https://www.embaixadacarioca.com/es/cafe-da-manha.html): de 8:30 a 11:30, a la carta
-- [Almuerzo con vista](https://www.embaixadacarioca.com/es/almoco.html): de 11:30 a 17:00
+- [Desayuno con vista](https://www.embaixadacarioca.com/es/cafe-da-manha.html): de 8:45 (7:45 los fines de semana) a 11:30, a la carta
+- [Almuerzo con vista](https://www.embaixadacarioca.com/es/almoco.html): de 11:30 a 17:00 (hasta las 18:00 los fines de semana)
 - [Feijoada de Academia da Cachaça](https://www.embaixadacarioca.com/es/feijoada.html): premio Veja Rio 2025/2026, servida por colaboración
 - [Atardecer](https://www.embaixadacarioca.com/es/atardecer.html): tragos y puesta de sol en el Morro da Urca
 - [Menú y precios](https://www.embaixadacarioca.com/es/cardapio.html)

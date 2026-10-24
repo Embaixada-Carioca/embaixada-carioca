@@ -1,10 +1,10 @@
 # Embaixada Carioca
 
-> Restaurante de cozinha brasileira no Morro da Urca, a 220 metros de altitude, na primeira parada do Bondinho Pão de Açúcar, no Rio de Janeiro. É o único restaurante do Parque Bondinho com vista direta para o Pão de Açúcar. Aberto todos os dias, das 8h30 às 21h.
+> Restaurante de cozinha brasileira no Morro da Urca, a 220 metros de altitude, na primeira parada do Bondinho Pão de Açúcar, no Rio de Janeiro. É o único restaurante do Parque Bondinho com vista direta para o Pão de Açúcar. Aberto de segunda a sexta das 8h45 às 20h45 e nos fins de semana das 7h45 às 20h45.
 
 ## Fatos
 
-- Horário (confirmado pelo operador em 12/10/2026): todos os dias, das 8h30 às 21h. Café da manhã das 8h30 às 11h30; almoço das 11h30 às 17h.
+- Horário (confirmado pelo operador em 12/10/2026): de segunda a sexta das 8h45 às 20h45 e nos fins de semana das 7h45 às 20h45. Café da manhã das 8h45 (7h45 nos fins de semana) às 11h30; almoço das 11h30 às 17h (até 18h aos sábados e domingos).
 - Café da manhã à la carte.
 - O restaurante fica no Morro da Urca, e não no cume do Pão de Açúcar.
 - A reserva do restaurante não inclui o ingresso do Parque Bondinho. O ingresso é necessário para usar o teleférico, seguir ao Pão de Açúcar ou descer pelo Bondinho. Pela trilha do Morro da Urca, quando aberta, é possível chegar sem ingresso.
@@ -17,8 +17,8 @@
 ## Páginas principais
 
 - [Planeje sua visita](https://www.embaixadacarioca.com/planeje-sua-visita.html): horários, acesso e o que esperar
-- [Café da manhã com vista](https://www.embaixadacarioca.com/cafe-da-manha.html): 8h30 às 11h30, à la carte
-- [Almoço com vista](https://www.embaixadacarioca.com/almoco.html): 11h30 às 17h
+- [Café da manhã com vista](https://www.embaixadacarioca.com/cafe-da-manha.html): 8h45 (7h45 nos fins de semana) às 11h30, à la carte
+- [Almoço com vista](https://www.embaixadacarioca.com/almoco.html): 11h30 às 17h (até 18h aos sábados e domingos)
 - [Feijoada da Academia da Cachaça](https://www.embaixadacarioca.com/feijoada.html): prêmio Veja Rio 2025/2026, servida por parceria
 - [Entardecer](https://www.embaixadacarioca.com/entardecer.html): drinks e pôr do sol no Morro da Urca
 - [Cardápio e preços](https://www.embaixadacarioca.com/cardapio.html)

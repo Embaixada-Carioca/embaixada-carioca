@@ -1,10 +1,10 @@
 # Embaixada Carioca
 
-> Brazilian restaurant on Urca Hill (Morro da Urca), 220 meters above sea level, at the first stop of the Sugarloaf cable car in Rio de Janeiro. It is the only restaurant in Bondinho Pão de Açúcar Park with a direct view of Sugarloaf Mountain. Open daily, 8:30 AM to 9:00 PM.
+> Brazilian restaurant on Urca Hill (Morro da Urca), 220 meters above sea level, at the first stop of the Sugarloaf cable car in Rio de Janeiro. It is the only restaurant in Bondinho Pão de Açúcar Park with a direct view of Sugarloaf Mountain. Open Monday to Friday from 8:45 AM to 8:45 PM and on weekends from 7:45 AM to 8:45 PM.
 
 ## Facts
 
-- Hours (confirmed by the operator on 12 October 2026): daily, 8:30 AM to 9:00 PM. Breakfast 8:30 to 11:30 AM; lunch 11:30 AM to 5:00 PM.
+- Hours (confirmed by the operator on 12 October 2026): Monday to Friday from 8:45 AM to 8:45 PM and on weekends from 7:45 AM to 8:45 PM. Breakfast 8:45 AM (7:45 AM on weekends) to 11:30 AM; lunch 11:30 AM to 5:00 PM (until 6:00 PM on weekends).
 - Breakfast is à la carte.
 - The restaurant is on Urca Hill, not at the summit of Sugarloaf Mountain.
 - Restaurant reservations do not include the park ticket. A ticket is required to ride the cable car, continue to Sugarloaf Mountain or ride down. Via the Urca Hill trail, when open, you can arrive without a cable car ticket.
@@ -17,8 +17,8 @@
 ## Main pages
 
 - [Plan your visit](https://www.embaixadacarioca.com/en/plan-your-visit.html): hours, access and what to expect
-- [Breakfast with a view](https://www.embaixadacarioca.com/en/cafe-da-manha.html): 8:30 to 11:30 AM, à la carte
-- [Lunch with a view](https://www.embaixadacarioca.com/en/almoco.html): 11:30 AM to 5:00 PM
+- [Breakfast with a view](https://www.embaixadacarioca.com/en/cafe-da-manha.html): 8:45 AM (7:45 AM on weekends) to 11:30 AM, à la carte
+- [Lunch with a view](https://www.embaixadacarioca.com/en/almoco.html): 11:30 AM to 5:00 PM (until 6:00 PM on weekends)
 - [Academia da Cachaça's feijoada](https://www.embaixadacarioca.com/en/feijoada.html): Veja Rio 2025/2026 award, served through a partnership
 - [Sunset](https://www.embaixadacarioca.com/en/sunset.html): drinks and sunset on Urca Hill
 - [Menu and prices](https://www.embaixadacarioca.com/en/cardapio.html)

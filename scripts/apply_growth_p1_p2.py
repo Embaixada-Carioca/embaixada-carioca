@@ -21,9 +21,9 @@ GROUPS = {
   ('en/cafe-da-manha.html', 'Breakfast with a Sugarloaf View | Embaixada Carioca', 'Breakfast with a Sugarloaf Mountain view on Urca Hill until 11:30 AM. Explore the menu and book a table. Cable-car tickets are purchased separately.', 'Breakfast with a view of Sugarloaf Mountain', 'Have breakfast facing Sugarloaf Mountain on Urca Hill, 220 meters above sea level. Breakfast is served until 11:30 AM; explore the menu and plan your park access.'),
   ('es/cafe-da-manha.html', 'Desayuno con Vista al Pan de Azúcar | Embaixada Carioca', 'Desayuna con vista al Pan de Azúcar en el Morro da Urca hasta las 11:30. Consulta el menú y reserva. La entrada del teleférico se compra por separado.', 'Desayuno con vista al Pan de Azúcar', 'Desayuna frente al Pan de Azúcar en el Morro da Urca, a 220 metros de altitud. El servicio termina a las 11:30; consulta el menú y planifica el acceso al parque.')],
  'lunch': [
-  ('almoco.html', 'Almoço com Vista no Morro da Urca | Embaixada Carioca', 'Almoço com vista para o Pão de Açúcar, das 11h30 às 17h no Morro da Urca. Picanha, feijoada e cozinha brasileira. Veja o cardápio e reserve sua mesa.', 'Almoço com vista para o Pão de Açúcar', 'Almoce com vista direta para o Pão de Açúcar, no Morro da Urca, das 11h30 às 17h. A Embaixada Carioca serve cozinha brasileira, picanha e a feijoada da Academia da Cachaça por meio de parceria formal.'),
-  ('en/almoco.html', 'Lunch with a Sugarloaf View | Embaixada Carioca', 'Brazilian lunch with a Sugarloaf Mountain view on Urca Hill, 11:30 AM–5:00 PM. Picanha and feijoada. Explore the menu and reserve your table.', 'Lunch with a view of Sugarloaf Mountain', 'Enjoy Brazilian lunch facing Sugarloaf Mountain on Urca Hill, from 11:30 AM to 5:00 PM. Embaixada Carioca serves picanha and Academia da Cachaça feijoada through a formal partnership.'),
-  ('es/almoco.html', 'Almuerzo con Vista al Pan de Azúcar | Embaixada Carioca', 'Almuerzo brasileño con vista al Pan de Azúcar, de 11:30 a 17:00 en el Morro da Urca. Picanha y feijoada. Consulta el menú y reserva tu mesa.', 'Almuerzo con vista al Pan de Azúcar', 'Almuerza frente al Pan de Azúcar en el Morro da Urca, de 11:30 a 17:00. Embaixada Carioca sirve cocina brasileña, picanha y la feijoada de Academia da Cachaça mediante una colaboración formal.')],
+  ('almoco.html', 'Almoço com Vista no Morro da Urca | Embaixada Carioca', 'Almoço com vista para o Pão de Açúcar, das 11h30 às 17h no Morro da Urca. Picanha, feijoada e cozinha brasileira. Veja o cardápio e reserve sua mesa.', 'Almoço com vista para o Pão de Açúcar', 'Almoce com vista direta para o Pão de Açúcar, no Morro da Urca, das 11h30 às 17h (até 18h aos sábados e domingos). A Embaixada Carioca serve cozinha brasileira, picanha e a feijoada da Academia da Cachaça por meio de parceria formal.'),
+  ('en/almoco.html', 'Lunch with a Sugarloaf View | Embaixada Carioca', 'Brazilian lunch with a Sugarloaf Mountain view on Urca Hill, 11:30 AM–5:00 PM (weekends to 6:00 PM). Picanha and feijoada. Explore the menu and reserve your table.', 'Lunch with a view of Sugarloaf Mountain', 'Enjoy Brazilian lunch facing Sugarloaf Mountain on Urca Hill, from 11:30 AM to 5:00 PM (until 6:00 PM on weekends). Embaixada Carioca serves picanha and Academia da Cachaça feijoada through a formal partnership.'),
+  ('es/almoco.html', 'Almuerzo con Vista al Pan de Azúcar | Embaixada Carioca', 'Almuerzo brasileño con vista al Pan de Azúcar, de 11:30 a 17:00 en el Morro da Urca. Picanha y feijoada. Consulta el menú y reserva tu mesa.', 'Almuerzo con vista al Pan de Azúcar', 'Almuerza frente al Pan de Azúcar en el Morro da Urca, de 11:30 a 17:00 (hasta las 18:00 los fines de semana). Embaixada Carioca sirve cocina brasileña, picanha y la feijoada de Academia da Cachaça mediante una colaboración formal.')],
  'park': [
   ('parque-bondinho.html', 'Parque Bondinho Pão de Açúcar: Horário, Ingresso e Dicas', 'Horário do Parque Bondinho (out/2026): seg–sex 8h30–21h, sáb–dom 7h30–21h, último embarque 19h30. Ingresso, trilha gratuita e onde almoçar com vista.', 'Parque Bondinho Pão de Açúcar: horário, ingresso e dicas', 'O Parque Bondinho Pão de Açúcar conecta a Praia Vermelha, o Morro da Urca e o Pão de Açúcar. Abre de segunda a sexta das 8h30 às 21h e nos fins de semana das 7h30 às 21h, com último embarque às 19h30 (outubro de 2026). Na primeira parada, a Embaixada Carioca serve café da manhã e almoço com vista.'),
   ('en/parque-bondinho.html', 'Sugarloaf Cable Car: Hours, Tickets & Tips | Rio Guide', 'Sugarloaf cable-car hours (Oct 2026): Mon–Fri 8:30 AM–9 PM, Sat–Sun 7:30 AM–9 PM, last boarding 7:30 PM. Tickets, the free trail and lunch with a view.', 'Sugarloaf cable car: hours, tickets and tips', 'Sugarloaf Cable Car Park connects Praia Vermelha, Urca Hill and Sugarloaf Mountain. It opens Monday to Friday from 8:30 AM to 9 PM and on weekends from 7:30 AM to 9 PM, with last boarding at 7:30 PM (October 2026). At the first stop, Embaixada Carioca serves breakfast and lunch with a view.'),
@@ -49,9 +49,9 @@ GROUPS = {
   ('en/sugarloaf-cable-car-restaurant.html', 'Sugarloaf Cable Car Restaurant | Embaixada Carioca', 'Stop for breakfast or lunch at the first Sugarloaf cable-car stop on Urca Hill. Browse the menu. Restaurant reservations and park tickets are separate.', 'Restaurant at the first Sugarloaf cable-car stop', 'Embaixada Carioca is on Urca Hill, the first cable-car stop before Sugarloaf Mountain. Plan breakfast or lunch during your visit. Restaurant reservations and park tickets are separate.'),
   ('es/restaurante-bondinho-pan-de-azucar.html', 'Restaurante del Teleférico | Embaixada Carioca', 'Desayuna o almuerza en la primera parada del teleférico del Pan de Azúcar. Consulta el menú. La reserva del restaurante y la entrada son separadas.', 'Restaurante en la primera parada del teleférico', 'Embaixada Carioca está en el Morro da Urca, la primera parada del teleférico antes del Pan de Azúcar. Planifica desayuno o almuerzo durante el paseo. La reserva y la entrada al parque son separadas.')],
  'where': [
-  ('onde-comer-no-pao-de-acucar.html', 'Onde Comer no Pão de Açúcar | Café e Almoço com Vista', 'Escolha onde comer durante a visita ao Pão de Açúcar: café da manhã ou almoço no Morro da Urca. Cardápio, reserva e acesso à Embaixada Carioca.', 'Onde comer durante a visita ao Pão de Açúcar', 'Se você procura onde comer durante o passeio ao Pão de Açúcar, a Embaixada Carioca fica no Morro da Urca, primeira parada do Bondinho. Compare os momentos: café da manhã até 11h30 ou almoço das 11h30 às 17h.'),
-  ('en/where-to-eat-near-sugarloaf.html', 'Where to Eat at Sugarloaf | Breakfast & Lunch Guide', 'Choose where to eat during your Sugarloaf visit: breakfast or lunch on Urca Hill. Explore the Embaixada Carioca menu, reservations and park access.', 'Where to eat during your Sugarloaf visit', 'For a meal during your Sugarloaf visit, Embaixada Carioca is on Urca Hill at the first cable-car stop. Choose breakfast until 11:30 AM or Brazilian lunch from 11:30 AM to 5:00 PM.'),
-  ('es/donde-comer-cerca-del-pan-de-azucar.html', 'Dónde Comer en el Pan de Azúcar | Desayuno y Almuerzo', 'Elige dónde comer durante tu visita al Pan de Azúcar: desayuno o almuerzo en el Morro da Urca. Consulta menú, reservas y acceso a Embaixada Carioca.', 'Dónde comer durante la visita al Pan de Azúcar', 'Para comer durante el paseo al Pan de Azúcar, Embaixada Carioca está en el Morro da Urca, primera parada del teleférico. Elige desayuno hasta las 11:30 o almuerzo brasileño de 11:30 a 17:00.')],
+  ('onde-comer-no-pao-de-acucar.html', 'Onde Comer no Pão de Açúcar | Café e Almoço com Vista', 'Escolha onde comer durante a visita ao Pão de Açúcar: café da manhã ou almoço no Morro da Urca. Cardápio, reserva e acesso à Embaixada Carioca.', 'Onde comer durante a visita ao Pão de Açúcar', 'Se você procura onde comer durante o passeio ao Pão de Açúcar, a Embaixada Carioca fica no Morro da Urca, primeira parada do Bondinho. Compare os momentos: café da manhã até 11h30 ou almoço das 11h30 às 17h (até 18h aos sábados e domingos).'),
+  ('en/where-to-eat-near-sugarloaf.html', 'Where to Eat at Sugarloaf | Breakfast & Lunch Guide', 'Choose where to eat during your Sugarloaf visit: breakfast or lunch on Urca Hill. Explore the Embaixada Carioca menu, reservations and park access.', 'Where to eat during your Sugarloaf visit', 'For a meal during your Sugarloaf visit, Embaixada Carioca is on Urca Hill at the first cable-car stop. Choose breakfast until 11:30 AM or Brazilian lunch from 11:30 AM to 5:00 PM (until 6:00 PM on weekends).'),
+  ('es/donde-comer-cerca-del-pan-de-azucar.html', 'Dónde Comer en el Pan de Azúcar | Desayuno y Almuerzo', 'Elige dónde comer durante tu visita al Pan de Azúcar: desayuno o almuerzo en el Morro da Urca. Consulta menú, reservas y acceso a Embaixada Carioca.', 'Dónde comer durante la visita al Pan de Azúcar', 'Para comer durante el paseo al Pan de Azúcar, Embaixada Carioca está en el Morro da Urca, primera parada del teleférico. Elige desayuno hasta las 11:30 o almuerzo brasileño de 11:30 a 17:00 (hasta las 18:00 los fines de semana).')],
  'itinerary': [
   ('roteiro-meio-dia-urca-pao-de-acucar.html', 'Roteiro de Meio Dia: Urca, Bondinho e Almoço com Vista', 'Planeje meio dia na Urca: Praia Vermelha, Bondinho, mirantes e almoço com vista no Morro da Urca. Entenda acesso, reserva e horários do restaurante.', 'Roteiro de meio dia na Urca e no Pão de Açúcar', None),
   ('en/roteiro-meio-dia-urca-pao-de-acucar.html', 'Half-Day Urca & Sugarloaf Itinerary with Lunch', 'Plan half a day in Urca: Praia Vermelha, cable car, viewpoints and lunch with a view. Learn about park access, reservations and restaurant hours.', 'Half-day Urca and Sugarloaf itinerary', None),
@@ -101,8 +101,8 @@ def opening_hours(node, title, description, url):
     if isinstance(node,dict):
         t=node.get('@type',[]); types=[t] if isinstance(t,str) else t
         if any(x in types for x in ('Restaurant','LocalBusiness','FoodEstablishment')):
-            node['openingHours']=['Mo-Su 08:30-21:00']
-            node['openingHoursSpecification']=[{'@type':'OpeningHoursSpecification','dayOfWeek':['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],'opens':'08:30','closes':'21:00'}]
+            node['openingHours']=['Mo-Fr 08:45-20:45','Sa-Su 07:45-20:45']
+            node['openingHoursSpecification']=[{'@type':'OpeningHoursSpecification','dayOfWeek':['Monday','Tuesday','Wednesday','Thursday','Friday'],'opens':'08:45','closes':'20:45'},{'@type':'OpeningHoursSpecification','dayOfWeek':['Saturday','Sunday'],'opens':'07:45','closes':'20:45'}]
         if 'Organization' in types and not node.get('logo'):
             node['logo']=SITE+'/assets/logo-azul.svg'
         if 'GeoCoordinates' in types and str(node.get('elevation'))=='227': node['elevation']='220'
@@ -123,20 +123,20 @@ def synchronize_schema(text, title, desc, rel):
     return JSONLD.sub(replace,text)
 
 def facts(text, lang):
-    # Operator confirmation on 12 October 2026: daily 08:30–21:00.
+    # Operator confirmation on 24 October 2026: Mon–Fri 08:45–20:45, Sat–Sun 07:45–20:45; lunch 11:30–17:00 (18:00 on weekends).
     text=re.sub(r'\b227 (metros|meters|metres)\b',r'220 \1',text)
     # 220 m = 721.78 ft; keep the imperial caption consistent with metric copy.
     text=re.sub(r'\b745\s*(ft|feet)\b',r'722\1',text)
     # Exact service-hour ranges only: preserve itinerary suggestions at 16h/16h30.
     text=re.sub(r'(11h30\s+(?:até\s+(?:as|às)|às)\s+)16h(?:00)?\b',r'\g<1>17h',text)
-    text=text.replace('11:30 AM to 4:00 PM','11:30 AM to 5:00 PM')
-    text=text.replace('11:30 a 16:00','11:30 a 17:00')
+    text=text.replace('11:30 AM to 4:00 PM','11:30 AM to 5:00 PM (until 6:00 PM on weekends)')
+    text=text.replace('11:30 a 16:00','11:30 a 17:00 (hasta las 18:00 los fines de semana)')
     def table_row(m):
         row=m[0];cells=re.findall(r'<td[^>]*>(.*?)</td>',row,re.S)
         if len(cells)<2: return row
         name=re.sub('<[^>]*>','',cells[0])
         if re.search('Almoço|Lunch|Almuerzo',name,re.I) and ('3:30 PM' in cells[1] or '15:30' in cells[1]):
-            return row.replace('<td>'+cells[1]+'</td>','<td>'+('11:30 AM–5:00 PM' if lang=='en' else '11:30–17:00')+'</td>',1)
+            return row.replace('<td>'+cells[1]+'</td>','<td>'+('11:30 AM–5:00 PM (weekends to 6:00 PM)' if lang=='en' else '11:30–17:00 (fin de semana hasta las 18:00)')+'</td>',1)
         return row
     return re.sub(r'<tr\b[^>]*>.*?</tr>',table_row,text,flags=re.S)
 
@@ -192,9 +192,9 @@ def transform(row, group):
     if group in ('park','hill'):
         # Park hours are a separate authority; point to the official source.
         answer={
-         'pt':'Confirme os horários e o último embarque do Parque Bondinho no site oficial bondinho.com.br. A Embaixada Carioca funciona todos os dias das 08h30 às 21h, com café da manhã até 11h30 e almoço das 11h30 às 17h.',
-         'en':'Confirm park hours and the last cable-car departure on the official website, bondinho.com.br. Embaixada Carioca is open daily from 8:30 AM to 9:00 PM, with breakfast until 11:30 AM and lunch from 11:30 AM to 5:00 PM.',
-         'es':'Confirma los horarios del parque y el último embarque en el sitio oficial bondinho.com.br. Embaixada Carioca abre todos los días de 8:30 a 21:00, con desayuno hasta las 11:30 y almuerzo de 11:30 a 17:00.'}[lang]
+         'pt':'Confirme os horários e o último embarque do Parque Bondinho no site oficial bondinho.com.br. A Embaixada Carioca funciona de segunda a sexta das 8h45 às 20h45 e nos fins de semana das 7h45 às 20h45, com café da manhã até 11h30 e almoço das 11h30 às 17h (até 18h aos sábados e domingos).',
+         'en':'Confirm park hours and the last cable-car departure on the official website, bondinho.com.br. Embaixada Carioca is open Monday to Friday from 8:45 AM to 8:45 PM and on weekends from 7:45 AM to 8:45 PM, with breakfast until 11:30 AM and lunch from 11:30 AM to 5:00 PM (until 6:00 PM on weekends).',
+         'es':'Confirma los horarios del parque y el último embarque en el sitio oficial bondinho.com.br. Embaixada Carioca abre de lunes a viernes de 8:45 a 20:45 y los fines de semana de 7:45 a 20:45, con desayuno hasta las 11:30 y almuerzo de 11:30 a 17:00 (hasta las 18:00 los fines de semana).'}[lang]
         old_park=re.compile(r'(?:8h(?:00)?\s*(?:às|a|–|-)\s*21h|8am\s*to\s*9pm|8:00\s*AM\s*to\s*9:00\s*PM)',re.I)
         def paragraph(m):
             visible=re.sub('<[^>]*>','',html.unescape(m[2]))
