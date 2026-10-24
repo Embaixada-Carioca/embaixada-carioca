@@ -8,6 +8,7 @@
   function gtag(){dataLayer.push(arguments);}
   window.ecLoadGA4 = window.ecLoadGA4 || function(){
     if (window.ecGA4Loaded) return;
+      if (navigator.webdriver||/HeadlessChrome|Lighthouse|bot|crawl|spider/i.test(navigator.userAgent)||!/(^|\.)embaixadacarioca\.com$/.test(location.hostname)) return;
     window.ecGA4Loaded = true;
     var s = document.createElement('script');
     s.async = true;
