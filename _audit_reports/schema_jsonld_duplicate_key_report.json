@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "mode": "check",
-  "files_checked": 115,
+  "files_checked": 192,
   "findings_count": 0,
   "files": [
     {
@@ -54,6 +54,12 @@
     },
     {
       "file": "abastecer/manual/2.8.2/index.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "abastecer/manual/2.9.0/index.html",
       "changed": false,
       "jsonld_blocks": 0,
       "invalid_blocks": 0
@@ -115,13 +121,433 @@
     {
       "file": "como-chegar.html",
       "changed": false,
-      "jsonld_blocks": 2,
+      "jsonld_blocks": 1,
       "invalid_blocks": 0
     },
     {
       "file": "contato.html",
       "changed": false,
       "jsonld_blocks": 1,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/404.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/almoco.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/avaliacoes-embaixada-carioca.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/cafe-da-manha.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/caipirinha-com-vista-rio.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/cardapio.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/como-chegar.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/contato.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/almoco.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/breakfast-with-a-view-rio-de-janeiro.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/cafe-da-manha.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/caipirinha-com-vista-rio.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/cardapio.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/contato.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/eventos-corporativos.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/eventos.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/feijoada.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/gastronomia-carioca.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/guia-do-rio.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/how-to-get-there.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/index.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/morro-da-urca.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/nossa-visao.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/o-que-fazer-depois-do-bondinho-pao-de-acucar.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/parque-bondinho.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/restaurant-at-urca-hill.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/reviews-embaixada-carioca.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/roteiro-meio-dia-urca-pao-de-acucar.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/sugarloaf-cable-car-restaurant.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/sunset.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/en/where-to-eat-near-sugarloaf.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/entardecer.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/almoco.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/atardecer.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/cafe-da-manha.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/caipirinha-com-vista-rio.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/cardapio.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/como-llegar.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/contato.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/desayuno-con-vista-rio-de-janeiro.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/donde-comer-cerca-del-pan-de-azucar.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/eventos-corporativos.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/eventos.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/feijoada.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/gastronomia-carioca.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/guia-do-rio.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/index.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/morro-da-urca.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/nossa-visao.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/o-que-fazer-depois-do-bondinho-pao-de-acucar.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/parque-bondinho.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/resenas-embaixada-carioca.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/restaurante-bondinho-pan-de-azucar.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/restaurante-morro-da-urca.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/es/roteiro-meio-dia-urca-pao-de-acucar.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/eventos-corporativos.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/eventos.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/feijoada.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/gastronomia-carioca.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/guia-do-rio.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/morro-da-urca.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/nossa-visao.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/o-que-fazer-depois-do-bondinho-pao-de-acucar.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/offline.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/onde-comer-no-pao-de-acucar.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/parque-bondinho.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/politica-de-privacidade.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/restaurante-bondinho-pao-de-acucar.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/restaurante-morro-da-urca.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "content/pages/roteiro-meio-dia-urca-pao-de-acucar.html",
+      "changed": false,
+      "jsonld_blocks": 0,
       "invalid_blocks": 0
     },
     {
@@ -181,7 +607,7 @@
     {
       "file": "en/eventos-corporativos.html",
       "changed": false,
-      "jsonld_blocks": 2,
+      "jsonld_blocks": 1,
       "invalid_blocks": 0
     },
     {
@@ -199,7 +625,7 @@
     {
       "file": "en/feijoada.html",
       "changed": false,
-      "jsonld_blocks": 2,
+      "jsonld_blocks": 1,
       "invalid_blocks": 0
     },
     {
@@ -217,7 +643,7 @@
     {
       "file": "en/how-to-get-there.html",
       "changed": false,
-      "jsonld_blocks": 2,
+      "jsonld_blocks": 1,
       "invalid_blocks": 0
     },
     {
@@ -246,6 +672,12 @@
     },
     {
       "file": "en/parque-bondinho.html",
+      "changed": false,
+      "jsonld_blocks": 1,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "en/plan-your-visit.html",
       "changed": false,
       "jsonld_blocks": 1,
       "invalid_blocks": 0
@@ -373,7 +805,7 @@
     {
       "file": "es/como-llegar.html",
       "changed": false,
-      "jsonld_blocks": 2,
+      "jsonld_blocks": 1,
       "invalid_blocks": 0
     },
     {
@@ -403,7 +835,7 @@
     {
       "file": "es/eventos-corporativos.html",
       "changed": false,
-      "jsonld_blocks": 2,
+      "jsonld_blocks": 1,
       "invalid_blocks": 0
     },
     {
@@ -421,7 +853,7 @@
     {
       "file": "es/feijoada.html",
       "changed": false,
-      "jsonld_blocks": 2,
+      "jsonld_blocks": 1,
       "invalid_blocks": 0
     },
     {
@@ -468,6 +900,12 @@
     },
     {
       "file": "es/parque-bondinho.html",
+      "changed": false,
+      "jsonld_blocks": 1,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "es/planifica-tu-visita.html",
       "changed": false,
       "jsonld_blocks": 1,
       "invalid_blocks": 0
@@ -529,13 +967,13 @@
     {
       "file": "eventos-corporativos.html",
       "changed": false,
-      "jsonld_blocks": 2,
+      "jsonld_blocks": 1,
       "invalid_blocks": 0
     },
     {
       "file": "eventos.html",
       "changed": false,
-      "jsonld_blocks": 2,
+      "jsonld_blocks": 1,
       "invalid_blocks": 0
     },
     {
@@ -553,7 +991,7 @@
     {
       "file": "feijoada.html",
       "changed": false,
-      "jsonld_blocks": 2,
+      "jsonld_blocks": 1,
       "invalid_blocks": 0
     },
     {
@@ -584,6 +1022,18 @@
       "file": "index.html",
       "changed": false,
       "jsonld_blocks": 1,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "lojas-bot/index.html",
+      "changed": false,
+      "jsonld_blocks": 0,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "lojas-bot/sobre.html",
+      "changed": false,
+      "jsonld_blocks": 0,
       "invalid_blocks": 0
     },
     {
@@ -630,6 +1080,18 @@
     },
     {
       "file": "parque-bondinho.html",
+      "changed": false,
+      "jsonld_blocks": 1,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "planeje-sua-visita.html",
+      "changed": false,
+      "jsonld_blocks": 1,
+      "invalid_blocks": 0
+    },
+    {
+      "file": "politica-de-privacidade.html",
       "changed": false,
       "jsonld_blocks": 1,
       "invalid_blocks": 0
