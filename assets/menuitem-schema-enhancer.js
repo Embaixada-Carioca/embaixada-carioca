@@ -69,7 +69,7 @@
     'url': 'https://www.embaixadacarioca.com/',
     'telephone': '+55 21 96683-7556',
     'email': 'eventos@embaixadacarioca.com.br',
-    'image': 'https://www.embaixadacarioca.com/assets/hero.jpg',
+    'image': 'https://www.embaixadacarioca.com/assets/hero-vista.jpg',
     'logo': 'https://www.embaixadacarioca.com/assets/logo.png',
     'priceRange': '$$$',
     'servesCuisine': ['Brazilian', 'Carioca', 'Feijoada', 'Breakfast', 'Bar'],

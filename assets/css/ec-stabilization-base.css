@@ -76,7 +76,7 @@ html body header.hero.hero {
   background-color: var(--ec-blue) !important;
   background-image:
     linear-gradient(180deg, rgba(0,32,46,.40) 0%, rgba(0,32,46,.18) 28%, rgba(0,32,46,.42) 58%, rgba(0,32,46,.88) 100%),
-    url('/assets/hero.webp') !important;
+    url('/assets/hero-vista.webp') !important;
   background-size: cover !important;
   background-position: center 40% !important;
   background-repeat: no-repeat !important;

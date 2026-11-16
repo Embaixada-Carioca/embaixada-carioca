@@ -1,6 +1,6 @@
 # Estado atual do site — Embaixada Carioca
 
-**Atualizado em:** 24/10/2026
+**Atualizado em:** 16/11/2026
 
 **Domínio canônico:** `https://www.embaixadacarioca.com/`
 
@@ -9,6 +9,12 @@
 **Branch de produção:** `master`
 
 Este é o documento de referência para o estado operacional atual. Relatórios datados em `_audit_reports/` registram o momento em que foram gerados e podem conter limitações já superadas.
+
+## Estado em 16/11/2026 — horários e foto do hero
+
+- Horário confirmado por Leonardo em 16/11/2026 (segue o Parque Bondinho): seg–sex 8h30–20h45, sáb–dom 7h45–20h45. Café da manhã da abertura às 11h30; almoço 11h30–17h (até 18h nos fins de semana); petiscos e drinks em todo o horário da casa. Aplicado em PT/EN/ES, `openingHoursSpecification`/`openingHours`, llms.txt (via `data/llms/`) e nas faixas de horário do cardápio (`scripts/refresh_menu_highlights.py`).
+- Foto do hero: a imagem anterior era uma edição feita com o Gemini (quiosque apagado, céu trocado, marca ✦ no canto). Substituída por recorte da foto original sem edição (`assets/hero-vista*`), com o Pão de Açúcar maior no quadro. Os arquivos `assets/hero*` antigos também receberam a foto real, porque têm cache `immutable` de 1 ano.
+- Pendente fora do repositório: alinhar o horário no Perfil da Empresa no Google, Tagme, Instagram e TripAdvisor.
 
 ## Estado verificado em 24/10/2026 — crescimento (itens 1–4 do plano de 24/10)
 
