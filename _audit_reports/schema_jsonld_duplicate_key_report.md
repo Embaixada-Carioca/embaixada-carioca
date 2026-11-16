@@ -181,7 +181,7 @@ Achados: **0**
 - `feijoada.html` — ok — blocos JSON-LD: 1 — inválidos: 0
 - `formulario.html` — ok — blocos JSON-LD: 0 — inválidos: 0
 - `gastronomia-carioca.html` — ok — blocos JSON-LD: 1 — inválidos: 0
-- `general-3/index.html` — ok — blocos JSON-LD: 0 — inválidos: 0
+- `general-3/index.html` — ok — blocos JSON-LD: 1 — inválidos: 0
 - `guia-do-rio.html` — ok — blocos JSON-LD: 1 — inválidos: 0
 - `index.html` — ok — blocos JSON-LD: 1 — inválidos: 0
 - `lojas-bot/index.html` — ok — blocos JSON-LD: 0 — inválidos: 0

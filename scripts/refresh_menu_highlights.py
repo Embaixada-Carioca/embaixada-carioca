@@ -124,7 +124,7 @@ MORE_ITEMS = [
 COPY = {
     'pt': {
         'headings': ('Café da manhã', 'Almoço brasileiro', 'Petiscos e entradas', 'Drinks e bebidas'),
-        'hours': ('Todos os dias · 08h30–11h30', 'Todos os dias · 11h30–17h', 'Todos os dias · 08h30–21h', 'Todos os dias · 08h30–21h'),
+        'hours': ('Seg–sex 8h30–11h30 · sáb–dom 7h45–11h30', 'Todos os dias · 11h30–17h (fds até 18h)', 'Seg–sex 8h30–20h45 · sáb–dom 7h45–20h45', 'Seg–sex 8h30–20h45 · sáb–dom 7h45–20h45'),
         'kicker': 'Cardápio online', 'title': 'Mais opções do cardápio',
         'intro': 'Confira mais opções verificadas no cardápio online em 19/10/2026. Para todas as porções de bobó de camarão, vinhos, espumantes e demais opções, consulte o menu completo.',
         'note': 'Valores em reais. Preços, porções e disponibilidade podem mudar; confirme no cardápio online e com a equipe antes do pedido. A reserva da mesa não inclui o ingresso do Parque Bondinho.',
@@ -132,7 +132,7 @@ COPY = {
     },
     'en': {
         'headings': ('Breakfast', 'Brazilian lunch', 'Snacks and starters', 'Cocktails and drinks'),
-        'hours': ('Daily · 8:30–11:30 AM', 'Daily · 11:30 AM–5:00 PM', 'Daily · 8:30 AM–9:00 PM', 'Daily · 8:30 AM–9:00 PM'),
+        'hours': ('Mon–Fri 8:30–11:30 AM · Sat–Sun 7:45–11:30 AM', 'Daily · 11:30 AM–5:00 PM (weekends until 6:00 PM)', 'Mon–Fri 8:30 AM–8:45 PM · Sat–Sun 7:45 AM–8:45 PM', 'Mon–Fri 8:30 AM–8:45 PM · Sat–Sun 7:45 AM–8:45 PM'),
         'kicker': 'Online menu', 'title': 'More options from the menu',
         'intro': 'Explore more options checked against the online menu on 19 October 2026. For all shrimp bobó portions, wines, sparkling wines and other options, see the full menu.',
         'note': 'Prices are in Brazilian reais. Prices, portions and availability may change; check the online menu and confirm with the team before ordering. Your table reservation does not include park admission.',
@@ -140,7 +140,7 @@ COPY = {
     },
     'es': {
         'headings': ('Desayuno', 'Almuerzo brasileño', 'Aperitivos y entradas', 'Cócteles y bebidas'),
-        'hours': ('Todos los días · 08:30–11:30', 'Todos los días · 11:30–17:00', 'Todos los días · 08:30–21:00', 'Todos los días · 08:30–21:00'),
+        'hours': ('Lun–vie 8:30–11:30 · sáb–dom 7:45–11:30', 'Todos los días · 11:30–17:00 (fines de semana hasta las 18:00)', 'Lun–vie 8:30–20:45 · sáb–dom 7:45–20:45', 'Lun–vie 8:30–20:45 · sáb–dom 7:45–20:45'),
         'kicker': 'Menú online', 'title': 'Más opciones del menú',
         'intro': 'Descubre más opciones comprobadas en el menú online el 19/10/2026. Para todas las porciones de bobó de camarones, vinos, espumantes y otras opciones, consulta el menú completo.',
         'note': 'Precios en reales brasileños. Los precios, las porciones y la disponibilidad pueden cambiar; consulta el menú online y confirma con el equipo antes de pedir. La reserva de mesa no incluye la entrada al parque.',

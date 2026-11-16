@@ -101,8 +101,8 @@ def opening_hours(node, title, description, url):
     if isinstance(node,dict):
         t=node.get('@type',[]); types=[t] if isinstance(t,str) else t
         if any(x in types for x in ('Restaurant','LocalBusiness','FoodEstablishment')):
-            node['openingHours']=['Mo-Fr 08:45-20:45','Sa-Su 07:45-20:45']
-            node['openingHoursSpecification']=[{'@type':'OpeningHoursSpecification','dayOfWeek':['Monday','Tuesday','Wednesday','Thursday','Friday'],'opens':'08:45','closes':'20:45'},{'@type':'OpeningHoursSpecification','dayOfWeek':['Saturday','Sunday'],'opens':'07:45','closes':'20:45'}]
+            node['openingHours']=['Mo-Fr 08:30-20:45','Sa-Su 07:45-20:45']
+            node['openingHoursSpecification']=[{'@type':'OpeningHoursSpecification','dayOfWeek':['Monday','Tuesday','Wednesday','Thursday','Friday'],'opens':'08:30','closes':'20:45'},{'@type':'OpeningHoursSpecification','dayOfWeek':['Saturday','Sunday'],'opens':'07:45','closes':'20:45'}]
         if 'Organization' in types and not node.get('logo'):
             node['logo']=SITE+'/assets/logo-azul.svg'
         if 'GeoCoordinates' in types and str(node.get('elevation'))=='227': node['elevation']='220'
@@ -123,7 +123,7 @@ def synchronize_schema(text, title, desc, rel):
     return JSONLD.sub(replace,text)
 
 def facts(text, lang):
-    # Operator confirmation on 24 October 2026: Mon–Fri 08:45–20:45, Sat–Sun 07:45–20:45; lunch 11:30–17:00 (18:00 on weekends).
+    # Operator confirmation on 16 November 2026: Mon–Fri 08:30–20:45, Sat–Sun 07:45–20:45; lunch 11:30–17:00 (18:00 on weekends).
     text=re.sub(r'\b227 (metros|meters|metres)\b',r'220 \1',text)
     # 220 m = 721.78 ft; keep the imperial caption consistent with metric copy.
     text=re.sub(r'\b745\s*(ft|feet)\b',r'722\1',text)
@@ -192,9 +192,9 @@ def transform(row, group):
     if group in ('park','hill'):
         # Park hours are a separate authority; point to the official source.
         answer={
-         'pt':'Confirme os horários e o último embarque do Parque Bondinho no site oficial bondinho.com.br. A Embaixada Carioca funciona de segunda a sexta das 8h45 às 20h45 e nos fins de semana das 7h45 às 20h45, com café da manhã até 11h30 e almoço das 11h30 às 17h (até 18h aos sábados e domingos).',
-         'en':'Confirm park hours and the last cable-car departure on the official website, bondinho.com.br. Embaixada Carioca is open Monday to Friday from 8:45 AM to 8:45 PM and on weekends from 7:45 AM to 8:45 PM, with breakfast until 11:30 AM and lunch from 11:30 AM to 5:00 PM (until 6:00 PM on weekends).',
-         'es':'Confirma los horarios del parque y el último embarque en el sitio oficial bondinho.com.br. Embaixada Carioca abre de lunes a viernes de 8:45 a 20:45 y los fines de semana de 7:45 a 20:45, con desayuno hasta las 11:30 y almuerzo de 11:30 a 17:00 (hasta las 18:00 los fines de semana).'}[lang]
+         'pt':'Confirme os horários e o último embarque do Parque Bondinho no site oficial bondinho.com.br. A Embaixada Carioca funciona de segunda a sexta das 8h30 às 20h45 e nos fins de semana das 7h45 às 20h45, com café da manhã até 11h30 e almoço das 11h30 às 17h (até 18h aos sábados e domingos).',
+         'en':'Confirm park hours and the last cable-car departure on the official website, bondinho.com.br. Embaixada Carioca is open Monday to Friday from 8:30 AM to 8:45 PM and on weekends from 7:45 AM to 8:45 PM, with breakfast until 11:30 AM and lunch from 11:30 AM to 5:00 PM (until 6:00 PM on weekends).',
+         'es':'Confirma los horarios del parque y el último embarque en el sitio oficial bondinho.com.br. Embaixada Carioca abre de lunes a viernes de 8:30 a 20:45 y los fines de semana de 7:45 a 20:45, con desayuno hasta las 11:30 y almuerzo de 11:30 a 17:00 (hasta las 18:00 los fines de semana).'}[lang]
         old_park=re.compile(r'(?:8h(?:00)?\s*(?:às|a|–|-)\s*21h|8am\s*to\s*9pm|8:00\s*AM\s*to\s*9:00\s*PM)',re.I)
         def paragraph(m):
             visible=re.sub('<[^>]*>','',html.unescape(m[2]))
